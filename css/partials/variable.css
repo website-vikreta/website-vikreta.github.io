@@ -1,0 +1,47 @@
+/* ========================================================== */
+/* GOOGLE FONTS */
+/* ========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Open+Sans:wght@400;700&family=Poppins:wght@400;600;800&display=swap');
+/* ! weights */
+/* 
+    poppins: 400 600 800
+    open sans: 400 600
+    montserrat: 400 900
+*/
+
+
+/* ========================================================== */
+/* DOWNLOADED FONTS */
+/* ========================================================== */
+/* @font-face {
+    font-family: fontname;
+    src: url("fonts/filename.ttf");
+} */
+
+/* ========================================================== */
+/* variables */
+/* ========================================================== */
+:root{
+
+    /* font families */
+    --poppins: 'Poppins', sans-serif;
+    --open-sans: 'Open Sans', sans-serif;
+    --montserrat: 'Montserrat', sans-serif;
+
+    /* colors */
+    --black-color: #000;
+    --black-color2: #1b1b1b;
+    --black-color3: #333;
+    --black-color4: #2b2b2b;
+    --white-color: #fff;
+    --whitesmoke-color: #f5f5f5;
+    --gray-color: #ddd;
+    --blue-color: #294cff;
+    
+    /* box-shadows */
+    --box-shadow: 0px 15px 45px -9px rgba(0,0,0,.2);
+    --box-shadow2: 0px 3px 13px 1px rgba(0,0,0,.12);
+    --box-shadow3: 0 1px 9px rgba(0,0,0,0.05);
+    --box-shadow4: 0 0 40px rgba(0,0,0,0.045);
+    
+}
