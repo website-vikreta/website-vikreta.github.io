@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/responsive.css">
 
+    <link rel="stylesheet" href="https://www.websitevikreta.com/sdms/sdm.css">
+
 </head>
 
 <body class="flex-center">
@@ -102,12 +104,44 @@
         </section>
     </main>
 
+    <div class="sdm__wrapper" id="sdm__wrapper">
+        <div class="sdm__control">
+           <button class="sdm__control-btn" id="sdm-btn">
+              <img src="https://www.websitevikreta.com/sdms/people.svg" alt="">
+           </button>
+           <label for="">Monitor Social Distancing</label>
+        </div>
+        <div class="sdm__statistics">
+           <div class="sdm__card">
+              <div class="sdm__number" id="currentPeople"></div>
+              <p class="sdm__text">Current People in the Premises</p>
+           </div>
+           <div class="sdm__card">
+              <div class="sdm__number" id="currentVoilations"></div>
+              <p class="sdm__text">Current Voilations in the Premises</p>
+           </div>
+           <div class="sdm__card">
+              <div class="sdm__number" id="visitedIn24Hr"></div>
+              <p class="sdm__text">People Visited in last hr</p>
+           </div>
+           <div class="sdm__card">
+              <div class="sdm__number" id="percentVoilation"></div>
+              <p class="sdm__text">Percentage Voilation</p>
+           </div>
+        </div>
+     </div>
+
     <!-- jquery -->
     <script src="./vendor/jquery/jquery.min.js"></script>
     <!-- bootstrap js -->
     <script src="./vendor/bootstrap/bootstrap.min.js"></script>
     <!-- custom js -->
     <script src="./js/main.js"></script>
+
+    <script src="https://www.websitevikreta.com/sdms/sdm.js"></script>
+    <script>
+        startMonitoring("6da681de5aac4b33a1ef8967964488d4");
+     </script>
 </body>
 
 </html>
