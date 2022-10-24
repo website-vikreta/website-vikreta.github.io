@@ -2,7 +2,7 @@
 import { workData } from "../json/ourWorkData";
 
 // importing packages
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useHistory } from 'react-router-dom';
 import parse from 'html-react-parser'
 import "slick-carousel/slick/slick.css";
@@ -20,7 +20,7 @@ const DetailedWork = () => {
 
    const history = useHistory();
    const url = history.location.pathname;
-   const [ourWork, setOurWork] = useState(workData);
+   const ourWork = workData;
 
    const myWork = ourWork.filter((x) => x.url === url)[0];
 
@@ -92,7 +92,7 @@ const DetailedWork = () => {
                      <div className="button-group">
                         {
                            (myWork.links.map(link => (
-                              <a href={link.value} target="_blank" className="awesome-link">Visit {link.key}</a>
+                              <a href={link.value} target="_blank" className="awesome-link" rel="noreferrer">Visit {link.key}</a>
                            )))
                         }
                      </div>

@@ -1,6 +1,5 @@
 // importing data
-import { filterList, workData } from "../json/ourWorkData";
-import DetailedWork from "./DetailedWork";
+import { workData } from "../json/ourWorkData";
 // Importing Bootstrap Icon
 import "bootstrap-icons/font/bootstrap-icons.css";
 // importing packages
