@@ -1,0 +1,66 @@
+@import "./partials/variables";
+@import "./partials/mixins";
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   cursor: none;
+}
+
+body {
+   font-family: "Roboto", sans-serif;
+   color: $light;
+   position: relative;
+   scroll-behavior: smooth;
+   min-height: 100vh;
+   overflow-x: hidden;
+   @include dark-color-bg(medium);
+}
+
+.container {
+   max-width: 1200px;
+   margin: auto;
+}
+
+.mouse {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   width: 2rem;
+   height: 2rem;
+   transform: translate(-30%, -20%);
+   z-index: 9999;
+   pointer-events: none;
+}
+
+
+ul {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+   color: inherit
+}
+
+section {
+   padding-bottom: 150px;
+}
+
+img {
+   width: 100%;
+   height: auto;
+   user-select: none;
+   pointer-events: none;
+}
+
+@import "./partials/components";
+
+// importing pages
+@import "./pages/home";
+@import "./pages/contact";
+@import "./pages/work";
+
+// responsive
+@import "./partials/responsive";

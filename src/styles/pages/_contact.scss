@@ -1,0 +1,87 @@
+// -----------------------------------------
+// Contact US
+// -----------------------------------------
+.contact-us {
+   padding: 150px 0;
+
+   .container {
+      @include flex-between;
+      gap: 8vw;
+   }
+
+   .heading {
+      @include heading-font;
+      font-size: 2rem;
+   }
+
+   .para {
+      @include para-font;
+      font-size: 0.9rem;
+      max-width: 70%;
+   }
+
+   .left {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      position: relative;
+
+      ul li {
+         margin: 1rem 0;
+      }
+
+      ul li a {
+         @include flex-center(1rem);
+         justify-content: flex-start;
+         @include font-weight(light);
+         letter-spacing: 1px;
+         transition: 0.35s ease-out;
+
+         &:hover {
+            color: $yellow;
+         }
+      }
+
+      &:before {
+         content: '';
+         position: absolute;
+         top: 50%;
+         left: -2rem;
+         transform: translateY(-50%);
+         width: 150px;
+         min-height: 50vh;
+         z-index: -1;
+         @include dark-color-bg(light);
+      }
+   }
+
+   .right .para {
+      margin-top: 1rem;
+      max-width: 80%;
+   }
+
+   .line {
+      min-height: 50vh;
+      height: 100%;
+      width: 0.6rem;
+      @include dark-color-bg(light);
+   }
+
+   .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 2rem;
+
+      .row {
+         @include flex-center(20px);
+         width: 100%;
+         margin: 0;
+      }
+
+      .normal-btn {
+         width: fit-content;
+         height: 3rem;
+      }
+   }
+}

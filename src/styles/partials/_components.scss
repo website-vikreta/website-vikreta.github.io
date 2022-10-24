@@ -1,0 +1,244 @@
+// -----------------------------------------
+// Navigation Bar
+// -----------------------------------------
+.navbar {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: auto;
+   z-index: 1000;
+   transition: 0.35s ease-out;
+   border-bottom: 1px solid transparent;
+
+   // making navbar flex
+   .container {
+      @include flex-between;
+      padding: 1.5rem 0;
+   }
+
+   #navToggle {
+      display: none
+   }
+
+   .logo {
+      @include flex-center(10px);
+
+      img {
+         max-height: 28px;
+         width: auto;
+      }
+
+      h1 {
+         font-size: 24px;
+         @include font-weight(bold);
+
+         span {
+            color: $yellow;
+         }
+      }
+
+      .toggle-btn {
+         display: none;
+      }
+   }
+
+   .wrapper {
+      @include flex-between;
+      width: 100%;
+   }
+
+   .nav-list,
+   .social-icons {
+      @include flex-center(1.5rem);
+   }
+
+   .nav-list {
+      padding: 0 50px;
+   }
+
+   .nav-item,
+   .social {
+      transition: 0.35s ease-out;
+   }
+
+   .nav-item:hover,
+   .social:hover {
+      color: $yellow;
+   }
+
+   .social-icons {
+      margin-left: auto;
+      gap: 1rem;
+   }
+}
+
+body.scroll-down .navbar {
+   transform: translate3d(0, -100%, 0);
+}
+
+body.scroll-up .navbar {
+   @include dark-color-bg(medium);
+   border-color: #555;
+}
+
+
+// -----------------------------------------
+// Buttons
+// -----------------------------------------
+.awesome-link {
+   display: inline-block;
+   padding: 1rem 1.25rem;
+   position: relative;
+   overflow: hidden;
+   @include font-weight(medium);
+   transition: 0.35s ease-in-out;
+
+   &:hover {
+      transition-delay: 0.3s;
+      @include dark-color(dark);
+   }
+
+   &:hover:before {
+      width: 98%;
+      transition: 0.35s ease-in-out 0s;
+   }
+
+   &:hover:after {
+      transition-delay: 0.35s;
+      top: 0;
+   }
+
+   &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 97%;
+      border: 1px solid $yellow;
+      z-index: -1;
+      transition: 0.35s ease-in-out 0.35s;
+   }
+
+   &:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 99%;
+      height: 100%;
+      background: $yellow;
+      z-index: -1;
+      transition: 0.35s ease-in-out;
+   }
+}
+
+.normal-btn {
+   display: inline-block;
+   border: 1px solid $yellow;
+   padding: 10px 20px;
+   @include font-weight(medium);
+   transition: 0.35s ease-in-out;
+
+   &.primary {
+      background: $yellow;
+      @include dark-color(dark);
+   }
+
+   &:hover {
+      background: $yellow;
+      @include dark-color(dark);
+   }
+
+   &.primary:hover {
+      background: transparent;
+      color: inherit;
+   }
+}
+
+
+// -----------------------------------------
+// Footer
+// -----------------------------------------
+footer {
+   padding: 100px 0;
+   @include flex-center(0.8rem);
+   flex-direction: column;
+   @include dark-color-bg(dark);
+
+   p {
+      @include flex-center(0.5rem);
+   }
+
+   i {
+      color: red;
+   }
+
+   span {
+      color: $yellow;
+      margin-right: -0.4rem;
+   }
+}
+
+// -----------------------------------------
+// Forms
+// -----------------------------------------
+.form-group {
+   width: 100%;
+
+   .error {
+      color: $orange;
+      font-size: 0.9rem;
+      padding: 5px 0;
+      @include font-weight(light);
+   }
+}
+
+.form-control {
+   width: 100%;
+   height: 3.5rem;
+   border-radius: 0;
+   @include dark-color-bg(dark);
+   border: 1px solid map-get($map: $black-colors, $key: light);
+   color: $light;
+   padding: 1rem;
+   font-size: 1rem;
+   font-family: inherit;
+
+   &:focus {
+      outline: none;
+      border-color: rgba(255, 214, 0, 0.5);
+   }
+}
+
+textarea {
+   min-height: 150px;
+   resize: none;
+}
+
+
+// -----------------------------------------
+// Frame Animation
+// -----------------------------------------
+.animation-frame {
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100vh;
+   width: 100%;
+   z-index: 9999;
+
+   &.one {
+      @include dark-color-bg(dark);
+   }
+
+   &.two {
+      @include dark-color-bg(medium);
+   }
+
+   &.three {
+      @include dark-color-bg(light);
+   }
+}

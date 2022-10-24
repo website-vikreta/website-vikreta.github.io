@@ -1,0 +1,23 @@
+1. Clone repo to local machine
+2. Create react app & install necessary packages
+	npm install react-router-dom framer-motion react-intersection-observer styled-components
+	npm i bootstrap-icons
+	npm install node-sass
+	npm install react-slick --save
+	npm install slick-carousel --save
+	npm install --save react-router-hash-link
+	npm install --save uuidv4
+	npm install html-react-parser
+	//npm install react-countup
+	npm install emailjs-com --save
+	
+3. Remove unwanted files from app
+4. Change Favicon
+
+NOTE: to work url routing with browser router needs to create htaccess file
+
+
+5. Deploy
+npm i serve -g 
+npm run build
+serve -s build

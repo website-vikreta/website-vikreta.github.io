@@ -1,0 +1,498 @@
+@media screen and (max-width: 1220px) {
+
+   // global components
+   .container {
+      max-width: initial;
+      width: 100%;
+      padding: 0 50px;
+   }
+
+   // navigation bar
+   .navbar .container {
+      padding: 1.5rem 50px;
+   }
+
+   // services
+   .services .card-wrapper .card {
+      max-width: 40%;
+      padding-top: 75px;
+
+      img {
+         max-width: 40%;
+      }
+   }
+
+   // detailed work
+   .detailed-work {
+      .container {
+         padding: 3rem 50px;
+      }
+   }
+}
+
+@media screen and (max-width: 1100px) {
+
+   // our work
+   .our-work {
+      padding: 120px 0;
+   }
+
+   .gallery-grid {
+      margin-top: 50px !important;
+      grid-template-columns: 1fr 1fr 1fr !important;
+   }
+
+   .detailed-work .review .title {
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-start;
+   }
+}
+
+@media screen and (max-width: 992px) {
+
+   // global styles
+   .container {
+      padding: 0 30px;
+   }
+
+   // navigation bar
+   .navbar {
+      .container {
+         padding: 1.5rem 30px;
+      }
+
+      // toggle
+      .toggle-btn {
+         display: block;
+         width: 40px;
+         height: 40px;
+         @include flex-center(5px);
+         flex-direction: column;
+         transition: 0.5s ease-out;
+         text-align: center;
+
+         .line {
+            width: 100%;
+            height: 2px;
+            background: $light;
+            transform-origin: center;
+            position: relative;
+            transition: 0.35s ease-in-out;
+         }
+      }
+
+      #navToggle:checked~.toggle-btn {
+         gap: 0;
+
+         .one {
+            transform: translateY(1px) rotate(90deg);
+         }
+
+         transform: rotate(45deg);
+      }
+
+      #navToggle:checked~.wrapper {
+         opacity: 1;
+         visibility: visible;
+      }
+
+      .wrapper {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100vh;
+         @include dark-color-bg(dark);
+         opacity: 0;
+         visibility: hidden;
+         z-index: -1;
+         transition: 0.35s ease-out;
+         flex-direction: column;
+         padding: 30vh 0;
+
+         .nav-list {
+            flex-direction: column;
+            font-size: 1.2rem;
+         }
+
+         .social-icons {
+            margin-left: initial;
+            font-size: 1.5rem;
+         }
+      }
+
+      .top-nav-wrapper {
+         width: 100%;
+         @include flex-between;
+      }
+   }
+
+   // Home Page
+   .hero {
+
+      // .title{}
+      .hero-image {
+         display: none;
+      }
+
+      &::after {
+         z-index: -2;
+         width: 30%;
+         left: initial;
+         right: 0;
+      }
+
+      &::before {
+         display: none;
+      }
+   }
+
+   .about-us {
+      .wrapper {
+         .right {
+            padding-right: 30px;
+            gap: 1.5rem;
+         }
+
+         .left {
+            width: 40%;
+         }
+
+         .right {
+            width: 60%;
+         }
+      }
+   }
+
+   .testimonials {
+      .review {
+         font-size: 0.9rem !important;
+      }
+   }
+
+   // /hire-us
+   .hire-us {
+      .right {
+         flex-direction: column;
+
+         a {
+            width: 100%;
+            text-align: center;
+         }
+      }
+   }
+
+   footer {
+      padding: 50px 0;
+   }
+}
+
+@media screen and (max-width:768px) {
+   * {
+      cursor: initial !important;
+   }
+
+   a,
+   button,
+   label,
+   .slick-dots {
+      cursor: pointer !important;
+   }
+
+   .mouse {
+      display: none;
+   }
+
+   body {
+      overflow-x: hidden !important;
+   }
+
+   section {
+      padding-bottom: 100px;
+   }
+
+   // hero
+   .hero {
+      .content {
+         .title {
+            max-width: 80%;
+         }
+
+         .para {
+            width: 100% !important;
+         }
+      }
+   }
+
+   // hireus
+   .hire-us {
+      text-align: center;
+
+      .container {
+         padding: 50px 30px;
+         flex-direction: column;
+         gap: 1.5rem;
+      }
+
+      .para {
+         margin-top: 0.5rem;
+      }
+
+      .center {
+         display: none;
+      }
+
+      .right {
+         flex-direction: row;
+      }
+   }
+
+   // about us
+   .about-us {
+      .numbers {
+         display: grid !important;
+         grid-template-columns: 1fr 1fr;
+         grid-gap: 5rem 0;
+         padding-top: 100px;
+      }
+
+      .wrapper {
+         padding: 30px;
+         position: relative;
+         margin-top: 100px;
+
+         &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20%;
+            height: 100%;
+            @include dark-color-bg(light);
+            z-index: -1;
+         }
+
+         .left {
+            display: none;
+         }
+
+         .right {
+            width: 100%;
+            padding-left: 5%;
+            padding-right: 0;
+         }
+      }
+   }
+
+   //services
+   .services {
+      .card-wrapper {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         grid-gap: 100px 1rem;
+
+         .card {
+            width: 100% !important;
+            max-width: initial;
+         }
+      }
+   }
+
+   // faq
+   .faq-wrapper {
+      padding: 0 30px;
+      gap: 0.8rem !important;
+
+      .answer {
+         padding: 1rem 1.5rem !important;
+         font-size: 0.9rem !important;
+      }
+   }
+
+   // ourwork
+   .our-work {
+      padding-bottom: 50px;
+
+      .gallery-grid {
+         grid-template-columns: 1fr 1fr !important;
+
+         .content {
+            padding: 1rem;
+         }
+      }
+
+      .heading h2 {
+         white-space: initial !important;
+      }
+
+      .line {
+         display: none;
+      }
+
+      .filter-container {
+         gap: 0.5rem;
+      }
+
+      .filter-container button {
+         font-size: 0.9rem;
+         padding: 8px;
+      }
+   }
+
+   .detailed-work {
+      .row {
+         flex-direction: column !important;
+         gap: 1rem;
+
+         .close {
+            display: none !important;
+
+            &.mobile {
+               display: flex !important;
+               margin-bottom: 0 !important;
+            }
+         }
+
+         .details {
+            width: 100%;
+            padding-top: 0 !important;
+         }
+
+         .review {
+            position: relative !important;
+            margin-left: initial !important;
+            width: 100%;
+            max-width: 100%;
+
+            .title {
+               margin-top: 0 !important;
+            }
+
+            .client {
+               margin-bottom: 3rem;
+            }
+         }
+      }
+   }
+
+   // contact us
+   .contact-us {
+
+      .container {
+         flex-direction: column-reverse;
+         gap: 10rem;
+      }
+
+      .left,
+      .right {
+         width: 100%;
+      }
+
+      .left {
+         margin-left: 60px;
+      }
+
+      .line {
+         display: none;
+      }
+   }
+}
+
+@media screen and (max-width:500px) {
+   .container {
+      padding: 0 20px;
+   }
+
+   .navbar .container {
+      padding: 1rem 20px;
+   }
+
+   .services .card-wrapper {
+      grid-template-columns: 1fr !important;
+      gap: 20px;
+      margin-top: 50px;
+
+      .card {
+         padding: 4rem 2rem 2rem 2rem;
+      }
+
+      .card img {
+         max-width: 20%;
+         top: 20px;
+      }
+   }
+
+   .faq .faq-wrapper {
+      margin-top: 50px;
+   }
+
+   .testimonials {
+      .testimonial-slider-wrapper .slider-btn {
+         @include dark-color-bg(dark);
+      }
+
+      .testimonial-slider {
+         max-width: 100%;
+
+         .card {
+            padding: 2rem 1.5rem;
+
+            .quote {
+               width: 4.5rem;
+               left: 2rem !important;
+            }
+         }
+
+         .user {
+            img {
+               width: 40px;
+            }
+
+            .name {
+               font-size: 1rem;
+            }
+
+            .des {
+               font-size: 0.8rem;
+               padding-right: 0.5rem;
+            }
+         }
+      }
+   }
+
+   .our-work .gallery-grid {
+      grid-template-columns: 1fr !important;
+   }
+
+   // detailed work
+   .detailed-work {
+      .container {
+         padding: 050px 20px !important;
+      }
+
+      .slider-wrapper {
+         min-height: initial;
+      }
+
+      .titles {
+         margin-top: 0;
+      }
+
+      .description p {
+         text-align: left;
+      }
+
+      .titles {
+         gap: 01rem;
+
+         .image {
+            height: auto;
+         }
+
+         .project-heading {
+            font-size: 1.7rem;
+         }
+      }
+   }
+}
