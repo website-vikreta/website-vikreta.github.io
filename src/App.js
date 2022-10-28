@@ -20,6 +20,7 @@ import { AnimatePresence } from "framer-motion";
 
 // importing style
 import "./styles/main.scss";
+import GoTop from "./components/GoTop";
 
 
 
@@ -55,6 +56,7 @@ function App() {
       <Route path="/work/:id">
         <DetailedWork />
       </Route>
+      <GoTop />
     </div>
   );
 }

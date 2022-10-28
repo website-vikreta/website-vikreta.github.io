@@ -82,6 +82,39 @@ body.scroll-up .navbar {
    border-color: #555;
 }
 
+// -----------------------------------------
+// GoToTop
+// -----------------------------------------
+
+.gototop{
+   display: none;
+   position: fixed;
+   bottom: 1.5rem;
+   right: 1.5rem;
+   width: 50px;
+   height: 50px;
+   border: none;
+   outline: none;   
+   font-size: 25px;
+   color: $yellow;
+   background-color: map-get($map: $black-colors, $key: dark);
+   transition: 0.35s ease-in-out;      
+}
+@keyframes fadeInUp{
+   0%{transform:translate(0px, 100px); opacity: 0;}
+   100%{transform:translate(0px, 0); opacity: 1;}
+}
+
+@keyframes fadeInDown{
+   100%{transform:translate(0px, 100px); opacity: 0;}
+   0%{transform:translate(0px, 0); opacity: 1;}
+}
+
+.gototop:hover{
+   color: map-get($map: $black-colors, $key: dark);
+   background-color: $yellow;
+}
+
 
 // -----------------------------------------
 // Buttons
@@ -155,30 +188,6 @@ body.scroll-up .navbar {
    &.primary:hover {
       background: transparent;
       color: inherit;
-   }
-}
-
-
-// -----------------------------------------
-// Footer
-// -----------------------------------------
-footer {
-   padding: 100px 0;
-   @include flex-center(0.8rem);
-   flex-direction: column;
-   @include dark-color-bg(dark);
-
-   p {
-      @include flex-center(0.5rem);
-   }
-
-   i {
-      color: red;
-   }
-
-   span {
-      color: $yellow;
-      margin-right: -0.4rem;
    }
 }
 
