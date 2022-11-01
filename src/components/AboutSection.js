@@ -17,10 +17,10 @@ const AboutSection = () => {
 
 
 
-   let totalProjects = 22;
-   let totalWebProjects = 18;
-   let totalClientsServed = 17;
-   let totalOngoingProjects = 2;
+   let totalProjects = 24;
+   let totalWebProjects = 20;
+   let totalClientsServed = 19;
+   let totalOngoingProjects = 3;
 
    const [projectsCompleted, setprojectsCompleted] = useState(0);
    const projectCounter = (start, end) => {
@@ -123,7 +123,7 @@ const AboutSection = () => {
                      Website Vikreta is committed to provide web development services. We design, build professional website/web-applications according to the need of clients; as well as we help them to build their presence through digital marketing and much more.
                   </p>
                   <p className="para">
-                     We have completed one year in the IT industry and hoping for many more. Every business requires impressive and attractive impact on the internet and we are thrilled to provide it. We are dedicated to design and develop verity of web products. With highest commitment and customer focus, we are known to deliver reliable web solutions.
+                     We have completed 2+ years in the IT industry and hoping for many more. Every business requires impressive and attractive impact on the internet and we are thrilled to provide it. We are dedicated to design and develop verity of web products. With highest commitment and customer focus, we are known to deliver reliable web solutions.
                   </p>
                   <p className="para">
                      We believe to deliver solutions that meet customer needs, business and budget expectations.

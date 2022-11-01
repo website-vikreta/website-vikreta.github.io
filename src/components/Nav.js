@@ -14,6 +14,9 @@ const Nav = () => {
    const unCheck = () => {
       document.querySelectorAll("#navToggle")[0].checked = false;
    }
+   const scrollUp = () =>{
+      window.scrollTo({top: 0, left: 0, behavior:'smooth'})
+  }
 
    return (
       <nav className="navbar">
@@ -23,7 +26,7 @@ const Nav = () => {
             {/* top nav */}
             <div className="top-nav-wrapper">
                <Link to="/">
-                  <div className="logo">
+                  <div className="logo" onClick={scrollUp}>
                      <img src={LogoIcon} alt="Website Vikreta Logo" /> <h1><span>Website</span>Vikreta</h1>
                   </div>
                </Link>

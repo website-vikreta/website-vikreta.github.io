@@ -265,15 +265,14 @@
       align-items: stretch;
       margin-top: calc(5rem + 50px);
       margin-bottom: 50px;
-
       .card {
          @include dark-color-bg(dark);
          padding: 100px 2rem 2rem 2rem;
          position: relative;
          width: 100%;
-         max-width: 17.7rem;
+         max-width: 17.8rem;
          display: flex;
-         flex-direction: column;
+         flex-direction: column;         
       }
 
       img {
