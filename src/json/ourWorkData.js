@@ -73,7 +73,7 @@ import BoompandaBAP4 from "../assets/Work/BoompandaBAP/4.png";
 import BoompandaBAP5 from "../assets/Work/BoompandaBAP/5.png";
 import BoompandaBAP6 from "../assets/Work/BoompandaBAP/6.png";
 import BoompandaBAP7 from "../assets/Work/BoompandaBAP/7.png";
- 
+
 import Katalyst1 from "../assets/Work/Katalyst/1.png";
 import Katalyst2 from "../assets/Work/Katalyst/2.png";
 import Katalyst3 from "../assets/Work/Katalyst/3.png";
@@ -88,7 +88,7 @@ export const workData = [
       url: "/work/FionaLi",
       thumbnail: FionaLi1,
       logo: "",
-      title: "Fiona Li.",
+      title: "Fiona Li. 123",
       niche: ["Website Development", "CMS Development", "Web Application", "API"],
       category: "Web Development",
       links: [
@@ -248,7 +248,7 @@ export const workData = [
          { key: "Dashboard", value: "https://abc.in/login/" },
       ],
       gallery: [
-         FirstKode1, FirstKode2, FirstKode3, FirstKode4, FirstKode5,  
+         FirstKode1, FirstKode2, FirstKode3, FirstKode4, FirstKode5,
       ],
       shortDescription: "",
       description: `
@@ -308,7 +308,7 @@ export const workData = [
          { key: "Dashboard", value: "https://abc.in/login/" },
       ],
       gallery: [
-         Metathumbz1, Metathumbz2, Metathumbz3, Metathumbz4, Metathumbz5, Metathumbz6 
+         Metathumbz1, Metathumbz2, Metathumbz3, Metathumbz4, Metathumbz5, Metathumbz6
       ],
       shortDescription: "",
       description: `
@@ -354,7 +354,7 @@ export const workData = [
          { key: "Dashboard", value: "https://abc.in/login/" },
       ],
       gallery: [
-         Katalyst1, Katalyst2, Katalyst3, Katalyst4 
+         Katalyst1, Katalyst2, Katalyst3, Katalyst4
       ],
       shortDescription: "",
       description: `
@@ -377,7 +377,7 @@ export const workData = [
          { key: "Dashboard", value: "https://abc.in/login/" },
       ],
       gallery: [
-         FionaLi1, FionaLi2, FionaLi3, FionaLi4, FionaLi5,  
+         FionaLi1, FionaLi2, FionaLi3, FionaLi4, FionaLi5,
       ],
       shortDescription: "",
       description: `
@@ -400,7 +400,7 @@ export const workData = [
          { key: "Dashboard", value: "https://abc.in/login/" },
       ],
       gallery: [
-         FionaLi1, FionaLi2, FionaLi3, FionaLi4, FionaLi5,  
+         FionaLi1, FionaLi2, FionaLi3, FionaLi4, FionaLi5,
       ],
       shortDescription: "",
       description: `
