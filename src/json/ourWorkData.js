@@ -9,9 +9,9 @@ import boompandag6 from "../assets/Work/boompanda/gallery/boompanda6.jpg";
 
 import cozmoThumb from "../assets/Work/cozmo-realty/thumbnail.jpg";
 import cozmoLogo from "../assets/Work/cozmo-realty/logo.png";
-import cozmog2 from "../assets/Work/cozmo-realty/gallery/cozmo2.jpg";
-import cozmog3 from "../assets/Work/cozmo-realty/gallery/cozmo3.jpg";
-import cozmog4 from "../assets/Work/cozmo-realty/gallery/cozmo4.jpg";
+import cozmog2 from "../assets/Work/cozmo-realty/gallery/2.jpg";
+import cozmog3 from "../assets/Work/cozmo-realty/gallery/3.jpg";
+
 
 import championThumb from "../assets/Work/champion-lenders/thumbnail.jpg";
 import championLogo from "../assets/Work/champion-lenders/logo.jpg";
@@ -213,7 +213,7 @@ export const workData = [
          { key: "Figma", value: "https://www.figma.com/file/l3iBCRyKyTTkW71PjyKKAP/CosmoRealty?node-id=0%3A1" },
       ],
       gallery: [
-         cozmoThumb, cozmog2, cozmog3, cozmog4
+         cozmoThumb, cozmog2, cozmog3
       ],
       shortDescription: "Figma based website design. Cozmo realty is a professional website for a highly focused brokerage company.",
       description: `
@@ -224,7 +224,10 @@ export const workData = [
             Cozmo Realty is a highly focused brokerage company and it gives an outstanding customer service and developing long term relationships to retailers, property owners, and investors. With experienced principals and strong regional market knowledge, Cozmo Realty provides full-service capabilities catered to the needs of its clients.
          </p>
       `,
-      clientReview: "It was my second time working with Website Vikreta. They finished the project within the given time. Even if I don't explain to them the design I want, they knows exactly what style of design I want. I will definitely work again with them on the future projects.",
+      clientReview:
+      `
+      It was my second time working with Website Vikreta. They finished the project within the given time. Even if I don't explain to them the design I want, they knows exactly what style of design I want. I will definitely work again with them on the future projects.
+      `,
       clientName: "Sang Hyun Han",
       designation: "Full stack enginner at Cozmo Realty",
    },
@@ -376,9 +379,11 @@ export const workData = [
       gallery: [
          Katalyst1, Katalyst2, Katalyst3, Katalyst4
       ],
-      shortDescription: "",
+      shortDescription: " Katalyst is a consultancy website.",
       description: `
-         Description goes here
+      Website vikreta got a chance to serve them a good website. We have provided a figma file from which we developed a user-friendly and attractive website for the company. We provided all the essential features such as Optimization, SEO, image optimization for faster loading, etc.
+      It is a performance centric site and integrated multiple modules in it. This website is efficient, responsive for any device, and super-optimized. This site will provide easy and instant information to the users about all the facilities given by Katalyst.
+      
       `,
       clientReview: "",
       clientName: "",
