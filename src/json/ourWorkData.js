@@ -40,18 +40,23 @@ import elevageg3 from "../assets/Work/elevagechiotspug/gallery/elevage3.jpg";
 import airotowerThumb from "../assets/Work/airotowers/thumbnail.jpg";
 import airotowerg2 from "../assets/Work/airotowers/gallery/airotowers2.jpg";
 
-import FionaLi1 from "../assets/Work/FionaLi/1.png";
-import FionaLi2 from "../assets/Work/FionaLi/2.png";
-import FionaLi3 from "../assets/Work/FionaLi/3.png";
-import FionaLi4 from "../assets/Work/FionaLi/4.png";
-import FionaLi5 from "../assets/Work/FionaLi/5.png";
 
-import Archmodal1 from "../assets/Work/Archmodal/1.png";
-import Archmodal2 from "../assets/Work/Archmodal/2.png";
-import Archmodal3 from "../assets/Work/Archmodal/3.png";
-import Archmodal4 from "../assets/Work/Archmodal/4.png";
-import Archmodal5 from "../assets/Work/Archmodal/5.png";
-import Archmodal6 from "../assets/Work/Archmodal/6.png";
+
+import FionaLi1 from "../assets/Work/FionaLi/1.jpg";
+import FionaLi2 from "../assets/Work/FionaLi/2.jpg";
+import FionaLi3 from "../assets/Work/FionaLi/3.jpg";
+import FionaLi4 from "../assets/Work/FionaLi/4.jpg";
+
+
+
+
+
+
+import Archmodal1 from "../assets/Work/Archmodal/1.jpg";
+import Archmodal2 from "../assets/Work/Archmodal/2.jpg";
+import Archmodal3 from "../assets/Work/Archmodal/3.jpg";
+import Archmodal4 from "../assets/Work/Archmodal/4.jpg";
+import Archmodal5 from "../assets/Work/Archmodal/5.jpg";
 
 import FirstKode1 from "../assets/Work/FirstKode/1.png";
 import FirstKode2 from "../assets/Work/FirstKode/2.png";
@@ -88,7 +93,7 @@ export const workData = [
       url: "/work/FionaLi",
       thumbnail: FionaLi1,
       logo: "",
-      title: "Fiona Li. 123",
+      title: "Portfolio website designed for Fiona Li.",
       niche: ["Website Development", "CMS Development", "Web Application", "API"],
       category: "Web Development",
       links: [
@@ -96,22 +101,27 @@ export const workData = [
          { key: "Dashboard", value: "https://abc.in/login/" },
       ],
       gallery: [
-         FionaLi1, FionaLi2, FionaLi3, FionaLi4, FionaLi5
+         FionaLi1, FionaLi2, FionaLi3, FionaLi4
       ],
-      shortDescription: "",
-      description: `
-         Description goes here
+      shortDescription: `
+      The client is experienced as a product designer, entrepreneur, product owner, and management consultant. She has a requirement to design a portfolio website for her; so that she can showcase her experience, past projects, skills & services.
       `,
-      clientReview: "",
-      clientName: "",
-      designation: "",
+      description: `
+      This is a UI/UX & a Prototyping project. We did research on how to get the best possible design or UX which will work for her. We perform several rounds of UX & discussion. On the basis of that, we proposed a mockup that really works well.
+      
+      The website has 5 main pages. Home, About me, Case Studies, Detailed case study, and contact us. Each page is uniquely designed. It’s professional yet modern looking. The client has limited access to case studies, so she wanted password-protected & limited-access pages. To tackle this we proposed a very simple yet good working solution. The entire pages are responsive to all devices. Do check the attached Figma link to have a quick overview of the project. “Prototype” pages in Figma have a fully functional prototype of the project.
+      
+      `,
+      clientReview: "Great to work with. Very skillful. Not a lot of UX UI designers have aesthetic and visual design tastes like them!",
+      clientName: "Fiona Li.",
+      designation: "Senior product designer & manager",
    },
    {
       id: 2,
       url: "/work/Archmodal",
       thumbnail: Archmodal1,
       logo: "",
-      title: "Archmodal",
+      title: "Business website developed for Archmodal.",
       niche: ["Website Development", "CMS Development", "Web Application", "API"],
       category: "Web Development",
       links: [
@@ -119,15 +129,25 @@ export const workData = [
          { key: "Dashboard", value: "https://abc.in/login/" },
       ],
       gallery: [
-         Archmodal1, Archmodal2, Archmodal3, Archmodal4, Archmodal5, Archmodal6
+         Archmodal1, Archmodal2, Archmodal3, Archmodal4, Archmodal5
       ],
-      shortDescription: "",
-      description: `
-         Description goes here
+      shortDescription: `
+      Archmodal is a construction company that provides modular & container classroom solutions. The business has a requirement to design a complete business website & develop static pages using NextJS. The goal is to create a website that actually works for a business. The website should be able to generate leads, gain traffic over time & should be modern yet optimized.
+
       `,
-      clientReview: "",
-      clientName: "",
-      designation: "",
+      description: `
+      Our team invested a lot of time in creating the design & prototype. Just like regular projects we conducted a few rounds of requirement calls with the client to get clear with the requirements. Conducted surveys to get feedback on typography & colors. We did point to point analysis of the competitors so that nothing will be missed on the website. The content & the images are provided by the client. 
+
+      The UI/UX of the website is neat & clean, but it’s super effective. After conducting the usability testing we found that 8/10 users scroll through the design for more than 2mins which is quite good. The attached Figma design has a complete overview, design & prototype of the project.
+      
+      This design is further developed using NextJS. NextJs has its own advantage over SEO, image optimization & cache. This boost the website's performance. Our aim was to create static pages for the website which need to be optimized as per the “google page speed index”, should have scrolling animations & should be responsive to all devices. We deliver the best possible result. Visit the website & see how we made this project successful.
+      
+      The main attraction of the project is the “design center” which you can see in Figma design. It’s an interactive 3D-based studio to get an exact idea of how your end product will look like. Another one is a multi-step “Get a free quote” form. It’s an add-on requirement put in by our team & this results in a really good outcome. The client likes it.
+      
+      `,
+      clientReview: "They were very professional. The team was timely, the design was great and they did above and beyond my request.",
+      clientName: "Stacey Bae.",
+      designation: "Developer at Archmodal Classrooms",
    },
    {
       id: 3,
@@ -377,7 +397,7 @@ export const workData = [
          { key: "Dashboard", value: "https://abc.in/login/" },
       ],
       gallery: [
-         FionaLi1, FionaLi2, FionaLi3, FionaLi4, FionaLi5,
+         FionaLi1, FionaLi2, FionaLi3, FionaLi4,
       ],
       shortDescription: "",
       description: `
@@ -400,7 +420,7 @@ export const workData = [
          { key: "Dashboard", value: "https://abc.in/login/" },
       ],
       gallery: [
-         FionaLi1, FionaLi2, FionaLi3, FionaLi4, FionaLi5,
+         FionaLi1, FionaLi2, FionaLi3, FionaLi4,
       ],
       shortDescription: "",
       description: `
@@ -494,5 +514,5 @@ export const workData = [
       clientReview: "Fully satisfied with the website design...Team Website Vikreta is really very punctual, professional and cooperative in their work.Big thanks from Team INFLUENCERS, HOD Civil (SAE Pune).",
       clientName: "Ashutosh Thokare",
       designation: "Team Representative of Versatile Airofying Tower Project",
-   },
+   }
 ]
