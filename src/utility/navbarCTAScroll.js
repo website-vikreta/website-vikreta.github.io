@@ -1,6 +1,5 @@
 export const navbarCTAScroll = () => {
    const body = document.body;
-   let previousScroll = 0;
    let currentScroll;
 
    window.addEventListener("scroll", () => {
@@ -11,6 +10,5 @@ export const navbarCTAScroll = () => {
          body.classList.add("navbar-cta-show");
       }
 
-      previousScroll = currentScroll
    })
 }
