@@ -49,9 +49,11 @@ const OurWork = () => {
                   <button onClick={() => setItems(workData)}>All</button>
                   <button onClick={() => filterItem('Web Design')}>Web Design</button>
                   <button onClick={() => filterItem('Web Development')}>Web Development</button>
-                  <button onClick={() => filterItem('Landing Pages')}>Landing Pages</button>
-                  <button onClick={() => filterItem('Portfolio')}>Portfolio</button>
-                  <button onClick={() => filterItem('Business')}>Business</button>
+                  <button onClick={() => filterItem('UI/UX')}>UI/UX</button>
+                  <button onClick={() => filterItem('E-commerce')}>E-commerce</button>
+                  <button onClick={() => filterItem('Mobile Apps')}>Mobile Apps</button>
+                  <button onClick={() => filterItem('Web Apps')}>Web Apps</button>
+                  <button onClick={() => filterItem('Business Websites')}>Business Websites</button>
                </div>
                <div>
                   <div class="gallery-grid">
@@ -63,7 +65,10 @@ const OurWork = () => {
                                  <div className="content">
                                     <h3 className="project-heading">{project.title}</h3>
                                     <p className="project-para">{project.shortDescription}</p>
-                                    <Link to={project.url} className="normal-btn primary">Learn More</Link>
+                                    <Link to={project.url} className="normal-btn primary">
+                                       <span>Read More</span>
+                                       <i className="bi bi-arrow-right"></i>
+                                    </Link>
                                  </div>
                               </div>
                            )

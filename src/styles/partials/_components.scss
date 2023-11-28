@@ -18,7 +18,7 @@
    }
 
    #navToggle {
-      display: none
+      display: none;
    }
 
    .logo {
@@ -82,11 +82,71 @@ body.scroll-up .navbar {
    border-color: #555;
 }
 
+body.scroll-down .navbar + .navbar-cta {
+   top: 0;
+}
+
+body.navbar-cta-show .navbar-cta {
+   visibility: visible;
+   opacity: 1;
+}
+
+.navbar-cta {
+   background: rgba($yellow, 0.9);
+   backdrop-filter: blur(5px);
+   color: map-get($map: $black-colors, $key: dark);
+   padding-block: 0.5rem;
+   position: fixed;
+   top: 4.75rem; /* when navbar is up */
+   left: 0;
+   width: 100%;
+   height: auto;
+   z-index: 999;
+   transition: 0.35s ease-out;
+   visibility: hidden;
+   opacity: 0;
+
+   .container {
+      @include flex-center;
+      gap: 1rem;
+      position: relative;
+   }
+
+   .link {
+      @include flex-center;
+      gap: 0.5rem;
+      font-weight: map-get($map: $font-weight, $key: medium);
+
+      &-text {
+         border-bottom: 1px solid;
+      }
+
+      &-icon {
+         color: red;
+      }
+
+      &:hover {
+         color: red;
+      }
+   }
+
+   .close {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      cursor: pointer;
+   }
+
+   &:has(.close.hide) {
+      top: -3rem !important;
+   }
+}
+
 // -----------------------------------------
 // GoToTop
 // -----------------------------------------
-
-.gototop{
+.gototop {
    display: none;
    position: fixed;
    bottom: 1.5rem;
@@ -94,27 +154,38 @@ body.scroll-up .navbar {
    width: 50px;
    height: 50px;
    border: none;
-   outline: none;   
+   outline: none;
    font-size: 25px;
    color: $yellow;
    background-color: map-get($map: $black-colors, $key: dark);
-   transition: 0.35s ease-in-out;      
+   transition: 0.35s ease-in-out;
 }
-@keyframes fadeInUp{
-   0%{transform:translate(0px, 100px); opacity: 0;}
-   100%{transform:translate(0px, 0); opacity: 1;}
+@keyframes fadeInUp {
+   0% {
+      transform: translate(0px, 100px);
+      opacity: 0;
+   }
+   100% {
+      transform: translate(0px, 0);
+      opacity: 1;
+   }
 }
 
-@keyframes fadeInDown{
-   100%{transform:translate(0px, 100px); opacity: 0;}
-   0%{transform:translate(0px, 0); opacity: 1;}
+@keyframes fadeInDown {
+   100% {
+      transform: translate(0px, 100px);
+      opacity: 0;
+   }
+   0% {
+      transform: translate(0px, 0);
+      opacity: 1;
+   }
 }
 
-.gototop:hover{
+.gototop:hover {
    color: map-get($map: $black-colors, $key: dark);
    background-color: $yellow;
 }
-
 
 // -----------------------------------------
 // Buttons
@@ -143,7 +214,7 @@ body.scroll-up .navbar {
    }
 
    &:before {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: 0;
@@ -156,7 +227,7 @@ body.scroll-up .navbar {
    }
 
    &:after {
-      content: '';
+      content: "";
       position: absolute;
       top: 100%;
       left: 0;
@@ -169,7 +240,10 @@ body.scroll-up .navbar {
 }
 
 .normal-btn {
-   display: inline-block;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 0.25rem;
    border: 1px solid $yellow;
    padding: 10px 20px;
    @include font-weight(medium);
@@ -226,7 +300,6 @@ textarea {
    min-height: 150px;
    resize: none;
 }
-
 
 // -----------------------------------------
 // Frame Animation

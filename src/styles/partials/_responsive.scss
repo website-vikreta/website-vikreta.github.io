@@ -11,6 +11,12 @@
       padding: 1.5rem 50px;
    }
 
+   .navbar-cta {
+      .close {
+         right: 50px;
+      }
+   }
+
    // services
    .services .card-wrapper .card {
       max-width: 40%;
@@ -125,6 +131,19 @@
       }
    }
 
+   .navbar-cta {
+      top: 5.5rem;
+      .container {
+         flex-direction: column !important;
+         gap: 0.25rem;
+         padding-inline: 50px;
+         text-align: center;
+      }
+      .close {
+         right: 30px;
+      }
+   }
+
    // Home Page
    .hero {
       // .title{}
@@ -199,7 +218,7 @@
          .quickLinks {
             text-align: left;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             .link {
                justify-content: flex-start;
             }
@@ -447,6 +466,13 @@
       padding: 1rem 20px;
    }
 
+   .navbar-cta {
+      top: 4.5rem;
+      .close {
+         right: 20px;
+      }
+   }
+
    .services .card-wrapper {
       grid-template-columns: 1fr !important;
       gap: 20px;
@@ -501,7 +527,7 @@
    }
 
    .our-work .gallery-grid {
-      grid-template-columns: 1fr !important;
+      grid-template-columns: 1fr 1fr !important;
    }
 
    // detailed work

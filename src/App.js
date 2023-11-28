@@ -11,6 +11,7 @@ import DetailedWork from "./pages/DetailedWork";
 
 // importing utilities
 import { navbarScroll } from "./utility/navbarScroll";
+import { navbarCTAScroll } from "./utility/navbarCTAScroll";
 
 // import router
 import { Route, Switch, useLocation } from 'react-router-dom';
@@ -25,40 +26,42 @@ import GoTop from "./components/GoTop";
 
 
 function App() {
-  navbarScroll();
-  const location = useLocation();
+   navbarScroll();
+   navbarCTAScroll();
 
-  return (
-    <div className="App">
-      {/* Custom Cursor */}
-      <DotRing />
+   const location = useLocation();
 
-      {/* Navigation Bar */}
-      <Nav />
+   return (
+      <div className="App">
+         {/* Custom Cursor */}
+         <DotRing />
 
-      {/* importing pages */}
-      <AnimatePresence exitBeforeEnter>
-        <Switch location={location} key={location.pathname}>
-          <Route path="/" exact>
-            <HomePage />
-          </Route>
-          <Route path="/work" exact>
-            <OurWork />
-          </Route>
-          <Route path="/contact">
-            <ContactUs />
-          </Route>
-        </Switch>
+         {/* Navigation Bar */}
+         <Nav />
 
-        {/* Importing Footer */}
-        <Footer />
-      </AnimatePresence>
-      <Route path="/work/:id">
-        <DetailedWork />
-      </Route>
-      <GoTop />
-    </div>
-  );
+         {/* importing pages */}
+         <AnimatePresence exitBeforeEnter>
+            <Switch location={location} key={location.pathname}>
+               <Route path="/" exact>
+                  <HomePage />
+               </Route>
+               <Route path="/work" exact>
+                  <OurWork />
+               </Route>
+               <Route path="/contact">
+                  <ContactUs />
+               </Route>
+            </Switch>
+
+            {/* Importing Footer */}
+            <Footer />
+         </AnimatePresence>
+         <Route path="/work/:id">
+            <DetailedWork />
+         </Route>
+         <GoTop />
+      </div>
+   );
 }
 
 export default App;
