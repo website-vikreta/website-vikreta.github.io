@@ -83,12 +83,67 @@ import Katalyst4 from "../assets/Work/Katalyst/4.png";
 
 // Real Data
 export const workData = [
+   // SBP
    {
       id: 1,
+      url: "/work/sbp-website",
+      thumbnail: boompandaThumb,
+      logo: boompandalogo,
+      title: "Website Designed & Developed for www.sustainablebtc.org",
+      niche: ["Website Development", "CMS Development", "Web Application", "API"],
+      category: "Web Development",
+      links: [
+         { key: "Website", value: "https://boompanda.in/" },
+         { key: "Figma", value: "https://boompanda.in/login/" },
+      ],
+      gallery: [
+         boompandaThumb, boompandag2, boompandag3, boompandag4, boompandag5, boompandag6
+      ],
+      shortDescription: "India’s Coolest student community. Get an experience you want to engage in and not something you are forced to.",
+      description: `
+         <p className='para'>
+            This website is proposed to be dynamic website for Student development. Boompanda is a student community platform. Boompanda asserts that it is nationwide community that gives students a rich experience throughout their education journey. This community will provide a platform to socialize and network with other students in the city through various Events, Task, Competitions, Live Sessions & shows, Seminars, etc. Boompanda promotes different educational oraganizations. It also provide platform for students to earn their pocket money.
+         </p>
+         <p className='para'>
+         This site will provide easy and instant information to the users about all the facilities given by boompanda. It is very easy to understand and use.
+         </p>
+         <p className='para'>
+            The site has attractive front end for visitors and backend for administration of the site.
+         </p>
+
+         <b> You will find: </b>
+
+         <ul>
+            <li>
+               <i class="bi bi-check2"></i>
+               Here you’ll find a opportunities page in which student can find out different opportunities provided by boompanda
+            </li>
+            <li>
+               <i class="bi bi-check2"></i>
+               Offers page is built extensively attractive and precise where user can view various offer given by this organization and also user can view terms and conditions and can redeem it.
+            </li>
+            <li>
+               <i class="bi bi-check2"></i>
+               Contact us, login and signup all the pages are made very precise and clear.
+            </li>
+            <li>
+               <i class="bi bi-check2"></i>
+               Admin panel is developed in a way that every operation can be perform easily with different login roles.
+            </li>
+         </ul>
+      `,
+      clientReview: "It's been over a year that Website Vikreta is providing us IT Development Services and we are very satisfied with the kind of work they have accomplished. The quality of service was the best and amazing the support was provided post completion of projects. The team is very cooperative and always delivers what is promised.",
+      clientName: "Rudra Ghodke",
+      designation: "CEO & Co-founder, BoomPanda",
+   },
+
+   // SBP WebApp
+   {
+      id: 2,
       url: "/work/FionaLi",
       thumbnail: FionaLi1,
       logo: "",
-      title: "Fiona Li. 123",
+      title: "WebApp designed & prototyped for SBP(Sustainable Bitcoin Protocol)",
       niche: ["Website Development", "CMS Development", "Web Application", "API"],
       category: "Web Development",
       links: [
@@ -98,6 +153,31 @@ export const workData = [
       gallery: [
          FionaLi1, FionaLi2, FionaLi3, FionaLi4, FionaLi5
       ],
+      shortDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, tempore!",
+      description: `
+         Description goes here
+      `,
+      clientReview: "",
+      clientName: "",
+      designation: "",
+   },
+
+   // Blancora Clothing
+   {
+      id: 3,
+      url: "/work/Archmodal",
+      thumbnail: Archmodal1,
+      logo: "",
+      title: "E-commerce website developed for blancoraclothing.com",
+      niche: ["Website Development", "CMS Development", "Web Application", "API"],
+      category: "Web Development",
+      links: [
+         { key: "Website", value: "https://abc.in/" },
+         { key: "Dashboard", value: "https://abc.in/login/" },
+      ],
+      gallery: [
+         Archmodal1, Archmodal2, Archmodal3, Archmodal4, Archmodal5, Archmodal6
+      ],
       shortDescription: "",
       description: `
          Description goes here
@@ -106,6 +186,33 @@ export const workData = [
       clientName: "",
       designation: "",
    },
+
+   // Boompanda
+   {
+      id: 4,
+      url: "/work/Archmodal",
+      thumbnail: Archmodal1,
+      logo: "",
+      title: "MVP developed for boompanda.in",
+      niche: ["Website Development", "CMS Development", "Web Application", "API"],
+      category: "Web Development",
+      links: [
+         { key: "Website", value: "https://abc.in/" },
+         { key: "Dashboard", value: "https://abc.in/login/" },
+      ],
+      gallery: [
+         Archmodal1, Archmodal2, Archmodal3, Archmodal4, Archmodal5, Archmodal6
+      ],
+      shortDescription: "",
+      description: `
+         Description goes here
+      `,
+      clientReview: "",
+      clientName: "",
+      designation: "",
+   },
+
+   // iEndorse MVP
    {
       id: 2,
       url: "/work/Archmodal",
@@ -129,6 +236,8 @@ export const workData = [
       clientName: "",
       designation: "",
    },
+
+   // Budget Renovation
    {
       id: 3,
       url: "/work/boompanda",
@@ -181,6 +290,8 @@ export const workData = [
       clientName: "Rudra Ghodke",
       designation: "CEO & Co-founder, BoomPanda",
    },
+
+   // Fiona Li.
    {
       id: 4,
       url: "/work/cozmo-realty",
@@ -208,6 +319,8 @@ export const workData = [
       clientName: "Sang Hyun Han",
       designation: "Full stack enginner at Cozmo Realty",
    },
+
+   // Psilent Ganges
    {
       id: 5,
       url: "/work/champion-lenders",
@@ -235,6 +348,8 @@ export const workData = [
       clientName: "John Kim",
       designation: "CEO - Champion Lenders",
    },
+
+   // Workik
    {
       id: 6,
       url: "/work/FirstKode",
@@ -258,6 +373,8 @@ export const workData = [
       clientName: "",
       designation: "",
    },
+
+   // Archmodal
    {
       id: 7,
       url: "/work/jaxl",
@@ -295,6 +412,8 @@ export const workData = [
       clientName: "Abhinav Singh",
       designation: "Co-founder - JAXL, India",
    },
+
+   // Limra Events
    {
       id: 8,
       url: "/work/Metathumbz",
@@ -318,6 +437,8 @@ export const workData = [
       clientName: "",
       designation: "",
    },
+
+   // Cozmo Realty
    {
       id: 9,
       url: "/work/BoompandaBAP",
@@ -341,6 +462,8 @@ export const workData = [
       clientName: "",
       designation: "",
    },
+
+   // Katalyst
    {
       id: 10,
       url: "/work/Katalyst",
@@ -364,6 +487,8 @@ export const workData = [
       clientName: "",
       designation: "",
    },
+
+   // Champion Lenders
    {
       id: 11,
       url: "/work/Maid4u",
@@ -387,6 +512,7 @@ export const workData = [
       clientName: "",
       designation: "",
    },
+
    {
       id: 12,
       url: "/work/CentralBrisbaneDental",
