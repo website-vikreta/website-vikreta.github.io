@@ -74,6 +74,7 @@ import championg6 from "../assets/Work/champion-lenders/gallery/champion6.jpg";
 
 // Real Data
 export const workData = [
+   // SBP
    {
       id: 1,
       url: "/work/sbp",
@@ -112,6 +113,8 @@ export const workData = [
       clientName: "Bradford van Voorhees",
       designation: "CEO of Sustainable Bitcoin Protocol",
    },
+
+   // boompanda
    {
       id: 2,
       url: "/work/boompanda",
@@ -164,6 +167,8 @@ export const workData = [
       clientName: "Rudra Ghodke",
       designation: "CEO & Co-founder, BoomPanda",
    },
+
+   // Blancora.
    {
       id: 3,
       url: "/work/blancora",
@@ -192,6 +197,7 @@ export const workData = [
       clientName: "write name of the client here ",
       designation: " desgintiion of the above person",
    },
+   //budget renovations
    {
       id: 4,
       url: "/work/budget-renovations",
@@ -226,6 +232,8 @@ export const workData = [
       clientName: "Ramanpreet Sandhu",
       designation: " 'designation' at  'name of org ' ",
    },
+
+   // Fiona Li
    {
       id: 5,
       url: "/work/FionaLi",
@@ -264,6 +272,8 @@ export const workData = [
       clientName: "Fiona Li.",
       designation: "Senior product designer & manager",
    },
+
+   // Psilent Ganges
    {
       id: 6,
       url: "/work/psilentganges",
@@ -294,6 +304,8 @@ export const workData = [
       clientName: "Gaurav Dey.",
       designation: "Managing Director of Psilent Ganges",
    },
+
+   // workik
    {
       id: 7,
       url: "/work/workik",
@@ -326,6 +338,8 @@ export const workData = [
       clientName: "Aakash Gandhi",
       designation: "Developer at Workik",
    },
+
+   // Archmodal
    {
       id: 8,
       url: "/work/Archmodal",
@@ -360,6 +374,8 @@ export const workData = [
       clientName: "Stacey Bae.",
       designation: "Developer at Archmodal Classrooms",
    },
+
+   // Limra Events
    {
       id: 9,
       url: "/work/limra-events",
@@ -390,6 +406,7 @@ export const workData = [
       clientName: "Sajid",
       designation: "Owner of Limra Events",
    },
+   //Cozmo Realty
    {
       id: 10,
       url: "/work/cozmo-realty",
@@ -420,6 +437,7 @@ export const workData = [
       clientName: "Sang Hyun Han",
       designation: "Full stack enginner at Cozmo Realty",
    },
+   //Katalyst
    {
       id: 11,
       url: "/work/Katalyst",
@@ -445,6 +463,7 @@ export const workData = [
       clientName: "",
       designation: "",
    },
+   //champion-lenders
    {
       id: 12,
       url: "/work/champion-lenders",

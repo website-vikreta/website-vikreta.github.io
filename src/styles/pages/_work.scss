@@ -22,9 +22,10 @@
    .filter-container {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 1rem;
       margin-top: 2rem;
-      
+
       button {
          display: inline-block;
          padding: 10px;
@@ -39,7 +40,7 @@
 
          &:hover {
             background: $yellow;
-            @include dark-color(dark);            
+            @include dark-color(dark);
          }
       }
    }
@@ -53,10 +54,15 @@
       .grid-item {
          @include dark-color-bg(light);
          transition: 0.35s ease-out;
-         border-bottom: 1px solid rgba(255, 214, 0, .7);
+         border-bottom: 1px solid rgba(255, 214, 0, 0.7);
+         display: flex;
+         flex-direction: column;
       }
       .content {
          padding: 1.5rem;
+         display: flex;
+         flex-direction: column;
+         flex: 1;
 
          .project-heading {
             font-size: 1.1rem;
@@ -69,14 +75,16 @@
             font-size: 0.8rem;
             min-height: 50px;
             opacity: 0.95;
+            flex: 1;
          }
 
          a {
             padding: 8px 10px !important;
             font-size: 0.9rem;
+            width: fit-content;
          }
       }
-   }   
+   }
 }
 
 .detailed-work {
@@ -89,7 +97,7 @@
    z-index: 9000;
 
    &::after {
-      content: '';
+      content: "";
       position: fixed;
       top: 0;
       left: 0;
@@ -174,7 +182,7 @@
             color: $yellow;
             padding: 6px 10px;
             @include font-weight(light);
-            font-size: 0.8rem
+            font-size: 0.8rem;
          }
       }
 
@@ -274,7 +282,7 @@
             color: $yellow;
          }
 
-         border-bottom: 1px solid rgba(255, 214, 0, .5);
+         border-bottom: 1px solid rgba(255, 214, 0, 0.5);
       }
 
       .text {
