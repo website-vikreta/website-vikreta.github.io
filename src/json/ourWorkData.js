@@ -84,6 +84,29 @@ import Katalyst2 from "../assets/Work/Katalyst/2.png";
 import Katalyst3 from "../assets/Work/Katalyst/3.png";
 import Katalyst4 from "../assets/Work/Katalyst/4.png";
 
+import SBP1 from "../assets/Work/SBP/1.jpg"
+import SBP2 from "../assets/Work/SBP/2.jpg"
+import SBP3 from "../assets/Work/SBP/3.jpg"
+import SBP4 from "../assets/Work/SBP/4.jpg"
+import SBP5 from "../assets/Work/SBP/5.jpg"
+import SBP6 from "../assets/Work/SBP/6.jpg"
+import SBP7 from "../assets/Work/SBP/7.jpg"
+
+import Workik1 from "../assets/Work/workik/1.jpg"
+import Workik2 from "../assets/Work/workik/2.jpg"
+import Workik3 from "../assets/Work/workik/3.jpg"
+
+import psilentGanges1 from "../assets/Work/psilent-ganges/1.jpg"
+import psilentGanges2 from "../assets/Work/psilent-ganges/2.jpg"
+import psilentGanges3 from "../assets/Work/psilent-ganges/3.jpg"
+import psilentGanges4 from "../assets/Work/psilent-ganges/4.jpg"
+
+
+import budgetRenovations1 from "../assets/Work/budget-renvovations/1.jpg"
+import budgetRenovations2 from "../assets/Work/budget-renvovations/2.jpg"
+import budgetRenovations3 from "../assets/Work/budget-renvovations/3.jpg"
+import budgetRenovations4 from "../assets/Work/budget-renvovations/4.jpg"
+
 // importing packages
 
 // Real Data
@@ -97,8 +120,18 @@ export const workData = [
       niche: ["Website Development", "CMS Development", "Web Application", "API"],
       category: "Web Development",
       links: [
-         { key: "Website", value: "https://abc.in/" },
-         { key: "Dashboard", value: "https://abc.in/login/" },
+         {
+            key: "Website",
+            value: "https://abc.in/"
+         },
+         {
+            key: "Dashboard",
+            value: "https://abc.in/login/"
+         },
+         {
+            key: "Figma",
+            value: "https://bit.ly/fionali-figma"
+         }
       ],
       gallery: [
          FionaLi1, FionaLi2, FionaLi3, FionaLi4
@@ -125,8 +158,9 @@ export const workData = [
       niche: ["Website Development", "CMS Development", "Web Application", "API"],
       category: "Web Development",
       links: [
-         { key: "Website", value: "https://abc.in/" },
+         { key: "Website", value: "https://www.archmodal.com" },
          { key: "Dashboard", value: "https://abc.in/login/" },
+         { key: "Figma", value: "https://bit.ly/archmodal-figma" }
       ],
       gallery: [
          Archmodal1, Archmodal2, Archmodal3, Archmodal4, Archmodal5
@@ -210,7 +244,7 @@ export const workData = [
       niche: ["Web Design", "Figma", "Website Prototype"],
       category: "Web Design",
       links: [
-         { key: "Figma", value: "https://www.figma.com/file/l3iBCRyKyTTkW71PjyKKAP/CosmoRealty?node-id=0%3A1" },
+         { key: "Figma", value: "https://www.figma.com/file/l3iBCRyKyTTkW71PjyKKAP/CosmoRealty?node-id=0%3A1" }
       ],
       gallery: [
          cozmoThumb, cozmog2, cozmog3
@@ -225,7 +259,7 @@ export const workData = [
          </p>
       `,
       clientReview:
-      `
+         `
       It was my second time working with Website Vikreta. They finished the project within the given time. Even if I don't explain to them the design I want, they knows exactly what style of design I want. I will definitely work again with them on the future projects.
       `,
       clientName: "Sang Hyun Han",
@@ -436,7 +470,7 @@ export const workData = [
       designation: "",
    },
    {
-      id: 5,
+      id: 13,
       url: "/work/limra-events",
       thumbnail: limraThumb,
       logo: limraLogo,
@@ -466,7 +500,7 @@ export const workData = [
       designation: "Owner of Limra Events",
    },
    {
-      id: 6,
+      id: 14,
       url: "/work/elevagechiotspug",
       thumbnail: elevageThumb,
       logo: elevageLogo,
@@ -488,7 +522,7 @@ export const workData = [
       designation: "Owner of Elevagechiotspug",
    },
    {
-      id: 7,
+      id: 15,
       url: "/work/airotowers",
       thumbnail: airotowerThumb,
       logo: "",
@@ -519,5 +553,145 @@ export const workData = [
       clientReview: "Fully satisfied with the website design...Team Website Vikreta is really very punctual, professional and cooperative in their work.Big thanks from Team INFLUENCERS, HOD Civil (SAE Pune).",
       clientName: "Ashutosh Thokare",
       designation: "Team Representative of Versatile Airofying Tower Project",
-   }
+   },
+   {
+      id: 16,
+      url: "/work/abc",
+      thumbnail: SBP1,
+      logo: "",
+      title: "Web Portal Re-design for Sustainable Bitcoin Protocol ",
+      niche: [" Website Design", "Web Application", "UI/UX", " Prototyping", "Mockups", " Re-Design"],
+
+
+      category: "Web Development",
+      links: [
+         { key: "Website", value: "https://abc.in/" },
+         { key: "Dashboard", value: "https://abc.in/login/" },
+         { key: "Figma", value: "https://bit.ly/sbp-platform-figma" }
+      ],
+      gallery: [
+         SBP1, SBP2, SBP3, SBP4, SBP5, SBP6, SBP7
+      ],
+      shortDescription: `
+      short description here 
+      `,
+      description: `
+      SBP promotes green bitcoin mining. Companies have to register on their platforms through KYC based on that they will get benefits. They have their own coin cryptocurrency SBC(sustainable bitcoin certificate). The business has a requirement for reconstructing & redesigning its existing platform/web application.
+
+      There are 3 essential modules i.e. Miner, Auditor, and Investor, which will mine the bitcoins, to verify the miners which is the third-party integration to the tool, and who purchases those bitcoins respectively.
+      
+      Website Vikreta has provided a completely updated UI/UX to the company. We did research on how to get the best possible design.
+      
+      We have provided all the required components, charts, graphs, and overall all the layout components which are necessary to enhance the functionality of the website. Also, a very easy-to-develop Figma design so that the tech team will be able to develop it easily & efficiently.
+
+      Any blockchain-based project needs complete secure modules therefore, we have done all the required testing and made their web application look more professional and eclectic. It helps to gain users’ trust.
+
+      This application will provide easy and instant information to the users about all the facilities given by SBP.      
+      `,
+      clientReview: `
+      The team was exceptional & supported our company on UX/UI design. I particularly appreciate the flexibility when we would request ad-hoc design-related tasks, to help support slide creation for our pitch decks using his UX/UI work, etc. The team is super responsive and delivers work on time. If for some reason he is unable to deliver on time, he is a good communicator. We never had any surprises or delays in deliverables. Just great work. I highly recommend the Website Vikreta.
+      `,
+      clientName: "Bradford van Voorhees",
+      designation: "CEO of Sustainable Bitcoin Protocol",
+   },
+   {
+      id: 17,
+      url: "/work/workik",
+      thumbnail: Workik1,
+      logo: "",
+      title: "Landing page & charts design for Workik.",
+      niche: [" Website Design", "UI/UX", " UI/UX", "Mockups", " Shopify"],
+      category: "Web Development",
+      links: [
+         { key: "Website", value: "https://abc.in/" },
+         { key: "Dashboard", value: "https://abc.in/login/" },
+         { key: "Figma", value: "https://bit.ly/workik-figma" }
+      ],
+      gallery: [
+         Workik1, Workik2, Workik3
+      ],
+      shortDescription: `
+      Workik will help you to manage and develop an e-commerce website by using Shopify. They also help to improve your existing website and its management.
+      `,
+      description: `
+         This is a landing page designed to promote and showcase client services. Visitors can schedule a call to the company with a single click. You can also contact the company by filling out the contact form. This landing page is fully responsive for any device. 
+
+         All the charts, graphs, and illustrations on this landing page are customized by us as needed. The working cycle gif is made by us to develop a page attractively and this gif is also responsive. This has a high-end design using the Figma tools and illustration software. 
+
+         This landing page is basically for marketing purposes. This landing page 100% meets the client's requirements. You can visit the Figma design by clicking on the below link.
+      `,
+      clientReview: `
+      “The team has done really good work for us. They are professional and delivered the work in the required time. People are also Easy to communicate with.
+      `,
+      clientName: "Aakash Gandhi",
+      designation: "Developer at Workik",
+   },
+   {
+      id: 18,
+      url: "/work/psilentganges",
+      thumbnail: psilentGanges1,
+      logo: "",
+      title: "Business website development for Psilent Ganges",
+      niche: ["Website Design", "Web Development", "Responsive Design", "Tailwind"]
+      ,
+      category: "Web Development",
+      links: [
+         { key: "Website", value: "http://psilentganges.com/" },
+         { key: "Dashboard", value: "https://abc.in/login/" },
+      ],
+      gallery: [
+         psilentGanges2, psilentGanges3, psilentGanges4
+      ],
+      shortDescription: `
+      Psilent Ganges is a renovation company, specializing in quality home renovations and custom home building. They will renovate your home, bathroom, kitchen, toilet, etc. within your budget.
+      `,
+      description: `
+      This is a business website to showcase their services and generate leads for the company. A high-end UI/UX design designed on user feedback with Figma. 
+      This website is built using HTML static pages and styled with tailwind CSS. The website is efficient, responsive for any device, and super-optimized.
+      This site will provide easy and instant information to the users about all the facilities given by Psilent ganges. 
+      `,
+      clientReview: `
+      "add client reveiw here "
+      `,
+      clientName: "Gaurav Dey.",
+      designation: "Managing Director of Psilent Ganges",
+   },
+   {
+      id: 19,
+      url: "/work/budget-renovations",
+      thumbnail: budgetRenovations1,
+      logo: "",
+      title: "Business website designed & developed for Budget Renovations",
+      niche: [" Website Design", "UI/UX", "Mockups", "Shopify", "Landing Page", "Tailwind", "Responsive Web Development", "SEO", "Website Optimization", "Ranking"],
+      category: "Web Development",
+      links: [
+         { key: "Website", value: "https://website-vikreta.github.io/budget-renovations/" },
+         { key: "Dashboard", value: "https://abc.in/login/" },
+         { key: "Figma", value: "https://www.bit.ly/budget-renovations" }
+      ],
+      gallery: [
+         budgetRenovations2, budgetRenovations3, budgetRenovations4
+      ],
+      shortDescription: `
+      Budget Renovations is a renovation company, specializing in quality home renovations and custom home building. They will renovate your home, bathroom, kitchen, toilet, etc. within your budget.
+      `,
+      description: `
+      This is a business website to showcase their services and generate leads for the company. This is a high-end UIUX design based on user feedback with Figma. 
+
+      This website is built using  HTML static pages and styled with the tailwind CSS by us. This website is efficient, responsive for any device, and super-optimized.
+      This site will provide easy and instant information to the users about all the facilities given by Budget Renovations. It is very easy to understand and use. We did on-page SEO to rank on the top results on search. It has seven pages developed with a variety of company information.
+
+      Visitors can contact the company by filling out the contact form details. We embedded the map location of the company on the contact page. Visitors can see all the services provided by the company, and also get a free quote by filling out the form. You can visit the website by clicking on the below link.
+
+      `,
+      clientReview: `
+      The team understood exactly what I wanted and gave it to me. Very stylish & new age designs and also did a lot of research to make sure the work is perfect. I’ll recommend them not only because their work is good but because they are easygoing. They listen to you, they co-operate & communicate well
+      `,
+      clientName: "Ramanpreet Sandhu",
+      designation: " 'designation' at  'name of org ' ",
+   },
+   
 ]
+
+//Tags' content is used inside 'niche' property
+
