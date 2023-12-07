@@ -46,14 +46,14 @@ const OurWork = () => {
                   <div className="line"></div>
                </div>
                <div className="filter-container">
-                  <button onClick={() => setItems(workData)}>All</button>
+                  <button onClick={() => setItems(workData)}>All Work</button>
                   <button onClick={() => filterItem('Web Design')}>Web Design</button>
                   <button onClick={() => filterItem('Web Development')}>Web Development</button>
-                  <button onClick={() => filterItem('UI/UX')}>UI/UX</button>
-                  <button onClick={() => filterItem('E-commerce')}>E-commerce</button>
+                  <button onClick={() => filterItem('MVPs')}>MVPs</button>
                   <button onClick={() => filterItem('Mobile Apps')}>Mobile Apps</button>
+                  <button onClick={() => filterItem('E-commerce')}>E-commerce</button>
+                  <button onClick={() => filterItem('UI/UX & Prototyping')}>UI/UX & Prototyping</button>
                   <button onClick={() => filterItem('Web Apps')}>Web Apps</button>
-                  <button onClick={() => filterItem('Business Websites')}>Business Websites</button>
                </div>
                <div>
                   <div class="gallery-grid">

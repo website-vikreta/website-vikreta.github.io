@@ -76,6 +76,11 @@
             min-height: 50px;
             opacity: 0.95;
             flex: 1;
+            
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
          }
 
          a {
