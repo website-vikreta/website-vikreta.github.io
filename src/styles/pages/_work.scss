@@ -48,7 +48,7 @@
    .gallery-grid {
       margin-top: 100px;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr  1fr;
       gap: 1rem;
 
       .grid-item {
@@ -66,13 +66,15 @@
 
          .project-heading {
             font-size: 1.1rem;
+            color:  #ffffff;
+            line-height: 130%;
             @include font-weight(regular);
          }
 
          .project-para {
             @include para-font;
             margin: 0.5rem 0 1rem 0;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             min-height: 50px;
             opacity: 0.95;
             flex: 1;
@@ -291,7 +293,8 @@
       }
 
       .text {
-         text-align: justify;
+         line-height: 140%;
+         text-align: left;
          font-size: 0.9rem;
          opacity: 0.9;
          margin: 1rem 0;

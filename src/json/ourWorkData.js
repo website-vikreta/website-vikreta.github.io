@@ -140,17 +140,23 @@ export const workData = [
       SBP promotes green bitcoin mining. Companies have to register on their platforms through KYC based on that they will get benefits. They have their own coin cryptocurrency SBC(sustainable bitcoin certificate). The business has a requirement for reconstructing & redesigning its existing platform/web application     
       `,
       description: `
+      <p className="para">
       SBP promotes green bitcoin mining. Companies have to register on their platforms through KYC based on that they will get benefits. They have their own coin cryptocurrency SBC(sustainable bitcoin certificate). The business has a requirement for reconstructing & redesigning its existing platform/web application.
+      </p>
 
+      <p >
       There are 3 essential modules i.e. Miner, Auditor, and Investor, which will mine the bitcoins, to verify the miners which is the third-party integration to the tool, and who purchases those bitcoins respectively.
-      
+      </p>
+
+      <p >
       Website Vikreta has provided a completely updated UI/UX to the company. We did research on how to get the best possible design.
-      
       We have provided all the required components, charts, graphs, and overall all the layout components which are necessary to enhance the functionality of the website. Also, a very easy-to-develop Figma design so that the tech team will be able to develop it easily & efficiently.
+      </p>
 
+      <p>
       Any blockchain-based project needs complete secure modules therefore, we have done all the required testing and made their web application look more professional and eclectic. It helps to gain users’ trust.
-
       This application will provide easy and instant information to the users about all the facilities given by SBP.      
+      </p>
       `,
       clientReview: `
       The team was exceptional & supported our company on UX/UI design. I particularly appreciate the flexibility when we would request ad-hoc design-related tasks, to help support slide creation for our pitch decks using his UX/UI work, etc. The team is super responsive and delivers work on time. If for some reason he is unable to deliver on time, he is a good communicator. We never had any surprises or delays in deliverables. Just great work. I highly recommend the Website Vikreta.      `,
@@ -187,17 +193,23 @@ export const workData = [
       SBP promotes green bitcoin mining. Companies have to register on their platforms through KYC based on that they will get benefits. They have their own coin cryptocurrency SBC(sustainable bitcoin certificate). The business has a requirement for reconstructing & redesigning its existing platform/web application     
       `,
       description: `
+      <p className="para">
       SBP promotes green bitcoin mining. Companies have to register on their platforms through KYC based on that they will get benefits. They have their own coin cryptocurrency SBC(sustainable bitcoin certificate). The business has a requirement for reconstructing & redesigning its existing platform/web application.
+      </p>
 
+      <p >
       There are 3 essential modules i.e. Miner, Auditor, and Investor, which will mine the bitcoins, to verify the miners which is the third-party integration to the tool, and who purchases those bitcoins respectively.
-      
+      </p>
+
+      <p >
       Website Vikreta has provided a completely updated UI/UX to the company. We did research on how to get the best possible design.
-      
       We have provided all the required components, charts, graphs, and overall all the layout components which are necessary to enhance the functionality of the website. Also, a very easy-to-develop Figma design so that the tech team will be able to develop it easily & efficiently.
+      </p>
 
+      <p>
       Any blockchain-based project needs complete secure modules therefore, we have done all the required testing and made their web application look more professional and eclectic. It helps to gain users’ trust.
-
       This application will provide easy and instant information to the users about all the facilities given by SBP.      
+      </p>
       `,
       clientReview: `
       The team was exceptional & supported our company on UX/UI design. I particularly appreciate the flexibility when we would request ad-hoc design-related tasks, to help support slide creation for our pitch decks using his UX/UI work, etc. The team is super responsive and delivers work on time. If for some reason he is unable to deliver on time, he is a good communicator. We never had any surprises or delays in deliverables. Just great work. I highly recommend the Website Vikreta.
@@ -282,7 +294,7 @@ export const workData = [
    },
    // StrandzBoost WebApp update contents
    {
-      id: 6,
+      id: 5,
       url: "/work/StrandzBoost",
       thumbnail: "",
       logo: StrandzBoostLogo,
@@ -431,7 +443,7 @@ export const workData = [
    },
    //Cozmo Realty
    {
-      id: 10,
+      id: 11,
       url: "/work/cozmo-realty",
       thumbnail: cozmoThumb,
       logo: cozmoLogo,
@@ -445,7 +457,7 @@ export const workData = [
          cozmoThumb, cozmog2, cozmog3
       ],
       shortDescription: `
-      Cozmo Realty is a professional website for a highly focused brokerage company. With an attractive design, this site covers all the necessary information needed for a brokerage company.
+      Cozmo Realty is a professional website for a highly focused brokerage company. With an attractive design this site covers all the necessary information needed for a brokerage company.
       `,
       description: `
          <p className="para">
@@ -463,7 +475,7 @@ export const workData = [
    },
    //Katalyst updated till above
    {
-      id: 11,
+      id: 12,
       url: "/work/Katalyst",
       thumbnail: Katalyst1,
       logo: "",
@@ -479,9 +491,10 @@ export const workData = [
       ],
       shortDescription: " Katalyst is a consultancy website.",
       description: `
-         Website vikreta got a chance to serve them a good website. We have provided a figma file from which we developed a user-friendly and attractive website for the company. We provided all the essential features such as Optimization, SEO, image optimization for faster loading, etc.
-         It is a performance centric site and integrated multiple modules in it. This website is efficient, responsive for any device, and super-optimized. This site will provide easy and instant information to the users about all the facilities given by Katalyst.
-         
+      <p className="para">
+      Website vikreta got a chance to serve them a good website. We have provided a figma file from which we developed a user-friendly and attractive website for the company. We provided all the essential features such as Optimization, SEO, image optimization for faster loading, etc.
+      It is a performance centric site and integrated multiple modules in it. This website is efficient, responsive for any device, and super-optimized. This site will provide easy and instant information to the users about all the facilities given by Katalyst.
+      </p>         
          `,
       clientReview: "",
       clientName: "",
@@ -489,7 +502,7 @@ export const workData = [
    },
    // boompanda
    {
-      id: 12,
+      id: 13,
       url: "/work/boompanda",
       thumbnail: boompandaThumb,
       logo: boompandalogo,
@@ -508,10 +521,10 @@ export const workData = [
             <p className='para'>
                This website is proposed to be dynamic website for Student development. Boompanda is a student community platform. Boompanda asserts that it is nationwide community that gives students a rich experience throughout their education journey. This community will provide a platform to socialize and network with other students in the city through various Events, Task, Competitions, Live Sessions & shows, Seminars, etc. Boompanda promotes different educational oraganizations. It also provide platform for students to earn their pocket money.
             </p>
-            <p className='para'>
+            <p className=''>
             This site will provide easy and instant information to the users about all the facilities given by boompanda. It is very easy to understand and use.
             </p>
-            <p className='para'>
+            <p className=' '>
                The site has attractive front end for visitors and backend for administration of the site.
             </p>
    
