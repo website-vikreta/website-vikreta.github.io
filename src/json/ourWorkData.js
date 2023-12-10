@@ -127,7 +127,7 @@ export const workData = [
       url: "/work/sbpwebapp",
       thumbnail: "",
       logo: SBPlogo,
-      title: "WebApp Re-design for Sustainable Bitcoin Protocol”",
+      title: "WebApp Re-design for Sustainable Bitcoin Protocol",
       niche: ["Figma", "UI/UX", "Prototyping", "Web Design", "Web Apps", "Mockups"],
       category: "Web Apps, UI/UX & Prototyping",
       links: [
