@@ -38,10 +38,11 @@
          text-align: center;
          border: none;
 
-         &:hover {
+         &:hover  {
             background: $yellow;
             @include dark-color(dark);
          }
+         
       }
    }
 
