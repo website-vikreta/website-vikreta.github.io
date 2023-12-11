@@ -127,9 +127,9 @@ export const workData = [
       url: "/work/sbpwebapp",
       thumbnail: "",
       logo: SBPlogo,
-      title: "WebApp Re-design for Sustainable Bitcoin Protocol”",
+      title: "WebApp Re-design for Sustainable Bitcoin Protocol",
       niche: ["Figma", "UI/UX", "Prototyping", "Web Design", "Web Apps", "Mockups"],
-      category: "Web Apps, UI/UX & Prototyping",
+      category: ["Web Apps","UI/UX & Prototyping"],
       links: [
          { key: "Figma", value: "https://bit.ly/sbp-platform-figma" }
       ],
@@ -181,7 +181,7 @@ export const workData = [
          "Web Apps",
          "Mockups"
       ],
-      category: "Web Development, Web Design, UI/UX & Prototyping",
+      category:[ "Web Development", "Web Design", "UI/UX & Prototyping"],
       links: [
          { key: "Figma", value: "https://bit.ly/sbp-website-figma" },
          { key: "Website", value: "https://www.sustainablebtc.org/" }
@@ -237,7 +237,7 @@ export const workData = [
          "Responsive Design",
          "SEO"
       ],
-      category: "E-commerce, Web Development",
+      category: ["E-commerce", "Web Development"],
       links: [
          { key: "Website", value: "https://blancoraclothing.com/shop" },
       ],
@@ -272,7 +272,7 @@ export const workData = [
          "Responsive Design",
          "SEO"
       ],
-      category: "MVPs, Web Development",
+      category: ["MVPs", "Web Development"],
       links: [
          { key: "Website", value: "https://iendorse.io/" },
          { key: "CMS", value: "https://iendorse.io/studio" },
@@ -300,7 +300,7 @@ export const workData = [
       logo: StrandzBoostLogo,
       title: "Web Application Developed for Medical Survey Platform StrandzBoost",
       niche: ["Laravel", "Surveys", "Forms", "Web Development", "Content Management System", "User Authentication", "Responsive Design"],
-      category: "Web Apps, Web Development",
+      category: ["Web Apps", "Web Development"],
       links: [
          { key: " Website", value: "https://www.strandzboost.com/" },
          { key: "CMS", value: "https://strandzboost.com/studio" }
@@ -323,7 +323,7 @@ export const workData = [
       logo: WorkikLogo,
       title: "Landing page design & developed for Workik",
       niche: ["Web Design", "Web Development", "UI/UX & Prototyping"],
-      category: "Web Development",
+      category: ["Web Development"],
       tags: ["Web Design", "Web Development", "UI/UX & Prototyping", "Figma", "Landing Page", "Shopify"],
       links: [
          { key: " Figma", value: "https://bit.ly/workik-figma" }
@@ -349,7 +349,7 @@ export const workData = [
       logo: psilentGangesLogo,
       title: "Business website design & developed for Psilent Ganges",
       niche: ["Web Design", "Web Development", "UI/UX & Prototyping", "Figma", "Landing Page", "Business Website", "CI/CD"],
-      category: "Web Design, Web Development, UI/UX & Prototyping",
+      category: ["Web Design", "Web Development", "UI/UX & Prototyping"],
       links: [
          { key: " Website", value: "http://psilentganges.com/" }
       ],
@@ -373,7 +373,7 @@ export const workData = [
       logo: FionaLiLogo,
       title: "Portfolio website designed for Fiona Li.",
       niche: ["UI/UX & Prototyping", "Figma", "Landing Page", "Portfolio Website"],
-      category: "Web Design, UI/UX & Prototyping",
+      category: ["Web Design", "UI/UX & Prototyping"],
       links: [
          { key: "Figma", value: "https://bit.ly/fionali-figma" }
       ],
@@ -396,7 +396,7 @@ export const workData = [
       logo: ArchmodalLogo,
       title: "Business website designed and developed for Archmodal",
       niche: ["UI/UX & Prototyping", "Figma", "Landing Page", "Business Website", "NextJS", "Responsive Design", "SEO", "Animations"],
-      category: "Web Design, Web Development, UI/UX & Prototyping",
+      category: ["Web Design", "Web Development", "UI/UX & Prototyping"],
       links: [
          { key: " Figma", value: "https://bit.ly/archmodal-figma" },
          { key: " Website", value: "https://www.archmodal.com" }
@@ -423,7 +423,7 @@ export const workData = [
       logo: budgetRenovationsLogo,
       title: "HTML template designed and developed for Budget Renovations",
       niche: ["UI/UX & Prototyping", "Figma", "Landing Page", "Business Website", "HTML", "SCSS", "Responsive Design", "Animations"],
-      category: "Web Design, Web Development, UI/UX & Prototyping",
+      category:[ "Web Design", "Web Development", "UI/UX & Prototyping"],
       links: [
          { key: "Figma", value: "https://www.bit.ly/budget-renovations" },
          { key: "Website", value: "https://website-vikreta.github.io/budget-renovations/" }
@@ -449,7 +449,7 @@ export const workData = [
       logo: cozmoLogo,
       title: "Website designed for Cozmo Realty",
       niche: ["UI/UX & Prototyping", "Figma", "Landing Page", "Business Website", "Responsive Design"],
-      category: "Web Design, UI/UX & Prototyping",
+      category: ["Web Design","UI/UX & Prototyping"],
       links: [
          { key: "View Figma", value: "https://bit.ly/cozmorealty-figma" }
       ],
@@ -481,7 +481,7 @@ export const workData = [
       logo: "",
       title: "Katalyst",
       niche: ["Website Development", "CMS Development", "Web Application", "API"],
-      category: "Web Development",
+      category: ["Web Development"],
       links: [
          { key: "Website", value: "https://abc.in/" },
          { key: "Dashboard", value: "https://abc.in/login/" },
@@ -508,7 +508,7 @@ export const workData = [
       logo: boompandalogo,
       title: "Community Platform Development for BoomPanda",
       niche: ["Website Development", "CMS Development", "Web Application", "API"],
-      category: "Web Development",
+      category:[ "Web Development"],
       links: [
          { key: "Website", value: "https://boompanda.in/" },
          { key: "Dashboard", value: "https://boompanda.in/login/" },
@@ -561,7 +561,7 @@ export const workData = [
       logo: championLogo,
       title: "Website UI design for Champion Lenders",
       niche: ["Web Design", "Figma", "CMS Design", "Website Prototype"],
-      category: "Web Design",
+      category: ["Web Design"],
       links: [
          { key: "Figma", value: "https://www.figma.com/file/UH4rqEkr70Vd0ilpEQVOok/Champion-Lenders?node-id=0%3A1" },
       ],

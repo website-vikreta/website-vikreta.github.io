@@ -17,11 +17,16 @@ const OurWork = () => {
    // filter item list
    const filterItem = (categItem) => {
       const updatedItems = workData.filter((curElem) => {
-         return curElem.category === categItem;
+         return   curElem.category.includes(categItem)
+         // return curElem.category === categItem;
+         // return items.filter(object =>
+         //    items.every(category => object.category.includes(category)))
+         // return items.filter(object => object.category.includes(categItem))
       });
 
       setItems(updatedItems);
    }
+
 
    // Scroll to top
    useEffect(() => {
@@ -57,6 +62,7 @@ const OurWork = () => {
                </div>
                <div>
                   <div class="gallery-grid">
+                     {/* { items.length===0?<h1>sorry no projects</h1>  :""} */}
                      {
                         items.map((project) => {
                            return (

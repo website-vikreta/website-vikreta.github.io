@@ -38,10 +38,11 @@
          text-align: center;
          border: none;
 
-         &:hover {
+         &:hover  {
             background: $yellow;
             @include dark-color(dark);
          }
+         
       }
    }
 
@@ -77,8 +78,9 @@
             font-size: 0.9rem;
             min-height: 50px;
             opacity: 0.95;
-            flex: 1;
-            
+
+            // flex: 1; line clamp works only with block element
+         
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;  
@@ -167,16 +169,28 @@
       margin-top: 3rem;
 
       .image {
-         background: white;
+         // background: white;
          margin-top: 8px;
-         height: 80px;
-         width: 80px;
+         // height: 80px;
+         // width: 80px;
          @include flex-center;
       }
 
-      // .image img {//    height: 80px;
+       .image img {
+         padding: 0.8rem;
+         background: white;
+         height: 80px;
+         width: 80px;
+
+      //    height: 80px; 
       //    width: 100%
-      // }
+      
+      @media (max-width: 480px) {
+         padding: 0.5rem;
+       }
+       
+       }
+      
 
       .niche {
          @include flex-center(0.5rem);
