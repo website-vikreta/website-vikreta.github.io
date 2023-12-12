@@ -10,21 +10,31 @@ import { pageAnimation, smoothFade, frameParentIvert, frameAnimationIvert } from
 
 
 const OurWork = () => {
+   const filters = [
+      'All Work',
+      'Web Design',
+      'Web Development',
+      'MVPs',
+      'Mobile Apps',
+      'E-commerce',
+      'UI/UX & Prototyping',
+      'Web Apps',
+   ]
 
    // Filter List
-   const [items, setItems] = useState(workData);
+   const [items, setItems] = useState(workData)
+   const [activeBtn, setActiveBtn] = useState(filters[0])
 
    // filter item list
-   const filterItem = (categItem) => {
-      const updatedItems = workData.filter((curElem) => {
-         return   curElem.category.includes(categItem)
-         // return curElem.category === categItem;
-         // return items.filter(object =>
-         //    items.every(category => object.category.includes(category)))
-         // return items.filter(object => object.category.includes(categItem))
+   const filterItem = (selectedCategory) => {
+      const updatedItems = workData.filter((workDataCard) => {
+         if (selectedCategory === filters[0]) {
+            return workData
+         }
+         return workDataCard.category.includes(selectedCategory)
       });
-
       setItems(updatedItems);
+      setActiveBtn(selectedCategory)
    }
 
 
@@ -50,25 +60,43 @@ const OurWork = () => {
                   <h2>Glimpse of Our Past Projects</h2>
                   <div className="line"></div>
                </div>
+
                <div className="filter-container">
-                  <button onClick={() => setItems(workData)}>All Work</button>
-                  <button onClick={() => filterItem('Web Design')}>Web Design</button>
+                  {/* <button onClick={() => setItems(workData)}>All Work</button> */}
+                  {
+                     filters.map((filter, index) => {
+                        return (
+                           <button
+                              key={index}
+                              className={activeBtn === filter ? "active-button" : ""}
+                              onClick={() => filterItem(filter)}>
+                              {filter}
+                           </button>
+                        )
+                     })
+                  }
+
+                  {/* <button onClick={() => filterItem('Web Design')}>Web Design</button>
                   <button onClick={() => filterItem('Web Development')}>Web Development</button>
                   <button onClick={() => filterItem('MVPs')}>MVPs</button>
                   <button onClick={() => filterItem('Mobile Apps')}>Mobile Apps</button>
                   <button onClick={() => filterItem('E-commerce')}>E-commerce</button>
                   <button onClick={() => filterItem('UI/UX & Prototyping')}>UI/UX & Prototyping</button>
-                  <button onClick={() => filterItem('Web Apps')}>Web Apps</button>
+                  <button onClick={() => filterItem('Web Apps')}>Web Apps</button> */}
                </div>
                <div>
-                  <div class="gallery-grid">
-                     {/* { items.length===0?<h1>sorry no projects</h1>  :""} */}
+                  <div className="gallery-grid">
                      {
                         items.map((project) => {
                            return (
-                              <div className="grid-item">
+                              <div className="grid-item" key={project.id}>
                                  <img src={project.thumbnail} alt={project.title} />
                                  <div className="content">
+                                    <ul className="category">
+                                       {
+                                          project.category.map((el, index) => <li key={index}> {el} </li>)
+                                       }
+                                    </ul>
                                     <h3 className="project-heading">{project.title}</h3>
                                     <p className="project-para">{project.shortDescription}</p>
                                     <Link to={project.url} className="normal-btn primary">
