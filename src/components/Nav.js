@@ -48,6 +48,7 @@ const Nav = () => {
                      <li className="nav-item" onClick={unCheck}><ScrollLink smooth to="../#services">Our Services</ScrollLink></li>
                      <li className="nav-item" onClick={unCheck}><Link to="/work">Our Work</Link></li>
                      <li className="nav-item" onClick={unCheck}><Link to="/contact">Contact Us</Link></li>
+                     <li className="nav-item" onClick={unCheck}><Link to="/blogs">Blogs</Link></li>
                   </ul>
                   {/* Social Icons */}
                   <ul className="social-icons">

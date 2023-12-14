@@ -75,14 +75,6 @@ const OurWork = () => {
                         )
                      })
                   }
-
-                  {/* <button onClick={() => filterItem('Web Design')}>Web Design</button>
-                  <button onClick={() => filterItem('Web Development')}>Web Development</button>
-                  <button onClick={() => filterItem('MVPs')}>MVPs</button>
-                  <button onClick={() => filterItem('Mobile Apps')}>Mobile Apps</button>
-                  <button onClick={() => filterItem('E-commerce')}>E-commerce</button>
-                  <button onClick={() => filterItem('UI/UX & Prototyping')}>UI/UX & Prototyping</button>
-                  <button onClick={() => filterItem('Web Apps')}>Web Apps</button> */}
                </div>
                <div>
                   <div className="gallery-grid">

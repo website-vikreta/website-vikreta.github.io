@@ -8,7 +8,8 @@ import HomePage from "./pages/HomePage";
 import ContactUs from "./pages/ContactUs";
 import OurWork from "./pages/OurWork";
 import DetailedWork from "./pages/DetailedWork";
-
+import Blogs from "./pages/Blogs";
+import OnePost from "./pages/OnePost";
 // importing utilities
 import { navbarScroll } from "./utility/navbarScroll";
 import { navbarCTAScroll } from "./utility/navbarCTAScroll";
@@ -51,6 +52,13 @@ function App() {
                <Route path="/contact" exact>
                   <ContactUs />
                </Route>
+               <Route path="/blogs/:slug" exact>
+                  <OnePost />
+               </Route>
+               <Route path="/blogs" exact>
+                  <Blogs />
+               </Route>
+
             </Switch>
 
             {/* Importing Footer */}
