@@ -1,13 +1,8 @@
-// importing data
-import { workData } from "../json/ourWorkData";
-// Importing Bootstrap Icon
-import "bootstrap-icons/font/bootstrap-icons.css";
-// importing packages
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { pageAnimation, smoothFade, frameParentIvert, frameAnimationIvert } from "../utility/animation";
-
+import { workData } from "../json/ourWorkData"; // Import your work data
 
 const OurWork = () => {
    const filters = [
@@ -19,35 +14,38 @@ const OurWork = () => {
       'E-commerce',
       'UI/UX & Prototyping',
       'Web Apps',
-   ]
+   ];
 
-   // Filter List
-   const [items, setItems] = useState(workData)
-   const [activeBtn, setActiveBtn] = useState(filters[0])
+   const [items, setItems] = useState(workData); // State to hold filtered items
+   const [activeBtn, setActiveBtn] = useState(filters[0]); // State for active filter button
 
-   // filter item list
+   // Filter item list based on selected category
    const filterItem = (selectedCategory) => {
-      const updatedItems = workData.filter((workDataCard) => {
-         if (selectedCategory === filters[0]) {
-            return workData
-         }
-         return workDataCard.category.includes(selectedCategory)
-      });
-      setItems(updatedItems);
-      setActiveBtn(selectedCategory)
-   }
+      if (selectedCategory === filters[0]) {
+         setItems(workData); // Show all items when "All Work" is selected
+      } else {
+         const updatedItems = workData.filter((workDataCard) => {
+            return workDataCard.category.includes(selectedCategory);
+         });
+         setItems(updatedItems); // Filter items based on selected category
+      }
+      setActiveBtn(selectedCategory); // Set active filter button
+   };
 
-
-   // Scroll to top
+   // Scroll to top and set document title on component mount
    useEffect(() => {
-      window.scrollTo(0, 0)
-      document.title = "Our Work"
-   }, [])
+      window.scrollTo(0, 0);
+      document.title = "Our Work";
+   }, []);
 
+   // Variants for grid item animations
+   const gridItemVariants = {
+      hidden: { opacity: 0, scale: 0.8 },
+      show: { opacity: 1, scale: 1, transition: { duration: 1 } }
+   };
 
    return (
       <motion.div exit="exit" variants={pageAnimation} initial="hidden" animate="show">
-
          <motion.div variants={frameParentIvert}>
             <motion.div className="animation-frame one" variants={frameAnimationIvert}></motion.div>
             <motion.div className="animation-frame two" variants={frameAnimationIvert}></motion.div>
@@ -62,58 +60,47 @@ const OurWork = () => {
                </div>
 
                <div className="filter-container">
-                  {/* <button onClick={() => setItems(workData)}>All Work</button> */}
-                  {
-                     filters.map((filter, index) => {
-                        return (
-                           <button
-                              key={index}
-                              className={activeBtn === filter ? "active-button" : ""}
-                              onClick={() => filterItem(filter)}>
-                              {filter}
-                           </button>
-                        )
-                     })
-                  }
+                  {filters.map((filter, index) => (
+                     <button
+                        key={index}
+                        className={activeBtn === filter ? "active-button" : ""}
+                        onClick={() => filterItem(filter)}
+                     >
+                        {filter}
+                     </button>
+                  ))}
+               </div>
 
-                  {/* <button onClick={() => filterItem('Web Design')}>Web Design</button>
-                  <button onClick={() => filterItem('Web Development')}>Web Development</button>
-                  <button onClick={() => filterItem('MVPs')}>MVPs</button>
-                  <button onClick={() => filterItem('Mobile Apps')}>Mobile Apps</button>
-                  <button onClick={() => filterItem('E-commerce')}>E-commerce</button>
-                  <button onClick={() => filterItem('UI/UX & Prototyping')}>UI/UX & Prototyping</button>
-                  <button onClick={() => filterItem('Web Apps')}>Web Apps</button> */}
-               </div>
-               <div>
-                  <div className="gallery-grid">
-                     {
-                        items.map((project) => {
-                           return (
-                              <div className="grid-item" key={project.id}>
-                                 <img src={project.thumbnail} alt={project.title} />
-                                 <div className="content">
-                                    <ul className="category">
-                                       {
-                                          project.category.map((el, index) => <li key={index}> {el} </li>)
-                                       }
-                                    </ul>
-                                    <h3 className="project-heading">{project.title}</h3>
-                                    <p className="project-para">{project.shortDescription}</p>
-                                    <Link to={project.url} className="normal-btn primary">
-                                       <span>Read More</span>
-                                       <i className="bi bi-arrow-right"></i>
-                                    </Link>
-                                 </div>
-                              </div>
-                           )
-                        })
-                     }
-                  </div>
-               </div>
+               <motion.div className="gallery-grid">
+                  {items.map((project) => (
+                     <motion.div
+                        key={project.id}
+                        className="grid-item"
+                        variants={gridItemVariants}
+                        initial="hidden"
+                        animate="show"
+                     >
+                        <img src={project.thumbnail} alt={project.title} />
+                        <div className="content">
+                           <ul className="category">
+                              {project.category.map((el, index) => (
+                                 <li key={index}> {el} </li>
+                              ))}
+                           </ul>
+                           <h3 className="project-heading">{project.title}</h3>
+                           <p className="project-para">{project.shortDescription}</p>
+                           <Link to={project.url} className="normal-btn primary">
+                              <span>Read More</span>
+                              <i className="bi bi-arrow-right"></i>
+                           </Link>
+                        </div>
+                     </motion.div>
+                  ))}
+               </motion.div>
             </div>
          </motion.section>
       </motion.div>
-   )
-}
+   );
+};
 
 export default OurWork;
