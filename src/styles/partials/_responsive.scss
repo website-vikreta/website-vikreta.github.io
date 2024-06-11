@@ -1,48 +1,111 @@
-@media screen and (max-width: 1220px) {
-   // global components
+// Existing SCSS with adjustments for PhoneInput component responsiveness
+
+// Global components
+.container {
+   max-width: initial;
+   width: 100%;
+   padding: 0 50px;
+}
+
+// Navigation bar
+.navbar .container {
+   padding: 1.5rem 50px;
+}
+
+.navbar-cta {
+   .close {
+      right: 50px;
+   }
+}
+
+// Services
+.services .card-wrapper .card {
+   max-width: 40%;
+   padding-top: 75px;
+
+   img {
+      max-width: 40%;
+   }
+}
+
+// Detailed work
+.detailed-work {
    .container {
-      max-width: initial;
+      padding: 3rem 50px;
+   }
+}
+
+// PhoneInput specific styles for consistency
+.react-tel-input {
+   .form-control {
       width: 100%;
-      padding: 0 50px;
-   }
+      height: 3.5rem;
+      border-radius: 0;
+      @include dark-color-bg(dark);
+      border: 1px solid map-get($map: $black-colors, $key: light);
+      color: $light;
+      padding: 1rem;
+      font-size: 1rem;
+      font-family: inherit;
 
-   // navigation bar
-   .navbar .container {
-      padding: 1.5rem 50px;
-   }
-
-   .navbar-cta {
-      .close {
-         right: 50px;
+      &:focus {
+         outline: none;
+         border-color: rgba(255, 214, 0, 0.5);
       }
    }
 
-   // services
+   .flag-dropdown, .selected-flag {
+      background-color: map-get($map: $black-colors, $key: dark);
+      border: 1px solid map-get($map: $black-colors, $key: light);
+   }
+
+   .country-list {
+      background-color: map-get($map: $black-colors, $key: dark);
+      color: $light;
+   }
+}
+
+// Media queries for responsiveness
+
+@media screen and (max-width: 1220px) {
+   .container {
+      padding: 0 30px;
+   }
+
+   .navbar .container {
+      padding: 1.5rem 30px;
+   }
+
+   .navbar-cta .close {
+      right: 30px;
+   }
+
    .services .card-wrapper .card {
-      max-width: 40%;
-      padding-top: 75px;
+      max-width: 50%;
+      padding-top: 60px;
 
       img {
-         max-width: 40%;
+         max-width: 50%;
       }
    }
 
-   // detailed work
-   .detailed-work {
-      .container {
-         padding: 3rem 50px;
-      }
+   .detailed-work .container {
+      padding: 3rem 30px;
+   }
+
+   .react-tel-input .form-control {
+      font-size: 0.9rem;
+      padding: 0.8rem;
    }
 }
 
 @media screen and (max-width: 1100px) {
-   // our work
    .our-work {
-      padding: 120px 0;
+      padding: 100px 0;
    }
 
    .gallery-grid {
-      margin-top: 50px !important;
+      margin-top: 40px !important;
       grid-template-columns: 1fr 1fr 1fr !important;
    }
 
@@ -51,103 +114,103 @@
       gap: 0.5rem;
       align-items: flex-start;
    }
+
+   .react-tel-input .form-control {
+      font-size: 0.8rem;
+      padding: 0.7rem;
+   }
 }
 
 @media screen and (max-width: 992px) {
-   // global styles
    .container {
-      padding: 0 30px;
+      padding: 0 20px;
    }
 
-   // navigation bar
-   .navbar {
-      .container {
-         padding: 1.5rem 30px;
-      }
+   .navbar .container {
+      padding: 1.5rem 20px;
+   }
 
-      // toggle
-      .toggle-btn {
-         display: block;
-         width: 40px;
-         height: 40px;
-         @include flex-center(5px);
-         flex-direction: column;
-         transition: 0.5s ease-out;
-         text-align: center;
+   .navbar .toggle-btn {
+      display: block;
+      width: 40px;
+      height: 40px;
+      @include flex-center(5px);
+      flex-direction: column;
+      transition: 0.5s ease-out;
+      text-align: center;
 
-         .line {
-            width: 100%;
-            height: 2px;
-            background: $light;
-            transform-origin: center;
-            position: relative;
-            transition: 0.35s ease-in-out;
-         }
-      }
-
-      #navToggle:checked ~ .toggle-btn {
-         gap: 0;
-
-         .one {
-            transform: translateY(1px) rotate(90deg);
-         }
-
-         transform: rotate(45deg);
-      }
-
-      #navToggle:checked ~ .wrapper {
-         opacity: 1;
-         visibility: visible;
-      }
-
-      .wrapper {
-         position: fixed;
-         top: 0;
-         left: 0;
+      .line {
          width: 100%;
-         height: 100vh;
-         @include dark-color-bg(dark);
-         opacity: 0;
-         visibility: hidden;
-         z-index: -1;
-         transition: 0.35s ease-out;
+         height: 2px;
+         background: $light;
+         transform-origin: center;
+         position: relative;
+         transition: 0.35s ease-in-out;
+      }
+   }
+
+   #navToggle:checked ~ .toggle-btn {
+      gap: 0;
+
+      .one {
+         transform: translateY(1px) rotate(90deg);
+      }
+
+      transform: rotate(45deg);
+   }
+
+   #navToggle:checked ~ .wrapper {
+      opacity: 1;
+      visibility: visible;
+   }
+
+   .wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      @include dark-color-bg(dark);
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+      transition: 0.35s ease-out;
+      flex-direction: column;
+      padding: 30vh 0;
+
+      .nav-list {
          flex-direction: column;
-         padding: 30vh 0;
-
-         .nav-list {
-            flex-direction: column;
-            font-size: 1.2rem;
-         }
-
-         .social-icons {
-            margin-left: initial;
-            font-size: 1.5rem;
-            margin: 20px;
-         }
+         font-size: 1.2rem;
       }
 
-      .top-nav-wrapper {
-         width: 100%;
-         @include flex-between;
+      .social-icons {
+         margin-left: initial;
+         font-size: 1.5rem;
+         margin: 20px;
       }
+   }
+
+   .top-nav-wrapper {
+      width: 100%;
+      @include flex-between;
    }
 
    .navbar-cta {
       top: 5.5rem;
+
       .container {
          flex-direction: column !important;
          gap: 0.25rem;
          padding-inline: 50px;
          text-align: center;
       }
+
       .close {
-         right: 30px;
+         right: 20px;
       }
    }
 
-   // Home Page
    .hero {
-      // .title{}
       .hero-image {
          display: none;
       }
@@ -164,87 +227,97 @@
       }
    }
 
-   .about-us {
-      .wrapper {
-         .right {
-            padding-right: 30px;
-            gap: 1.5rem;
-         }
-
-         .left {
-            width: 40%;
-         }
-
-         .right {
-            width: 60%;
-         }
-      }
-   }
-
-   .testimonials {
-      .review {
-         font-size: 0.9rem !important;
-      }
-   }
-
-   // /hire-us
-   .hire-us {
+   .about-us .wrapper {
       .right {
-         flex-direction: column;
+         padding-right: 20px;
+         gap: 1.5rem;
+      }
 
-         a {
-            width: 100%;
-            text-align: center;
-         }
+      .left {
+         width: 40%;
+      }
+
+      .right {
+         width: 60%;
       }
    }
-   // footer
+
+   .testimonials .review {
+      font-size: 0.9rem !important;
+   }
+
+   .hire-us .right {
+      flex-direction: column;
+
+      a {
+         width: 100%;
+         text-align: center;
+      }
+   }
+
    .footer {
       text-align: center;
       padding: 0;
+
       .container {
-         padding: 3rem 30px 2rem 30px;
+         padding: 3rem 20px 2rem 20px;
          flex-direction: column;
          gap: 2rem;
       }
+
       .left {
          width: 100%;
          text-align: left;
+
          .des {
             font-size: 0.9rem;
          }
       }
+
       .right {
          width: 100%;
+
          .quickLinks {
             text-align: left;
             display: grid;
             grid-template-columns: 1fr;
+
             .link {
                justify-content: flex-start;
             }
 
             gap: 0.8rem;
+
             .icon {
                margin-left: 0;
             }
          }
+
          .social-media {
             justify-content: flex-start;
+
             .icon {
                margin-left: 0;
             }
+
             a {
                margin-right: 20px;
             }
          }
+
          .copyright {
             text-align: left;
+
             .break {
                display: block;
             }
          }
       }
+   }
+
+   .react-tel-input .form-control {
+      font-size: 0.75rem;
+      padding: 0.6rem;
    }
 }
 
@@ -253,10 +326,7 @@
       cursor: initial !important;
    }
 
-   a,
-   button,
-   label,
-   .slick-dots {
+   a, button, label, .slick-dots {
       cursor: pointer !important;
    }
 
@@ -272,25 +342,19 @@
       padding-bottom: 100px;
    }
 
-   // hero
-   .hero {
-      .content {
-         .title {
-            max-width: 80%;
-         }
-
-         .para {
-            width: 100% !important;
-         }
-      }
+   .hero .content .title {
+      max-width: 80%;
    }
 
-   // hireus
+   .hero .content .para {
+      width: 100% !important;
+   }
+
    .hire-us {
       text-align: center;
 
       .container {
-         padding: 50px 30px;
+         padding: 50px 20px;
          flex-direction: column;
          gap: 1.5rem;
       }
@@ -308,56 +372,51 @@
       }
    }
 
-   // about us
-   .about-us {
-      .numbers {
-         display: grid !important;
-         grid-template-columns: 1fr 1fr;
-         grid-gap: 5rem 0;
-         padding-top: 100px;
+   .about-us .numbers {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 5rem 0;
+      padding-top: 100px;
+   }
+
+   .about-us .wrapper {
+      padding: 30px;
+      position: relative;
+      margin-top: 100px;
+
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 20%;
+         height: 100%;
+         @include dark-color-bg(light);
+         z-index: -1;
       }
 
-      .wrapper {
-         padding: 30px;
-         position: relative;
-         margin-top: 100px;
+      .left {
+         display: none;
+      }
 
-         &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 20%;
-            height: 100%;
-            @include dark-color-bg(light);
-            z-index: -1;
-         }
-
-         .left {
-            display: none;
-         }
-
-         .right {
-            width: 100%;
-            padding-left: 5%;
-            padding-right: 0;
-         }
+      .right {
+         width: 100%;
+         padding-left: 5%;
+         padding-right: 0;
       }
    }
 
-   //services
-   .services {
-      .card-wrapper {
-         display: grid;
-         grid-template-columns: 1fr 1fr;
-         grid-gap: 100px 1rem;
+   .services .card-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 100px 1rem;
 
-         .card {
-            width: 100% !important;
-            max-width: initial;
-         }
+      .card {
+         width: 100% !important;
+         max-width: initial;
       }
    }
+
 
    // faq
    .faq-wrapper {
