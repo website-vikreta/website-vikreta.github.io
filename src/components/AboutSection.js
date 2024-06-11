@@ -17,9 +17,9 @@ const AboutSection = () => {
 
 
 
-   let totalProjects = 24;
-   let totalWebProjects = 20;
-   let totalClientsServed = 19;
+   let totalProjects = 30;
+   let totalWebProjects = 24;
+   let totalClientsServed = 22;
    let totalOngoingProjects = 3;
 
    const [projectsCompleted, setprojectsCompleted] = useState(0);
