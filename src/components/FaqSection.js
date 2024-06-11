@@ -1,10 +1,17 @@
+import { useState } from "react";
 import Toggle from "../utility/toggleFaq";
 import { AnimateSharedLayout } from "framer-motion";
 import faqData from "../json/faqData";
-import parse from 'html-react-parser'
+import parse from 'html-react-parser';
 
 const FaqSection = () => {
+   const [openIndex, setOpenIndex] = useState(0);
    const faqs = faqData();
+
+   const handleToggle = (index) => {
+      setOpenIndex(openIndex === index ? null : index);
+   };
+
    return (
       <section className="faq">
          <div className="heading">
@@ -14,17 +21,22 @@ const FaqSection = () => {
 
          <div className="faq-wrapper">
             <AnimateSharedLayout>
-               {faqs.map(faq =>
-                  <Toggle title={faq.title} defaultToggle={faq.toggle ? faq.toggle : false}>
+               {faqs.map((faq, index) => (
+                  <Toggle
+                     key={index}
+                     title={faq.title}
+                     isOpen={openIndex === index}
+                     onToggle={() => handleToggle(index)}
+                  >
                      <div className="answer">
                         {parse(faq.answer)}
                      </div>
                   </Toggle>
-               )}
+               ))}
             </AnimateSharedLayout>
          </div>
       </section>
-   )
-}
+   );
+};
 
-export default FaqSection
+export default FaqSection;

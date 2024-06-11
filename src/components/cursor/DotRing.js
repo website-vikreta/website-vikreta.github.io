@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import useMousePosition from "./useMousePosition";
 import useMouseInside from "./useMouseInside";
 
