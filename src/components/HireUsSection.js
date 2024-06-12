@@ -19,7 +19,7 @@ const HireUsSection = () => {
 
             <div className="right">
                <Link to="/work" className="normal-btn primary">View Our Work</Link>
-               <Link to="/contact" className="normal-btn secondary">Get a Free Quote</Link>
+               <Link to="/contact" className="normal-btn secondary">Contact Us</Link>
             </div>
          </div>
       </section>

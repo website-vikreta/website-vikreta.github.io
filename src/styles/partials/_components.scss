@@ -102,51 +102,42 @@ body.navbar-cta-show .navbar-cta {
    width: 100%;
    height: auto;
    z-index: 999;
-   transition: opacity 0.35s ease-out, visibility 0.35s ease-out, top 0.35s ease-out;
+   transition: 0.35s ease-out;
    visibility: hidden;
    opacity: 0;
- 
-   &.visible {
-     visibility: visible;
-     opacity: 1;
-   }
- 
+
    .container {
-     @include flex-center;
-     gap: 1rem;
-     position: relative;
+      @include flex-center;
+      gap: 1rem;
+      position: relative;
    }
- 
+
    .link {
-     @include flex-center;
-     gap: 0.5rem;
-     font-weight: map-get($map: $font-weight, $key: medium);
- 
-     &-text {
-       border-bottom: 1px solid;
-     }
- 
-     &-icon {
-       color: red;
-     }
- 
-     &:hover {
-       color: red;
-     }
+      @include flex-center;
+      gap: 0.5rem;
+      font-weight: map-get($map: $font-weight, $key: medium);
+
+      &-text {
+         border-bottom: 1px solid;
+      }
+
+      &-icon {
+         color: red;
+      }
+
+      &:hover {
+         color: red;
+      }
    }
- 
+
    .close {
-     position: absolute;
-     top: 50%;
-     right: 0;
-     transform: translateY(-50%);
-     cursor: pointer;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      cursor: pointer;
    }
- 
-   &.hide {
-     top: -3rem !important;
-   }
-  
+
    &:has(.close.hide) {
       top: -3rem !important;
    }
