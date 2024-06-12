@@ -6,7 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import Nav from './components/Nav';
 import DotRing from './components/cursor/DotRing';
 import Footer from './components/Footer';
-import Preload from './components/Preload'; // New: Import Preload component
+import Preload from './components/Preload'; 
 
 // Importing pages
 import HomePage from './pages/HomePage';
@@ -41,7 +41,7 @@ function App() {
       window.addEventListener('load', handleLoad);
       setTimeout(() => {
         setLoading(false); // Fallback in case of a very slow connection
-      }); // Adjust timeout as needed
+      }); 
     }
 
     return () => {
