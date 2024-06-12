@@ -1,67 +1,92 @@
-// importing components
-import Nav from "./components/Nav";
-import DotRing from "./components/cursor/DotRing";
-import Footer from "./components/Footer";
-
-// importing pages
-import HomePage from "./pages/HomePage";
-import ContactUs from "./pages/ContactUs";
-import OurWork from "./pages/OurWork";
-import DetailedWork from "./pages/DetailedWork";
-
-// importing utilities
-import { navbarScroll } from "./utility/navbarScroll";
-import { navbarCTAScroll } from "./utility/navbarCTAScroll";
-
-// import router
+import React, { useState, useEffect } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 
-// framer
-import { AnimatePresence } from "framer-motion";
+// Importing components
+import Nav from './components/Nav';
+import DotRing from './components/cursor/DotRing';
+import Footer from './components/Footer';
+import Preload from './components/Preload'; // New: Import Preload component
 
-// importing style
-import "./styles/main.scss";
-import GoTop from "./components/GoTop";
+// Importing pages
+import HomePage from './pages/HomePage';
+import ContactUs from './pages/ContactUs';
+import OurWork from './pages/OurWork';
+import DetailedWork from './pages/DetailedWork';
 
+// Importing utilities
+import { navbarScroll } from './utility/navbarScroll';
+import { navbarCTAScroll } from './utility/navbarCTAScroll';
 
+// Importing style
+import './styles/main.scss';
+import GoTop from './components/GoTop';
 
 function App() {
-   navbarScroll();
-   navbarCTAScroll();
+  navbarScroll();
+  navbarCTAScroll();
 
-   const location = useLocation();
+  const location = useLocation();
+  const [loading, setLoading] = useState(true); // State to manage loading status
 
-   return (
-      <div className="App">
-         {/* Custom Cursor */}
-         <DotRing />
+  useEffect(() => {
+    // Set loading to false when all resources are loaded
+    const handleLoad = () => setLoading(false);
+    
+    // Check if the document is already loaded
+    if (document.readyState === 'complete') {
+      setLoading(false);
+    } else {
+      // Add event listeners for load and timeout
+      window.addEventListener('load', handleLoad);
+      setTimeout(() => {
+        setLoading(false); // Fallback in case of a very slow connection
+      }); // Adjust timeout as needed
+    }
 
-         {/* Navigation Bar */}
-         <Nav />
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []);
 
-         {/* importing pages */}
-         <AnimatePresence exitBeforeEnter>
+  return (
+    <div className="App">
+      {/* Custom Cursor */}
+      <DotRing />
+
+      {/* Navigation Bar */}
+      <Nav />
+
+      {/* Conditional rendering of preload screen */}
+      {loading ? (
+        <Preload />
+      ) : (
+        <>
+          {/* Render content after loading */}
+          <AnimatePresence exitBeforeEnter>
             <Switch location={location} key={location.pathname}>
-               <Route path="/" exact>
-                  <HomePage />
-               </Route>
-               <Route path="/work" exact>
-                  <OurWork />
-               </Route>
-               <Route path="/contact" exact>
-                  <ContactUs />
-               </Route>
+              <Route path="/" exact>
+                <HomePage />
+              </Route>
+              <Route path="/work" exact>
+                <OurWork />
+              </Route>
+              <Route path="/contact" exact>
+                <ContactUs />
+              </Route>
             </Switch>
 
             {/* Importing Footer */}
             <Footer />
-         </AnimatePresence>
-         <Route path="/work/:id">
+          </AnimatePresence>
+          <Route path="/work/:id">
             <DetailedWork />
-         </Route>
-         <GoTop />
-      </div>
-   );
+          </Route>
+          <GoTop />
+        </>
+      )}
+    </div>
+  );
 }
 
 export default App;
