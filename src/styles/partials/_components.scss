@@ -345,7 +345,9 @@ body.navbar-cta-show .navbar-cta {
       color: $light; 
       border: 1px solid map-get($map: $black-colors, $key: light); 
       padding-left: 50px; 
-      margin:35px;
+      width: 100%;
+      height: 3.5rem;
+      
       
    }
 
@@ -364,7 +366,7 @@ body.navbar-cta-show .navbar-cta {
    }
 
    .country-list {
-      background-color: map-get($map: $black-colors, $key: dark);
+      background-color: map-get($map: $black-colors, $key: light);
       color: $light; 
    }
 }

@@ -13,13 +13,16 @@ import LogoIcon from "../assets/LogoIcon.svg";
 
 
 const Nav = () => {
+   const location = useLocation();
 
    const unCheck = () => {
       document.querySelectorAll("#navToggle")[0].checked = false;
    }
+
    const scrollUp = () => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
    }
+
    const handleHomeClick = () => {
       if (location.pathname === "/") {
          scrollUp();
@@ -57,16 +60,15 @@ const Nav = () => {
                   </ul>
                   {/* Social Icons */}
                   <ul className="social-icons">
-                     <li className="social"><a href="https://www.instagram.com/websitevikreta/" target="_BLANK" rel="noreferrer"><i class="bi bi-instagram"></i></a></li>
-                     <li className="social"><a href="https://www.linkedin.com/company/websitevikreta/" target="_BLANK" rel="noreferrer"><i class="bi bi-linkedin"></i></a></li>
+                     <li className="social"><a href="https://www.instagram.com/websitevikreta/" target="_BLANK" rel="noreferrer"><i className="bi bi-instagram"></i></a></li>
+                     <li className="social"><a href="https://www.linkedin.com/company/websitevikreta/" target="_BLANK" rel="noreferrer"><i className="bi bi-linkedin"></i></a></li>
                   </ul>
                </div>
             </div>
          </nav>
          <NavbarCTA />
-
       </header>
-   )
+   );
 }
 
 export default Nav;
