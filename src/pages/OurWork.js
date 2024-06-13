@@ -41,7 +41,7 @@ const OurWork = () => {
    // Variants for grid item animations
    const gridItemVariants = {
       hidden: { opacity: 0, scale: 0.8 },
-      show: { opacity: 1, scale: 1, transition: { duration: 1 } }
+      show: { opacity: 1, scale: 1, transition: { duration: 0.5 } }
    };
 
    return (
@@ -71,7 +71,8 @@ const OurWork = () => {
                   ))}
                </div>
 
-               <motion.div className="gallery-grid">
+               
+               <motion.div className="gallery-grid" key={activeBtn}>  {/*added key yo forcefully re-render so that all items get animate*/}
                   {items.map((project) => (
                      <motion.div
                         key={project.id}
