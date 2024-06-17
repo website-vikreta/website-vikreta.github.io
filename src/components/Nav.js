@@ -1,5 +1,5 @@
 // importing react packages
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 import { HashLink as ScrollLink } from "react-router-hash-link";
 
 // Importing components
@@ -13,12 +13,21 @@ import LogoIcon from "../assets/LogoIcon.svg";
 
 
 const Nav = () => {
+   const location = useLocation();
 
    const unCheck = () => {
       document.querySelectorAll("#navToggle")[0].checked = false;
    }
+
    const scrollUp = () => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+   }
+
+   const handleHomeClick = () => {
+      if (location.pathname === "/") {
+         scrollUp();
+      }
+      unCheck();
    }
 
    return (
@@ -43,7 +52,7 @@ const Nav = () => {
                {/* navigation list items */}
                <div className="wrapper">
                   <ul className="nav-list">
-                     <li className="nav-item" onClick={unCheck}><Link to="/">Home</Link></li>
+                     <li className="nav-item" onClick={handleHomeClick}><Link to="/">Home</Link></li>
                      <li className="nav-item" onClick={unCheck}><ScrollLink smooth to="../#aboutUs">About Us</ScrollLink></li>
                      <li className="nav-item" onClick={unCheck}><ScrollLink smooth to="../#services">Our Services</ScrollLink></li>
                      <li className="nav-item" onClick={unCheck}><Link to="/work">Our Work</Link></li>
@@ -51,16 +60,15 @@ const Nav = () => {
                   </ul>
                   {/* Social Icons */}
                   <ul className="social-icons">
-                     <li className="social"><a href="https://www.instagram.com/websitevikreta/" target="_BLANK" rel="noreferrer"><i class="bi bi-instagram"></i></a></li>
-                     <li className="social"><a href="https://www.linkedin.com/company/websitevikreta/" target="_BLANK" rel="noreferrer"><i class="bi bi-linkedin"></i></a></li>
+                     <li className="social"><a href="https://www.instagram.com/websitevikreta/" target="_BLANK" rel="noreferrer"><i className="bi bi-instagram"></i></a></li>
+                     <li className="social"><a href="https://www.linkedin.com/company/websitevikreta/" target="_BLANK" rel="noreferrer"><i className="bi bi-linkedin"></i></a></li>
                   </ul>
                </div>
             </div>
          </nav>
          <NavbarCTA />
-
       </header>
-   )
+   );
 }
 
 export default Nav;

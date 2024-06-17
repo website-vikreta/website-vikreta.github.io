@@ -139,8 +139,47 @@ body.navbar-cta-show .navbar-cta {
    }
 
    &:has(.close.hide) {
-      top: -3rem !important;
+      top: -25% !important;
    }
+}
+
+// -----------------------------------------
+// Preload
+// -----------------------------------------
+
+.preload {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: map-get($map: $black-colors, $key: dark);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 9999;
+}
+
+.spinner {
+   width: 50px;
+   height: 50px;
+
+   animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+.preload h1 {
+   font-size: 24px;
+   color: #333; /* text color */
+   margin-top: 20px;
 }
 
 // -----------------------------------------
@@ -257,17 +296,19 @@ body.navbar-cta-show .navbar-cta {
    &:hover {
       background: $yellow;
       @include dark-color(dark);
-   }
-
-   &.primary:hover {
-      background: transparent;
-      color: inherit;
+      background: $light;
+      filter: drop-shadow(4px 4px 0 rgba($yellow, 0.5));
    }
 }
 
 // -----------------------------------------
 // Forms
 // -----------------------------------------
+textarea {
+   min-height: 150px;
+   resize: none;
+}
+
 .form-group {
    width: 100%;
 
@@ -296,9 +337,65 @@ body.navbar-cta-show .navbar-cta {
    }
 }
 
-textarea {
-   min-height: 150px;
-   resize: none;
+// Specific styles for react-phone-input-2 to match form-control
+.react-tel-input {
+   .form-control {
+      @include dark-color-bg(dark);
+      color: $light;
+      border: 1px solid map-get($map: $black-colors, $key: light);
+      border-radius: 0;
+      padding-left: 50px;
+      width: 100%;
+      height: 3.5rem;
+   }
+
+   .flag-dropdown {
+      background-color: map-get($map: $black-colors, $key: dark);
+      border: 1px solid map-get($map: $black-colors, $key: light);
+      border-radius: 0;
+   }
+
+   .selected-flag {
+      background-color: map-get($map: $black-colors, $key: dark);
+      border: 1px solid map-get($map: $black-colors, $key: light);
+      border-radius: 0;
+
+      &:hover,
+      &:focus,
+      &:active {
+         background-color: map-get($map: $black-colors, $key: dark);
+      }
+   }
+
+   .form-control:focus {
+      border-color: rgba(255, 214, 0, 0.5);
+   }
+
+   .country-list {
+      background-color: map-get($map: $black-colors, $key: light);
+      color: $light;
+
+      .country {
+         &:hover {
+            background-color: map-get($map: $black-colors, $key: dark);
+         }
+
+         &.highlight {
+            background-color: map-get(
+               $map: $black-colors,
+               $key: dark
+            ) !important;
+         }
+         .dial-code {
+            color: $light;
+         }
+      }
+
+      .selected-flag {
+         background-color: map-get($map: $black-colors, $key: dark);
+         color: $light;
+      }
+   }
 }
 
 // -----------------------------------------

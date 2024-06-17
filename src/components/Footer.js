@@ -33,7 +33,7 @@ const Footer = () => {
                      <a href="https://www.linkedin.com/company/websitevikreta/" target="_BLANK" rel="noreferrer"><i className="icon bi bi-linkedin"></i>&nbsp;  linkedin</a>
                   </div>
                   <div className="line"></div>
-                  <p className="copyright">© 2020-23 <span>Website</span>Vikreta.<br className="break" /> All rights reserved</p>
+                  <p className="copyright">© 2020-24 <span>Website</span>Vikreta.<br className="break" /> All rights reserved</p>
                </div>
             </div>
          </section>

@@ -13,13 +13,13 @@ const AboutSection = () => {
       window.removeEventListener('scroll', onScroll);
       window.addEventListener('scroll', onScroll, { passive: true });
       return () => window.removeEventListener('scroll', onScroll);
-   }, []);   
+   }, []);
 
 
 
-   let totalProjects = 24;
-   let totalWebProjects = 20;
-   let totalClientsServed = 19;
+   let totalProjects = 36;
+   let totalWebProjects = 31;
+   let totalClientsServed = 28;
    let totalOngoingProjects = 3;
 
    const [projectsCompleted, setprojectsCompleted] = useState(0);
