@@ -6,7 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import Nav from './components/Nav';
 import DotRing from './components/cursor/DotRing';
 import Footer from './components/Footer';
-import Preload from './components/Preload'; 
+import Preload from './components/Preload';
 
 // Importing pages
 import HomePage from './pages/HomePage';
@@ -23,70 +23,70 @@ import './styles/main.scss';
 import GoTop from './components/GoTop';
 
 function App() {
-  navbarScroll();
-  navbarCTAScroll();
+   navbarScroll();
+   navbarCTAScroll();
 
-  const location = useLocation();
-  const [loading, setLoading] = useState(true); // State to manage loading status
+   const location = useLocation();
+   const [loading, setLoading] = useState(true); // State to manage loading status
 
-  useEffect(() => {
-    // Set loading to false when all resources are loaded
-    const handleLoad = () => setLoading(false);
-    
-    // Check if the document is already loaded
-    if (document.readyState === 'complete') {
-      setLoading(false);
-    } else {
-      // Add event listeners for load and timeout
-      window.addEventListener('load', handleLoad);
-      setTimeout(() => {
-        setLoading(false); // Fallback in case of a very slow connection
-      }); 
-    }
+   useEffect(() => {
+      // Set loading to false when all resources are loaded
+      const handleLoad = () => setLoading(false);
 
-    return () => {
-      window.removeEventListener('load', handleLoad);
-    };
-  }, []);
+      // Check if the document is already loaded
+      if (document.readyState === 'complete') {
+         setLoading(false);
+      } else {
+         // Add event listeners for load and timeout
+         window.addEventListener('load', handleLoad);
+         setTimeout(() => {
+            setLoading(false); // Fallback in case of a very slow connection
+         });
+      }
 
-  return (
-    <div className="App">
-      {/* Custom Cursor */}
-      <DotRing />
+      return () => {
+         window.removeEventListener('load', handleLoad);
+      };
+   }, []);
 
-      {/* Navigation Bar */}
-      <Nav />
+   return (
+      <div className="App">
+         {/* Custom Cursor */}
+         <DotRing />
 
-      {/* Conditional rendering of preload screen */}
-      {loading ? (
-        <Preload />
-      ) : (
-        <>
-          {/* Render content after loading */}
-          <AnimatePresence exitBeforeEnter>
-            <Switch location={location} key={location.pathname}>
-              <Route path="/" exact>
-                <HomePage />
-              </Route>
-              <Route path="/work" exact>
-                <OurWork />
-              </Route>
-              <Route path="/contact" exact>
-                <ContactUs />
-              </Route>
-            </Switch>
+         {/* Navigation Bar */}
+         <Nav />
 
-            {/* Importing Footer */}
-            <Footer />
-          </AnimatePresence>
-          <Route path="/work/:id">
-            <DetailedWork />
-          </Route>
-          <GoTop />
-        </>
-      )}
-    </div>
-  );
+         {/* Conditional rendering of preload screen */}
+         {loading ? (
+            <Preload />
+         ) : (
+            <>
+               {/* Render content after loading */}
+               <AnimatePresence exitBeforeEnter>
+                  <Switch location={location} key={location.pathname}>
+                     <Route path="/" exact>
+                        <HomePage />
+                     </Route>
+                     <Route path="/work" exact>
+                        <OurWork />
+                     </Route>
+                     <Route path="/contact" exact>
+                        <ContactUs />
+                     </Route>
+                  </Switch>
+
+                  {/* Importing Footer */}
+                  <Footer />
+               </AnimatePresence>
+               <Route path="/work/:id">
+                  <DetailedWork />
+               </Route>
+               <GoTop />
+            </>
+         )}
+      </div>
+   );
 }
 
 export default App;
