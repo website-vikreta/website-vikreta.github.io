@@ -134,7 +134,7 @@ body.navbar-cta-show .navbar-cta {
     position: absolute;
     top: 50%;
     right: 0;
-    transform: translateY(-50%);
+    transform: translateY(-0%);
     cursor: pointer;
   }
 
@@ -288,21 +288,24 @@ body.navbar-cta-show .navbar-cta {
   @include font-weight(medium);
   transition: 0.35s ease-in-out;
 
+
+
   &.primary {
     background: $yellow;
     @include dark-color(dark);
+
   }
 
   &:hover {
     background: $yellow;
     @include dark-color(dark);
+    background: $light;
+    filter: drop-shadow(4px 4px 2px #ae9c42);
   }
 
-  &.primary:hover {
-    background: transparent;
-    color: inherit;
-  }
+
 }
+
 
 // -----------------------------------------
 // Forms
