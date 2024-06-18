@@ -8,7 +8,6 @@ const ContactForm = () => {
    const [nameErr, setNameErr] = useState(null);
    const [emailErr, setEmailErr] = useState(null);
    const [mobileErr, setMobileErr] = useState(null);
-   const [messageErr, setMessageErr] = useState(null);
    const [mobile, setMobile] = useState('');
 
    const sendEmail = (e) => {
@@ -45,16 +44,6 @@ const ContactForm = () => {
       } else {
          setEmailErr(null);
          flag3 = 0;
-      }
-
-      // message validation
-      const tempmsg = e.target.message.value;
-      if (tempmsg === "") {
-         setMessageErr("Message cannot be empty");
-         flag4 = 1;
-      } else {
-         setMessageErr(null);
-         flag4 = 0;
       }
 
       if (flag1 === 0 && flag2 === 0 && flag3 === 0 && flag4 === 0) {
@@ -107,7 +96,7 @@ const ContactForm = () => {
          </div>
          <div className="form-group">
             <textarea className="form-control" name="message" placeholder="What's your query"></textarea>
-            <span className="error">{messageErr != null ? messageErr : ""}</span>
+         
          </div>
          <button className="normal-btn primary">Send an Enquiry</button>
          <div>
