@@ -58,6 +58,9 @@ const ContactForm = () => {
       }
 
       if (flag1 === 0 && flag2 === 0 && flag3 === 0 && flag4 === 0) {
+         // Update the hidden mobile input field value
+         e.target.mobile.value = mobile;
+
          emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, e.target, process.env.REACT_APP_PUBLIC_KEY)
             .then((result) => {
                console.log(result.text);
@@ -87,13 +90,15 @@ const ContactForm = () => {
             </div>
             <div className="form-group">
                <PhoneInput
-                  country={'us'}
+                  country={'in'}
                   value={mobile}
                   onChange={(phone) => setMobile(phone)}
                   inputClass="form-control"
                   placeholder="Your Contact Number"
                />
                <span className="error">{mobileErr != null ? mobileErr : ""}</span>
+               {/* Hidden input field for mobile number */}
+               <input type="hidden" name="mobile" value={mobile} />
             </div>
          </div>
          <div className="form-group">
