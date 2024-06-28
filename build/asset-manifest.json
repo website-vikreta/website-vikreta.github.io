@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.d4842f70.css",
-    "main.js": "/static/js/main.05dfe557.js",
+    "main.js": "/static/js/main.4798a7e9.js",
     "static/js/787.9c1d6841.chunk.js": "/static/js/787.9c1d6841.chunk.js",
     "static/media/MetaThumbz.png": "/static/media/MetaThumbz.8d175b0ab308d9a5140d.png",
     "static/media/blancora-logo.svg": "/static/media/blancora-logo.65b0c44fa720bbffd853fd5232704a25.svg",
@@ -59,11 +59,11 @@
     "static/media/numbers-svg.svg": "/static/media/numbers-svg.322962dfa3c33d8d01b4c26cd0a45c38.svg",
     "static/media/LogoIcon.svg": "/static/media/LogoIcon.a4e50ecc73a36f0c3b3a3cb908f914e7.svg",
     "main.d4842f70.css.map": "/static/css/main.d4842f70.css.map",
-    "main.05dfe557.js.map": "/static/js/main.05dfe557.js.map",
+    "main.4798a7e9.js.map": "/static/js/main.4798a7e9.js.map",
     "787.9c1d6841.chunk.js.map": "/static/js/787.9c1d6841.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d4842f70.css",
-    "static/js/main.05dfe557.js"
+    "static/js/main.4798a7e9.js"
   ]
 }
