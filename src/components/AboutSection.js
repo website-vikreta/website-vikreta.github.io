@@ -74,11 +74,11 @@ const AboutSection = () => {
       }, 200);
    }
 
-   if (offset > 300 && offset < 350) {
-      projectCounter(0, totalProjects)
-      webProjectCounter(0, totalWebProjects);
-      clientCounter(0, totalClientsServed);
-      onGoingCounter(0, totalOngoingProjects);
+   if (offset > 300 && offset < 650) {                   //changed offset upper bound
+      projectCounter(projectsCompleted, totalProjects);   //changed the start from 0->current value, so that it won't start to count each time from 0
+      webProjectCounter(webProjects, totalWebProjects);
+      clientCounter(clientsServed, totalClientsServed);
+      onGoingCounter(onGoingProjects, totalOngoingProjects);
       setOffset(0);
    }
 
