@@ -74,14 +74,29 @@
       margin-top: 2rem;
 
       .row {
-         @include flex-center(20px);
+         display: flex;
+         gap: 20px;
          width: 100%;
          margin: 0;
+      }
+
+      .form-group {
+         flex: 1; /* Make sure form groups take equal space */
       }
 
       .normal-btn {
          width: fit-content;
          height: 3rem;
+      }
+   }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+   .contact-form {
+      .row {
+         flex-direction: column; 
+         gap: 10px;
       }
    }
 }
