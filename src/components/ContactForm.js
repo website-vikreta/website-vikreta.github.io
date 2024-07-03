@@ -130,6 +130,7 @@ const ContactForm = () => {
                <option value="E-commerce">E-commerce</option>
                <option value="UI/UX & Prototyping">UI/UX & Prototyping</option>
                <option value="Web Apps">Web Apps</option>
+               <option value="Something Else">Something Else...</option>
             </select>
             <span className="error">{serviceErr != null ? serviceErr : ""}</span>
          </div>
