@@ -135,7 +135,13 @@ const ContactForm = () => {
             <span className="error">{serviceErr != null ? serviceErr : ""}</span>
          </div>
          <div className="form-group">
-            <input type="text" className="form-control" name="budget" placeholder="Your Budget" value={budget} onChange={(e) => setBudget(e.target.value)} />
+            <select className="form-control" name="budget" value={budget} onChange={(e) => setBudget(e.target.value)}>
+               <option value="">Select Budget</option>
+               <option value="$0 - $1000">$0 - $1000</option>
+               <option value="$1000 - $5000">$1000 - $5000</option>
+               <option value="$5000 - $20000">$5000 - $20000</option>
+               <option value="$20000 onwards">$20000 onwards</option>
+            </select>
             <span className="error">{budgetErr != null ? budgetErr : ""}</span>
          </div>
          <div className="form-group">
