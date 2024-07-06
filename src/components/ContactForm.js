@@ -4,6 +4,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import axios from 'axios';
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
 
 const ContactForm = () => {
    const [nameErr, setNameErr] = useState(null);
@@ -45,7 +46,8 @@ const ContactForm = () => {
       }
 
       // contact validation
-      if (mobile === "" || mobile.length < 10) {
+      const phoneNumber = parsePhoneNumberFromString(mobile, countryCode.toUpperCase());
+      if (!phoneNumber || !phoneNumber.isValid()) {
          setMobileErr("Invalid Contact Number");
          flag2 = 1;
       } else {
@@ -82,8 +84,11 @@ const ContactForm = () => {
       }
 
       if (flag1 === 0 && flag2 === 0 && flag3 === 0 && flag4 === 0 && flag5 === 0 && flag6 === 0) {
+         // Format the phone number
+         const formattedPhoneNumber = phoneNumber.formatInternational();
+
          // Update the hidden mobile input field value
-         e.target.mobile.value = mobile;
+         e.target.mobile.value = formattedPhoneNumber;
          e.target.service.value = service;
          e.target.budget.value = budget;
 
