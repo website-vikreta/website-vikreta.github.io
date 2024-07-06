@@ -1,8 +1,9 @@
+import { useEffect, useState } from 'react';
 import emailjs from 'emailjs-com';
-import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import axios from 'axios';
 
 const ContactForm = () => {
    const [nameErr, setNameErr] = useState(null);
@@ -13,6 +14,18 @@ const ContactForm = () => {
    const [budget, setBudget] = useState('');
    const [serviceErr, setServiceErr] = useState(null);
    const [budgetErr, setBudgetErr] = useState(null);
+   const [countryCode, setCountryCode] = useState(''); // store country code
+
+   useEffect(() => {
+      // Fetch user's country code
+      axios.get('https://ipapi.co/json/')
+         .then((response) => {
+            setCountryCode(response.data.country_code.toLowerCase());
+         })
+         .catch((error) => {
+            console.error("Error fetching country code:", error);
+         });
+   }, []);
 
    const sendEmail = (e) => {
       e.preventDefault();
@@ -105,7 +118,7 @@ const ContactForm = () => {
             </div>
             <div className="form-group">
                <PhoneInput
-                  country={'in'}
+                  country={countryCode}
                   value={mobile}
                   onChange={(phone) => setMobile(phone)}
                   inputClass="form-control"
