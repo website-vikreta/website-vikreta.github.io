@@ -21,6 +21,7 @@ import { navbarCTAScroll } from './utility/navbarCTAScroll';
 // Importing style
 import './styles/main.scss';
 import GoTop from './components/GoTop';
+import Calculator from './pages/Calculator';
 
 function App() {
    navbarScroll();
@@ -73,6 +74,9 @@ function App() {
                      </Route>
                      <Route path="/contact" exact>
                         <ContactUs />
+                     </Route>
+                     <Route path="/cal-ux" exact>
+                        <Calculator/>
                      </Route>
                   </Switch>
 
