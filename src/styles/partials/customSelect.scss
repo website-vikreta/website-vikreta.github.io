@@ -1,0 +1,132 @@
+.c-dropdown-btn{
+  display: flex;
+  height: var(--Radius-50, 50px);
+  padding: 12px var(--Radius-20, 20px);
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 5px;
+  border: 1px solid rgba(180, 180, 180, 0.30);
+  width: 568px;
+
+  h4{
+    color: #FFF;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.c-dropdown {
+    position: relative;
+  }
+  
+  .c-dropdown-content {
+    position: absolute;
+    display: flex;
+    top: 115%;
+    left: 0;
+    width: 568px;
+    max-height: 207px;
+    overflow-y: auto; 
+    padding-right: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+    border-radius: 5px;
+    background: #FFF;
+    z-index: 1000;
+  }
+  
+  .c-dropdown-content::-webkit-scrollbar {
+    width: 5px; 
+  }
+  
+  .c-dropdown-content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .c-dropdown-content::-webkit-scrollbar-thumb {
+    background: #FFD600;
+    height: 141px;
+    border-radius: 0px;
+    border-right: 0px;
+  }
+  
+  .c-dropdown-content::-webkit-scrollbar-thumb:hover {
+    background: #FFD600;
+  }
+  
+  .c-dropdown-item {
+    display: flex;
+    padding: var(--Paragraph-Space, 16px) var(--Radius-20, 20px);
+    align-items: center;
+    gap: var(--Radius-10, 10px);
+    align-self: stretch;
+    background: #FFF;
+    box-shadow: 0px 1px 0px 0px rgba(51, 51, 51, 0.10);
+  }
+  
+  .c-dropdown-item-title {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 8px;
+    flex: 1 0 0;
+    flex-wrap: wrap;
+    color: #333333;
+  }
+  
+  .c-option-cost {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+  }
+  
+  .c-option-time {
+    color: #333;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.8;
+  }
+  
+  .c-option-time span {
+    opacity: 0.8;
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .c-option-rectangle {
+    width: 5px;
+    align-self: stretch;
+    opacity: 0.1;
+    background: #333;
+  }
+  
+  .c-option-cost-cost {
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    opacity: 0.8;
+  }
+
+  .c-dropdown-item.selected {
+    background-color: #e0e0e0;
+    color: #000;
+  }
+  
+  

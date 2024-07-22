@@ -4,6 +4,11 @@ import { useEffect, useState } from "react";
 // import CalForm from "../components/CalForm";
 import calData from "../json/calData";
 import currancy from "../json/currancy";
+import PhoneInput from "react-phone-input-2";
+// import customSelect from "../components/customSelect"
+import CustomDropdown from "../components/CustomDropdown";
+// import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Calculator = () => {
   useEffect(() => {
@@ -15,7 +20,9 @@ const Calculator = () => {
   const curr = currancy();
 
   const [selectedCurrency, setSelectedCurrency] = useState("USD");
-  // const [selectedFlag,setSelectedFlag] = useState()
+  const first = curr.find((item)=>item.name==="USD")?.flag
+  // console.log(first);
+  const [selectedFlag,setSelectedFlag] = useState(first)
   const [factor,setFactor] = useState(1)
   const [symbol,setSymbol] = useState('$')
   // const handleChange = (e) => setSelectedCurrency(e.target.value);
@@ -28,46 +35,67 @@ const Calculator = () => {
     const next = curr.find((item)=>item.name===e.target.value);
     const front1 = next.front;
     setSymbol(next.symbol);
-    // setSelectedFlag(next.flag)
+    setSelectedFlag(next.flag)
     const mul = front1*back1;
     console.log(mul);
     setFactor(front1);
     // console.log(factor)
   }
 
-
-
-
   const [totalCost,setTotalCost] = useState(0);
   const [totalTime,setTotalTime] = useState(4);
 
 
+  var data = [
+    { title: `Fast Train - Under ${totalTime - 4} Weeks`, name: 'Fast Train', cost: 100, additionalTime: 0 },
+    { title: `Slow Train - Up to ${totalTime} Weeks`, name: 'Slow Train', cost: 0, additionalTime: 0 }
+  ];
+
+  if(totalTime-4<=4){
+    data = [
+      { title: `Slow Train - Up to ${totalTime} Weeks`, name: 'Slow Train', cost: 0, additionalTime: 0 }
+    ];
+  }
+
   const [timeline,setTimeline] = useState('');
 
+  const [isClicked,setIsClicked] = useState(false);
   const [formState, setFormState] = useState({});
   const [visibleQuestions, setVisibleQuestions] = useState(["type","typeOfWebsite"]);
 
-  const handleTypeChange = (event) => {
-    const { name, value } = event.target;
-    console.log(name, value);
-    const currentQuestion = questions.find((item) => item.name === name);
-    const cost = currentQuestion.data.find((item) => item.name === value)?.cost || 0;
-    const time = currentQuestion.data.find((item) => item.name === value)?.additionalTime || 0;
-    const que = questions.find((item)=> item.name===name)?.question;
-    const title = currentQuestion.data.find((item)=>item.name===value)?.title
-    // console.log(que);
-
+  const handleTypeChange = (event = null, name = "", value = "") => {
+    if (name === 'timeline') {
+      setTimeline(value);
+      return;
+    }
+    setTimeline('');
+    var tempName = name;
+    var tempValue = value;
+  
+    if (event) {
+      tempName = event.target.name;
+      tempValue = event.target.value;
+    } else {
+      tempName = name;
+      tempValue = value;
+    }
+  
+    const currentQuestion = questions.find((item) => item.name === tempName);
+    const cost = currentQuestion.data.find((item) => item.name === tempValue)?.cost || 0;
+    const time = currentQuestion.data.find((item) => item.name === tempValue)?.additionalTime || 0;
+    const que = questions.find((item) => item.name === tempName)?.question;
+    const title = currentQuestion.data.find((item) => item.name === tempValue)?.title;
+  
     setFormState((prevState) => {
       const newState = {
         ...prevState,
-        [name]: [title, cost, time,que]
+        [tempName]: [title, cost, time, que]
       };
   
-      console.log(newState);
-  
-      const nextQuestionName = currentQuestion.data.find((item) => item.name === value)?.visibleAfterLoad;
+      const nextQuestionName = currentQuestion.data.find((item) => item.name === tempValue)?.visibleAfterLoad;
+      
       if (nextQuestionName) {
-        const newVisibleQuestions = visibleQuestions.slice(0, visibleQuestions.indexOf(name) + 1);
+        const newVisibleQuestions = visibleQuestions.slice(0, visibleQuestions.indexOf(tempName) + 1);
         setVisibleQuestions([...newVisibleQuestions, nextQuestionName]);
   
         const updatedFormState = { ...newState };
@@ -82,14 +110,22 @@ const Calculator = () => {
           setFormState(updatedFormState);
         }
       } else {
-        setVisibleQuestions(visibleQuestions.slice(0, visibleQuestions.indexOf(name) + 1));
-      }
+        const newVisibleQuestions = visibleQuestions.slice(0, visibleQuestions.indexOf(tempName) + 1);
+        setVisibleQuestions(newVisibleQuestions);
   
-      // calculateTotal();
+        const updatedFormState = { ...newState };
+        Object.keys(updatedFormState).forEach((key) => {
+          if (visibleQuestions.indexOf(key) === -1) {
+            delete updatedFormState[key];
+          }
+        });
+        setFormState(updatedFormState);
+      }
   
       return newState;
     });
   };
+  
 
 
   const calculateTotal = () => {
@@ -108,7 +144,6 @@ const Calculator = () => {
   useEffect(() => {
     calculateTotal();
   }, [formState]);
-  
 
   const renderQuestion = (question) => {
     const { name, questionType, data, question: questionText } = question;
@@ -116,44 +151,141 @@ const Calculator = () => {
     if (questionType === 'dropdown') {
       return (
         <div key={name} className="type-wrapper">
-        <label className="queLabel">{questionText}<span> *</span></label>
-        <div className="custom-select">
-            <select name={name} onChange={handleTypeChange} className="web-type">
-                <option value="">Select an option</option>
-                {data.map((option) => (
-                    <option key={option.name} value={option.name} className="try1">
-                        {option.title}
-                    </option>
-                ))}
-            </select>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="dropdown-cursor">
-              <g id="ChevronDown">
-              <path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M1.64689 4.64592C1.69334 4.59935 1.74852 4.56241 1.80926 4.5372C1.87001 4.512 1.93513 4.49902 2.00089 4.49902C2.06666 4.49902 2.13178 4.512 2.19253 4.5372C2.25327 4.56241 2.30845 4.59935 2.35489 4.64592L8.00089 10.2929L13.6469 4.64592C13.6934 4.59943 13.7486 4.56255 13.8093 4.53739C13.87 4.51223 13.9352 4.49929 14.0009 4.49929C14.0666 4.49929 14.1317 4.51223 14.1925 4.53739C14.2532 4.56255 14.3084 4.59943 14.3549 4.64592C14.4014 4.6924 14.4383 4.74759 14.4634 4.80833C14.4886 4.86907 14.5015 4.93417 14.5015 4.99992C14.5015 5.06566 14.4886 5.13076 14.4634 5.1915C14.4383 5.25224 14.4014 5.30743 14.3549 5.35392L8.35489 11.3539C8.30845 11.4005 8.25327 11.4374 8.19253 11.4626C8.13178 11.4878 8.06666 11.5008 8.00089 11.5008C7.93513 11.5008 7.87001 11.4878 7.80926 11.4626C7.74852 11.4374 7.69334 11.4005 7.64689 11.3539L1.64689 5.35392C1.60033 5.30747 1.56339 5.2523 1.53818 5.19155C1.51297 5.13081 1.5 5.06568 1.5 4.99992C1.5 4.93415 1.51297 4.86903 1.53818 4.80828C1.56339 4.74754 1.60033 4.69236 1.64689 4.64592Z" fill="white"/>
-              </g>
-            </svg>
-        </div>
+          {
+            name==="typeOfWebsite" ? (
+              <div className="typeDiv">
+                <label className="queLabel">{questionText}<span> *</span></label>
+                <div className="curr-div">
+                  <p>Select Currency</p>
+                  <div className="curr-option ">
+                      <div className="curr-name">
+                        {/* <p className=""></p> */}
+                        <p className=""><span dangerouslySetInnerHTML={{ __html: selectedFlag }}></span> <span style={{color:"#FFD600"}}> {symbol}</span></p>
+                      </div>
+                      <div className="">
+                      <select value={selectedCurrency} name="" onChange={handleChange} className="black-background">
+                        <option value="USD">USD </option>
+                        <option value="INR">INR</option>
+                        <option value="EUR">EUR</option>
+                      </select>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+            ):(
+              <label className="queLabel">{questionText}<span> *</span></label>
+            )
+          } 
+
+          <CustomDropdown data={data} handleTypeChange={handleTypeChange} name={name} factor={factor} symbol={symbol} selectedCurrency={selectedCurrency} formatNumberToIndianCurrency={formatNumberToIndianCurrency}/>
     </div>
       );
     }
 
     if (questionType === 'radio') {
       return (
-        <div key={name} className="form-question">
+        <div key={name} className="type-wrapper">
           <label className="queLabel">{questionText}<span> *</span></label>
-          <div className="extra-options">
-            {data.map((option) => (
-              <div key={option.name} className="form-option">
-                <input
-                  type="radio"
-                  name={name}
-                  value={option.name}
-                  id={option.name}
-                  onChange={handleTypeChange}
-                />
-                <label htmlFor={option.name}>{option.title}</label>
-              </div>
-            ))}
-          </div>
+          {
+            name==="type" ?(
+              <>
+                <div className="r-type">
+                  {data.map((option)=>(
+
+                    <div className="r-option" onChange={(e)=>handleTypeChange(e,"","")}>
+                      <input
+                          type="radio"
+                          name={name}
+                          value={option.name}
+                          id={option.name}
+                          
+                        />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none" className="radio-symbol">
+                    <circle cx="8" cy="8.5" r="7.5" stroke="#FFD600"/>
+                    </svg>
+                    <label htmlFor={option.name} className="optionLabel">{option.title}</label>
+                    </div>
+                  ))}
+                  <Link to='/contact' className="r-option">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none" className="radio-symbol">
+                    <circle cx="8" cy="8.5" r="7.5" stroke="#FFD600"/>
+                    </svg>
+                    <label className="optionLabel">Web App</label>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <g clip-path="url(#clip0_2524_1326)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.477 2.625C6.477 2.52554 6.43749 2.43016 6.36717 2.35984C6.29684 2.28951 6.20146 2.25 6.102 2.25H1.125C0.826631 2.25 0.540483 2.36853 0.329505 2.5795C0.118526 2.79048 0 3.07663 0 3.375L0 10.875C0 11.1734 0.118526 11.4595 0.329505 11.6705C0.540483 11.8815 0.826631 12 1.125 12H8.625C8.92337 12 9.20952 11.8815 9.4205 11.6705C9.63147 11.4595 9.75 11.1734 9.75 10.875V5.898C9.75 5.79854 9.71049 5.70316 9.64017 5.63283C9.56984 5.56251 9.47446 5.523 9.375 5.523C9.27554 5.523 9.18016 5.56251 9.10983 5.63283C9.03951 5.70316 9 5.79854 9 5.898V10.875C9 10.9745 8.96049 11.0698 8.89017 11.1402C8.81984 11.2105 8.72446 11.25 8.625 11.25H1.125C1.02554 11.25 0.930161 11.2105 0.859835 11.1402C0.789509 11.0698 0.75 10.9745 0.75 10.875V3.375C0.75 3.27554 0.789509 3.18016 0.859835 3.10984C0.930161 3.03951 1.02554 3 1.125 3H6.102C6.20146 3 6.29684 2.96049 6.36717 2.89016C6.43749 2.81984 6.477 2.72446 6.477 2.625Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0005 0.375C12.0005 0.275544 11.961 0.180161 11.8906 0.109835C11.8203 0.0395088 11.7249 0 11.6255 0L7.87547 0C7.77602 0 7.68063 0.0395088 7.61031 0.109835C7.53998 0.180161 7.50047 0.275544 7.50047 0.375C7.50047 0.474456 7.53998 0.569839 7.61031 0.640165C7.68063 0.710491 7.77602 0.75 7.87547 0.75H10.7202L4.60997 6.8595C4.57511 6.89437 4.54745 6.93576 4.52858 6.98131C4.50971 7.02687 4.5 7.07569 4.5 7.125C4.5 7.17431 4.50971 7.22313 4.52858 7.26869C4.54745 7.31424 4.57511 7.35563 4.60997 7.3905C4.64484 7.42537 4.68623 7.45302 4.73179 7.47189C4.77734 7.49076 4.82617 7.50047 4.87547 7.50047C4.92478 7.50047 4.97361 7.49076 5.01916 7.47189C5.06472 7.45302 5.10611 7.42537 5.14097 7.3905L11.2505 1.28025V4.125C11.2505 4.22446 11.29 4.31984 11.3603 4.39016C11.4306 4.46049 11.526 4.5 11.6255 4.5C11.7249 4.5 11.8203 4.46049 11.8906 4.39016C11.961 4.31984 12.0005 4.22446 12.0005 4.125V0.375Z" fill="white"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_2524_1326">
+                          <rect width="12" height="12" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    </Link>
+                </div>
+              </>
+            ):(<>
+                  <div className="extra-options" >
+                    {data.map((option) => (
+                      <div className="extra-options" >
+                        
+                        
+                      <div key={option.name} className="form-option" onChange={(e)=>handleTypeChange(e,"","")}>
+                          
+                        <input
+                          type="radio"
+                          name={name}
+                          value={option.name}
+                          id={option.name}
+                          
+                        />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none" className="radio-symbol">
+                          <circle cx="8" cy="8.5" r="7.5" stroke="#FFD600"/>
+                        </svg>
+                        <label htmlFor={option.name} className="optionLabel">{option.title}</label>
+                        
+                        <div className="option-cost">
+                          {
+                            option.cost===0 && option.additionalTime===0 ? (
+                              <>
+                                <p className="option-time">No addtional charges / time required</p>
+                                
+                              </>
+                            ):(
+                              <>
+                              {/* <p className="option-cost-cost">+{symbol}{option.cost*factor}</p> */}
+                              {
+                                option.name==="yes"|| option.name==="no"?(
+                                  <>
+                                  
+                                    <p className="strikethrough"> {symbol} {selectedCurrency === "INR" ? formatNumberToIndianCurrency(option.cost * factor) : (option.cost * factor).toLocaleString()}</p>
+                                    <div className="option-rectangle"></div>
+                                    <p className="option-time">additional <span className="strikethrough">{option.additionalTime} week</span> <span>0 week </span>of time</p>
+                                  </>
+                                ):(
+                                  <>
+                                    <p className="option-cost-cost"> {symbol} {selectedCurrency === "INR" ? formatNumberToIndianCurrency(option.cost * factor) : (option.cost * factor).toLocaleString()}</p>
+                                    <div className="option-rectangle"></div>
+                                    <p className="option-time">additional <span>{option.additionalTime} week</span> of time</p>
+                                  </>
+                                )
+                              }                 
+                              </>
+                            )
+                          }
+                            {/* <p className="option-cost-cost">{option.cost}</p>
+                            <div className="option-rectangle"></div>
+                            <p className="option-time">additional <span>{option.additionalTime} week</span> of time</p> */}
+                        </div>
+                      </div>
+                      </div>
+                    ))}
+                  </div>
+            </>)
+          }
         </div>
       );
     }
@@ -181,7 +313,6 @@ const Calculator = () => {
       <motion.section className="motion-section" variants={smoothFade}>
         <div className="content">
           <div className="title-wrapper">
-            {/* <h2>Calculate cost for UI/UX of your website</h2> */}
             <h1 className="title">
               Website <span>Cost Calculator</span>
             </h1>
@@ -189,128 +320,166 @@ const Calculator = () => {
             <div className="button-group1">
               <a href="/#cal" className="normal-btnp primary">Get Started Now</a>
             </div>
-          </div>
-          
-          
+          </div> 
         </div>
-
+        
         <div className="cal" id={"cal"}>
-          
           <div className="form-container">
-            <div className="makeFlex">
-              <h3 className="text-xl font-semibold">Selected Currency</h3>
-              <div className="gap-x">
-                <select value={selectedCurrency} onChange={handleChange} className="currency-dropdown">
-                  <option value="USD">USD </option>
-                  <option value="INR">INR</option>
-                  <option value="EUR">EUR</option>
-                </select>
-              </div>
-            </div>
-            <form className="test">
-
+            <div className="">
                 {questions.filter((question) => visibleQuestions.includes(question.name)).map((question) => renderQuestion(question))}
                 {Object.keys(formState).includes('cms') && (
                   <div className="type-wrapper">
-                    <p>What is the timeline you have in mind for launch?</p>
-                    <div className="custom-select">
-                      <select name='Select Value' id="" className='web-type' value={timeline} onChange={(e)=>setTimeline(e.target.value)}>
-                        <option value="">Selected Value</option>
-                          {
-                            totalTime>=8 && (
-                              <option value="Fast Train (+ $100)">Fast Train - Under {totalTime-4} Weeks (+ $ 100)</option>
-                            )
-                          }
-                          
-                        <option value="Slow Train (+ $0.0)">Slow Train - Up to {totalTime} Weeks (No Extra Charges)</option>
-                      </select>
+                    <label className="queLabel">What is the timeline you have in mind for launch?</label>
+                    <div className="form-group">
+                      <CustomDropdown data={data} handleTypeChange={handleTypeChange} name="timeline" factor={factor} symbol={symbol} selectedCurrency={selectedCurrency} formatNumberToIndianCurrency={formatNumberToIndianCurrency}/>
                     </div>
                   </div>
                 )}
-              </form>
+              </div>
           </div>
           <div className="summary">
-            <div className="summary-container">
-              <div className="heading1">
-                <h3 className="text-3xl font-semibold">Summary</h3>
-              </div>
-              <div className="summary-row">
-                <div className="name-div">
-                  <h3 >Name</h3>
+              <div className="summary-container">
+                <div className="heading1">
+                  <h3 className="text-3xl font-semibold">Summary</h3>
                 </div>
-                <div className="cost-div">
-                  <h3>Cost</h3>
-                </div>
-                <div className="cost-div">
-                  <h3>Time</h3>
-                </div>
-              </div>
-              {Object.keys(formState).map((key) => (
                 <div className="summary-row">
-                  <div className="">  
-                    <div key={key} className="summary-item">
-                      <p className="main">{formState[key][3]} : </p>
-                      <p className="sub">{formState[key][0]}</p>
-                    </div>
+                  <div className="name-div">
+                    <h3 >Name</h3>
                   </div>
-                  <div className="">
-                    <div className="cost">
-                      <p className=""> {symbol} {selectedCurrency === "INR" ? formatNumberToIndianCurrency(formState[key][1] * factor) : (formState[key][1] * factor).toLocaleString()}</p>
-                    </div>
+                  <div className="cost-div">
+                    <h3>Cost</h3>
                   </div>
-                  <div className="">
-                    <div className="cost">
-                      <p className="">{formState[key][2]} Week</p>
-                    </div>
+                  <div className="cost-div">
+                    <h3>Time</h3>
                   </div>
                 </div>
-              ))}
-              {timeline.length > 0 && (
+                {visibleQuestions.map((key) => {
+                  const questionState = formState[key];
+                  if (!questionState || !questionState[0]) return null;
+
+                  return (
+                    <div key={key} className="summary-row dashed">
+                      <div className="summary-item">
+                        <p className="main">{questionState[3]}</p>
+                        <p className="sub">{questionState[0]}</p>
+                      </div>
+                      <div className="cost">
+                        <p>
+                          {symbol}
+                          {selectedCurrency === "INR"
+                            ? formatNumberToIndianCurrency(questionState[1] * factor)
+                            : (questionState[1] * factor).toLocaleString()}
+                        </p>
+                      </div>
+                      <div className="cost">
+                        {questionState[2] === 0 ? (
+                          <p className="dash">—</p>
+                        ) : (
+                          <p>{questionState[2]} Week</p>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+                {timeline.length > 0 && (
+                  <div className="summary-row dashed">
+                    <div className="summary-item">
+                      <p className="main">What is the timeline you have in mind for launch?*</p>
+                      {timeline === "Fast Train" && (
+                        <p className="sub">Fast Train ( {symbol}{100 * factor}) </p>
+                      )}
+                      {timeline === "Slow Train" && (
+                        <p className="sub">Slow Train ( $0.0)</p>
+                      )}
+                    </div>
+                    <div className="cost">
+                      {timeline === "Fast Train" && (
+                        <p className=""> {symbol} {100 * factor}</p>
+                      )}
+                      {timeline === "Slow Train" && (
+                        <p className=""> {symbol} {0 * factor}</p>
+                      )}
+                    </div>
+                    <div className="cost">
+                    <p className="">—</p>
+                    </div>
+                  </div>
+                )}
                 <div className="summary-row">
                   <div className="summary-item">
-                    <p className="main">What is the timeline you have in mind for launch?*</p>
-                    {timeline === "Fast Train (+ $100)" && (
-                      <p className="sub">Fast Train ( {symbol}{100 * factor}) </p>
-                    )}
-                    {timeline === "Slow Train (+ $0.0)" && (
-                      <p className="sub">Slow Train ( $0.0)</p>
+                  </div>
+                  
+                  <div className="cost">
+                    {timeline === "Fast Train" ? (
+                      <p className="total-cost">~ {symbol}{selectedCurrency === "INR" ? formatNumberToIndianCurrency((totalCost + 100) * factor) : ((totalCost + 100) * factor).toLocaleString()}</p>
+                    ) : (
+                      <p className="total-cost">~ {symbol}{selectedCurrency === "INR" ? formatNumberToIndianCurrency(totalCost * factor) : (totalCost * factor).toLocaleString()}</p>
                     )}
                   </div>
                   <div className="cost">
-                    {timeline === "Fast Train (+ $100)" && (
-                      <p className="main"> {symbol} {100 * factor}</p>
-                    )}
-                    {timeline === "Slow Train (+ $0.0)" && (
-                      <p className="main"> {symbol} {0 * factor}</p>
+                    
+                    {timeline === "Fast Train" ? (
+                      <p className="total-cost">{totalTime-4} Weeks</p>
+                    ) : (
+                      <p className="total-cost">{totalTime} Weeks</p>
                     )}
                   </div>
                 </div>
-              )}
-              <div className="summary-row">
-                <div className="summary-item">
-                  <h2>Total :</h2>
-                </div>
-                
-                <div className="cost">
-                  {timeline === "Fast Train (+ $100)" ? (
-                    <p className="total-cost">~ {symbol} {selectedCurrency === "INR" ? formatNumberToIndianCurrency((totalCost + 100) * factor) : ((totalCost + 100) * factor).toLocaleString()}</p>
-                  ) : (
-                    <p className="total-cost">~ {symbol} {selectedCurrency === "INR" ? formatNumberToIndianCurrency(totalCost * factor) : (totalCost * factor).toLocaleString()}</p>
-                  )}
-                </div>
-                <div className="cost">
-                  {timeline === "Fast Train (+ $100)" ? (
-                    <p className="total-cost">{totalTime-4} Weeks</p>
-                  ) : (
-                    <p className="total-cost">{totalTime} Weeks</p>
-                  )}
-                </div>
               </div>
-            </div>
+              {
+                !isClicked && (
+
+                  <div className="place-order">
+                      <div className="order-btn">
+                        <p className="orderLabel" onClick={()=>setIsClicked(true)}>Place Order</p>
+                      </div>
+                    </div>
+                )
+              }
+            {
+              isClicked && (
+                <div className="order-form">
+              <div className="form-group">
+                  <input type="text" placeholder="Your Name" className="form-control"/>   
+              </div>
+              <div className="form-group">
+                <PhoneInput
+                    country="+91"
+                    value=""
+                    inputClass="form-control"
+                    placeholder="Your Contact Number"
+                />
+              </div>
+              <div className="form-group">
+                <input type="email" placeholder="Your Email" className="form-control"/>
+              </div>
+              <div className="form-group">
+                <textarea className="form-control" name="message" placeholder="What's your message?"></textarea>
+              </div>
+              <div className="order-btn1">
+                <p className="orderLabel">Place Order</p>
+                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="Send" clip-path="url(#clip0_2530_2660)">
+                  <path id="Vector" d="M16.3522 0.646028C16.4214 0.71536 16.4688 0.803502 16.4883 0.899505C16.5079 0.995508 16.4988 1.09514 16.4622 1.18603L10.6432 15.733C10.5919 15.8611 10.5063 15.9726 10.3958 16.0552C10.2852 16.1378 10.154 16.1883 10.0166 16.2011C9.87921 16.2139 9.74094 16.1886 9.61702 16.1279C9.49309 16.0672 9.38832 15.9734 9.31422 15.857L6.13622 10.862L1.14122 7.68403C1.02454 7.61001 0.930574 7.5052 0.869693 7.38116C0.808811 7.25711 0.783381 7.11866 0.796208 6.98108C0.809035 6.8435 0.859621 6.71214 0.942384 6.60148C1.02515 6.49083 1.13687 6.4052 1.26522 6.35403L15.8122 0.537028C15.9031 0.50044 16.0027 0.49136 16.0987 0.510916C16.1947 0.530473 16.2829 0.577803 16.3522 0.647028V0.646028ZM7.13422 10.57L9.89522 14.908L14.6282 3.07603L7.13422 10.57ZM13.9212 2.36903L2.08922 7.10203L6.42822 9.86203L13.9212 2.36903Z" fill="black"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_2530_2660">
+                <rect width="16" height="16" fill="white" transform="translate(0.5 0.5)"/>
+                </clipPath>
+                </defs>
+                </svg>
+              </div>
+            </div>     
+              )
+            }
+            
           </div>
+
+          
 
 
          </div>
+         
         </motion.section>
       </motion.div>
     );

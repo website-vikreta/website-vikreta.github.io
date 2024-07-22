@@ -342,14 +342,14 @@ function calData() {
         onChange:"handleContentAssistChange",
         data:[
             {
-                name:"yes",
+                name:"yes1",
                 title:"Yes,I would love to",
-                cost:10000,
+                cost:300,
                 additionalTime:0,
                 visibleAfterLoad:"rank"
             },
             {
-                name:"no",
+                name:"no1",
                 title:"No, I'll provide it",
                 cost:0,
                 additionalTime:0,
@@ -398,13 +398,13 @@ function calData() {
                 name:"yes",
                 title:"Yes",
                 cost:300,
-                additionalTime:0,
+                additionalTime:1,
                 visibleAfterLoad:"cms"
             },
             {
                 name:"no",
                 title:"No",
-                cost:0 ,
+                cost:0,
                 additionalTime:0,
                 visibleAfterLoad:"cms"
             }
