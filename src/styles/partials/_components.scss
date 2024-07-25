@@ -74,22 +74,27 @@
 }
 
 
-//added by prasad
-
 .nav-item {
-   position: relative;
+   position: relative; // Required for absolute positioning of the dropdown
+   display: inline-block; // Keeps nav items on the same line
+   white-space: nowrap; // Prevents text wrapping
  }
-
-.dropdown {
+ 
+ .dropdown {
    position: absolute;
-   top: 100%; /* Position the dropdown below the nav item */
+   top: 100%; 
    left: 0;
-   background-color: white;
-   min-width: 160px;
-   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-   z-index: 1000;
-   display: none; /* Initially hide the dropdown */
+   background-color: rgb(40, 38, 38); 
+   min-width: 160px; 
+   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); 
+   z-index: 1000; 
+   display: none; 
    flex-direction: column;
+   margin-top: 8px; 
+ }
+ 
+ .dropdown.show {
+   display: flex; // Show the dropdown when active
  }
  
  .dropdown-menu {
@@ -103,22 +108,22 @@
  }
  
  .dropdown-menu li a {
-   color: black;
+   color: white; // Text color inside dropdown
    text-decoration: none;
  }
  
  .dropdown-menu li:hover {
-   background-color: #ddd;
+   background-color: #444; // Background color on hover
  }
  
- .dropdown.show {
-   display: flex; 
- }
-
  .dropdown-icon {
    margin-left: 8px;
    transition: transform 0.3s ease;
+   cursor: pointer;
  }
+ 
+ 
+ 
 
  //------------------------------------------------------------------------//
 

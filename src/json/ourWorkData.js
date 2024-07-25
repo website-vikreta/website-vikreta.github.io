@@ -21,6 +21,18 @@ import SBP4 from "../assets/Work/SBP-website/4.jpg"
 import SBP5 from "../assets/Work/SBP-website/5.jpg"
 import SBP6 from "../assets/Work/SBP-website/6.jpg"
 import SBP7 from "../assets/Work/SBP-website/7.jpg"
+
+//sbp webapp
+import sbpapp1 from "../assets/Work/SBP-webApp/sbp_webapp-01.jpg"
+import sbpapp2 from "../assets/Work/SBP-webApp/sbp_webapp-02.jpg"
+import sbpapp3 from "../assets/Work/SBP-webApp/sbp_webapp-03.jpg"
+import sbpapp4 from "../assets/Work/SBP-webApp/sbp_webapp-04.jpg"
+import sbpapp5 from "../assets/Work/SBP-webApp/sbp_webapp-05.jpg"
+import sbpapp6 from "../assets/Work/SBP-webApp/sbp_webapp-06.jpg"
+import sbpapp7 from "../assets/Work/SBP-webApp/sbp_webapp-07.jpg"
+import sbpapp8 from "../assets/Work/SBP-webApp/sbp_webapp-08.jpg"
+import sbpapp9 from "../assets/Work/SBP-webApp/sbp_webapp-09.jpg"
+
 //blancora
 import blancoraLogo from "../assets/Work/blancora/blancora-logo.svg"
 import blancora1 from "../assets/Work/blancora/1.jpg"
@@ -125,7 +137,7 @@ export const workData = [
    {
       id: 1,
       url: "/work/sbpwebapp",
-      thumbnail: "",
+      thumbnail: sbpapp1,
       logo: SBPlogo,
       title: "WebApp Re-design for Sustainable Bitcoin Protocol",
       niche: ["Figma", "UI/UX", "Prototyping", "Web Design", "Web Apps", "Mockups"],
@@ -133,7 +145,7 @@ export const workData = [
       links: [
          { key: "Figma", value: "https://bit.ly/sbp-platform-figma" }
       ],
-      gallery: [
+      gallery: [ sbpapp1, sbpapp2, sbpapp3, sbpapp4, sbpapp5, sbpapp6, sbpapp7, sbpapp8, sbpapp9
         
       ],
       shortDescription: `
