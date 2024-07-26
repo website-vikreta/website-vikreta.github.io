@@ -31,7 +31,8 @@
     left: 0;
     width: 568px;
     max-height: 207px;
-    overflow-y: auto; 
+    overflow-y: auto;
+    overflow-x: hidden; 
     padding-right: 5px;
     flex-direction: column;
     align-items: flex-start;
@@ -64,11 +65,18 @@
     display: flex;
     padding: var(--Paragraph-Space, 16px) var(--Radius-20, 20px);
     align-items: center;
-    gap: var(--Radius-10, 10px);
+    gap: var(--Radius-10, 20px);
     align-self: stretch;
     background: #FFF;
     box-shadow: 0px 1px 0px 0px rgba(51, 51, 51, 0.10);
+    width: calc(100% + 5px);
   }
+
+    .c-dropdown-item:hover {
+      background-color: #d3d3d3;
+      color: #000;
+  }
+
   
   .c-dropdown-item-title {
     display: flex;

@@ -38,21 +38,21 @@ function calData() {
             name: "businessWebsite",
             title: "Business / Informatic Website",
             cost: 0,
-            additionalTime: 1,
+            additionalTime: 5,
             visibleAfterLoad: "platformForBusinessWebsite",
           },
           {
             name: "blog",
             title: "Blog",
             cost: 0,
-            additionalTime: 0,
+            additionalTime: 4,
             visibleAfterLoad: "platformForBlog",
           },
           {
             name: "eCommerce",
             title: "E-Commerce",
             cost: 0,
-            additionalTime: 1,
+            additionalTime: 5,
             visibleAfterLoad: "platformForECommerce",
           },
         ],
@@ -69,7 +69,7 @@ function calData() {
               name: "framer",
               title: "Framer",
               cost: 1200,
-              additionalTime: 0,
+              additionalTime: 1,
               visibleAfterLoad: "noOfPages",
             },
             {
@@ -343,7 +343,7 @@ function calData() {
         data:[
             {
                 name:"yes1",
-                title:"Yes,I would love to",
+                title:"Yes, I would love to",
                 cost:300,
                 additionalTime:0,
                 visibleAfterLoad:"rank"
