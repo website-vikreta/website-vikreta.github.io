@@ -1,3 +1,7 @@
+.c-dropdown{
+   width: 100%;
+}
+
 .c-dropdown-btn{
   display: flex;
   height: var(--Radius-50, 50px);
@@ -7,7 +11,7 @@
   align-self: stretch;
   border-radius: 5px;
   border: 1px solid rgba(180, 180, 180, 0.30);
-  width: 568px;
+  width: 100%;
 
   h4{
     color: #FFF;
@@ -29,10 +33,10 @@
     display: flex;
     top: 115%;
     left: 0;
-    width: 568px;
+    width: 100%;
     max-height: 207px;
-    overflow-y: auto; 
-    padding-right: 5px;
+    overflow-y: auto;
+    overflow-x: hidden; 
     flex-direction: column;
     align-items: flex-start;
     gap: 1px;
@@ -64,11 +68,18 @@
     display: flex;
     padding: var(--Paragraph-Space, 16px) var(--Radius-20, 20px);
     align-items: center;
-    gap: var(--Radius-10, 10px);
+    gap: var(--Radius-10, 20px);
     align-self: stretch;
     background: #FFF;
     box-shadow: 0px 1px 0px 0px rgba(51, 51, 51, 0.10);
+    width: 100%;
   }
+
+    .c-dropdown-item:hover {
+      background-color: #d3d3d3;
+      color: #000;
+  }
+
   
   .c-dropdown-item-title {
     display: flex;

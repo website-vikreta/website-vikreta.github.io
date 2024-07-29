@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function CustomDropdown({
   data,
@@ -11,6 +11,8 @@ export default function CustomDropdown({
 }) {
   const [isActive, setIsActive] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Select");
+  const dropdownRef = useRef(null);
+
 
   const handleChange = (e, title, value) => {
     // e.preventDefault();
@@ -19,8 +21,21 @@ export default function CustomDropdown({
     setSelectedOption(title);
   };
 
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsActive(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="c-dropdown">
+    <div className="c-dropdown" ref={dropdownRef}>
       <div className="c-dropdown-btn" onClick={() => setIsActive(!isActive)}>
         <h4>{selectedOption}</h4>
         <svg
