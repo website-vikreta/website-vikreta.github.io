@@ -74,7 +74,13 @@ export default function CustomDropdown({
               }`}
               onClick={(e) => handleChange(e, option.title, option.name)}
             >
-              <p className="c-dropdown-item-title">{option.title}</p>
+              <p className="c-dropdown-item-title">
+                {option.title}
+                {option.recommended && (
+                  <span className="recommended-label">Recommended</span>
+                )}
+              </p>
+
               <div className="c-option-cost">
                 {option.cost === 0 && option.additionalTime === 0 ? (
                   <p className="c-option-time">

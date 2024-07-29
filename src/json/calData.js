@@ -13,12 +13,14 @@ function calData() {
           title:"New Website",
           cost:0,
           additionalTime:0,
+          recommended:false,
           visibleAfterLoad:"typeOfWebsite",
         },
         {
           name:"revamp",
           title:"Revamp",
           cost:0,
+          recommended:false,
           additionalTime:0,
           visibleAfterLoad:"typeOfWebsite",
         },
@@ -39,6 +41,7 @@ function calData() {
             title: "Business / Informatic Website",
             cost: 0,
             additionalTime: 5,
+            recommended:false,
             visibleAfterLoad: "platformForBusinessWebsite",
           },
           {
@@ -46,6 +49,7 @@ function calData() {
             title: "Blog",
             cost: 0,
             additionalTime: 4,
+            recommended:false,
             visibleAfterLoad: "platformForBlog",
           },
           {
@@ -53,6 +57,7 @@ function calData() {
             title: "E-Commerce",
             cost: 0,
             additionalTime: 5,
+            recommended:false,
             visibleAfterLoad: "platformForECommerce",
           },
         ],
@@ -70,6 +75,7 @@ function calData() {
               title: "Framer",
               cost: 1200,
               additionalTime: 1,
+              recommended:false,
               visibleAfterLoad: "noOfPages",
             },
             {
@@ -77,6 +83,7 @@ function calData() {
               title: "Word Press",
               cost: 1000,
               additionalTime: 0,
+              recommended:true,
               visibleAfterLoad: "noOfPages",
             },
             {
@@ -91,6 +98,7 @@ function calData() {
                 title: "Web Flow",
                 cost: 1200,
                 additionalTime: 0,
+                recommended:true,
                 visibleAfterLoad: "noOfPages",
             },
             {
@@ -98,6 +106,7 @@ function calData() {
               title: "Custom Development",
               cost: 2000,
               additionalTime: 1,
+              recommended:true,
               visibleAfterLoad: "noOfPages",
             },
             {
@@ -105,6 +114,7 @@ function calData() {
                 title: "Wix",
                 cost: 1000,
                 additionalTime: 0,
+                recommended:false,
                 visibleAfterLoad: "noOfPages",
             },
             {
@@ -112,6 +122,7 @@ function calData() {
               title: "Squarespace",
               cost: 1000,
               additionalTime: 0,
+              recommended:false,
               visibleAfterLoad: "noOfPages",
           },
     
@@ -129,6 +140,7 @@ function calData() {
                 name: "wordPress",
                 title: "Word Press",
                 cost: 1000,
+                recommended:true,
                 additionalTime: 0,
                 visibleAfterLoad: "noOfPages",
               },
@@ -137,6 +149,7 @@ function calData() {
                 title: "Custom Development",
                 cost: 2000,
                 additionalTime: 1,
+                recommended:true,
                 visibleAfterLoad: "noOfPages",
               },
               {
@@ -161,6 +174,7 @@ function calData() {
             title: "Woo-Commerce",
             cost: 1000,
             additionalTime: 0,
+            recommended:false,
             visibleAfterLoad: "operatingLocation",
           },
           {
@@ -168,6 +182,7 @@ function calData() {
             title: "Shopify",
             cost: 1200,
             additionalTime: 0,
+            recommended:true,
             visibleAfterLoad: "operatingLocation",
           },
           {
@@ -175,6 +190,7 @@ function calData() {
             title: "Custom Development",
             cost: 3000,
             additionalTime: 1,
+            recommended:false,
             visibleAfterLoad: "operatingLocation",
           },
         ],
@@ -191,6 +207,7 @@ function calData() {
                 title:"Single Country",
                 cost: 0,
                 additionalTime: 0,
+                recommended:false,
                 visibleAfterLoad:"noOfProduct"
             },
             {
@@ -198,6 +215,7 @@ function calData() {
                 title:"Globally",
                 cost:20000,
                 additionalTime:1,
+                recommended:false,
                 visibleAfterLoad:"noOfProduct"
             },
         ]
@@ -214,6 +232,7 @@ function calData() {
                 title:"1 to 50",
                 cost: 0,
                 additionalTime:0,
+                recommended:false,
                 visibleAfterLoad:"noOfPages"
             },
             {   
@@ -221,6 +240,7 @@ function calData() {
                 title:"50 to 100",
                 cost:100,
                 additionalTime:1,
+                recommended:false,
                 visibleAfterLoad:"noOfPages"
             },
             {
@@ -228,6 +248,7 @@ function calData() {
                 title:"100 to 200",
                 cost:300,
                 additionalTime:1,
+                recommended:false,
                 visibleAfterLoad:"noOfPages"
             },
             {
@@ -235,6 +256,7 @@ function calData() {
                 title:"200 to 500",
                 cost:500,
                 additionalTime:2,
+                recommended:false,
                 visibleAfterLoad:"noOfPages"
             },
             {
@@ -242,6 +264,7 @@ function calData() {
                 title:"500 +",
                 cost:1000,
                 additionalTime:2,
+                recommended:false,
                 visibleAfterLoad:"noOfPages"
             },
         ]
@@ -258,6 +281,7 @@ function calData() {
                 title:"0 to 10",
                 cost:0,
                 additionalTime:0,
+                recommended:false,
                 visibleAfterLoad:"designStyle"
             },
             {
@@ -265,6 +289,7 @@ function calData() {
                 title:"10 to 20",
                 cost:300,
                 additionalTime:1,
+                recommended:false,
                 visibleAfterLoad:"designStyle"
             },
             {
@@ -272,6 +297,7 @@ function calData() {
                 title:"20 to 50",
                 cost:1000,
                 additionalTime:2,
+                recommended:false,
                 visibleAfterLoad:"designStyle"
             },
             {
@@ -279,6 +305,7 @@ function calData() {
               title:"50 to 100",
               cost:1200,
               additionalTime:3,
+              recommended:false,
               visibleAfterLoad:"designStyle"
           },
             {
@@ -286,6 +313,7 @@ function calData() {
                 title:"100 +",
                 cost:3000,
                 additionalTime:4,
+                recommended:false,
                 visibleAfterLoad:"designStyle"
             },
         ]
@@ -302,6 +330,7 @@ function calData() {
                 title:"Simple",
                 cost:0,
                 additionalTime:0,
+                recommended:false,
                 visibleAfterLoad:"contentAssist"
             },
             {
@@ -309,6 +338,7 @@ function calData() {
                 title:"Simple yet Attractive",
                 cost:500,
                 additionalTime:0,
+                recommended:true,
                 visibleAfterLoad:"contentAssist"
             },
             {
@@ -316,6 +346,7 @@ function calData() {
                 title:"Moderately Styled",
                 cost:800,
                 additionalTime:1,
+                recommended:false,
                 visibleAfterLoad:"contentAssist"
             },
             {
@@ -323,6 +354,7 @@ function calData() {
                 title:"High End",
                 cost:1000,
                 additionalTime:1,
+                recommended:true,
                 visibleAfterLoad:"contentAssist"
             },
             {
@@ -330,6 +362,7 @@ function calData() {
               title:"World Class",
               cost:3000,
               additionalTime:4,
+              recommended:false,
               visibleAfterLoad:"contentAssist"
           },
         ]
@@ -346,6 +379,7 @@ function calData() {
                 title:"Yes, I would love to",
                 cost:300,
                 additionalTime:0,
+                recommended:false,
                 visibleAfterLoad:"rank"
             },
             {
@@ -353,6 +387,7 @@ function calData() {
                 title:"No, I'll provide it",
                 cost:0,
                 additionalTime:0,
+                recommended:false,
                 visibleAfterLoad:"rank"
             }
         ]
@@ -369,6 +404,7 @@ function calData() {
                 title:"Yes, but only on page SEO",
                 cost:0,
                 additionalTime:0,
+                recommended:false,
                 visibleAfterLoad:"responsive"
             },
             {
@@ -376,6 +412,7 @@ function calData() {
                 title:"Yes, integrated with all necessary tools & on page SEO",
                 cost:100,
                 additionalTime:0,
+                recommended:true,
                 visibleAfterLoad:"responsive"
             },
             {
@@ -383,6 +420,7 @@ function calData() {
                 title:"Dedicated SEO for each page",
                 cost:500,
                 additionalTime:1,
+                recommended:false,
                 visibleAfterLoad:"responsive"
             },
         ]
@@ -397,8 +435,9 @@ function calData() {
             {
                 name:"yes",
                 title:"Yes",
-                cost:300,
-                additionalTime:1,
+                cost:0,
+                additionalTime:0,
+                recommended:false,
                 visibleAfterLoad:"cms"
             },
             {
@@ -406,6 +445,7 @@ function calData() {
                 title:"No",
                 cost:0,
                 additionalTime:0,
+                recommended:false,
                 visibleAfterLoad:"cms"
             }
         ]
@@ -422,6 +462,7 @@ function calData() {
                 title:"No",
                 cost:0,
                 additionalTime:0,
+                recommended:false,
                 visibleAfterLoad:"timeline"
             },
             {
@@ -429,6 +470,7 @@ function calData() {
                 title:"Yes, but minimal",
                 cost:400,
                 additionalTime:0,
+                recommended:false,
                 visibleAfterLoad:"timeline"
             },
             {
@@ -436,6 +478,7 @@ function calData() {
                 title:"Yes, but moderate",
                 cost:500,
                 additionalTime:1,
+                recommended:true,
                 visibleAfterLoad:"timeline",
             },
             {
@@ -443,6 +486,7 @@ function calData() {
                 title:"Yes, I need the complete dedicated CMS for my website",
                 cost:1000,
                 additionalTime:4,
+                recommended:false,
                 visibleAfterLoad:"timeline"
             }
         ]

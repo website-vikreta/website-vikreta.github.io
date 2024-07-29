@@ -75,7 +75,7 @@ function App() {
                      <Route path="/contact" exact>
                         <ContactUs />
                      </Route>
-                     <Route path="/cal-ux" exact>
+                     <Route path="/website-cost-calculator" exact>
                         <Calculator/>
                      </Route>
                   </Switch>
