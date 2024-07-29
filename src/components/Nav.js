@@ -70,7 +70,7 @@ const Nav = () => {
                 />
                 <div className={`dropdown ${dropdownVisible ? 'show' : ''}`}>
                   <ul className="dropdown-menu">
-                    <li><Link to="/cal-ux">Website Cost Calculator</Link></li>
+                    <li onClick={unCheck}><Link to="/website-cost-calculator">Website Cost Calculator</Link></li>
                   </ul>
                 </div>
               </li>

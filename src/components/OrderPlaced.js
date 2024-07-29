@@ -21,7 +21,7 @@ const ThankYou = ({ orderId, setIsSubmitted }) => {
          
          <button className="normal-btn secondary" onClick={(e) => setIsSubmitted(false)}>
             <i className="bi bi-arrow-left"></i>
-            <span>Back to calculator</span>
+            <p className='btn-txt'>Back to calculator</p>
          </button>
       </div>
    );
