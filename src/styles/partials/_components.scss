@@ -331,6 +331,32 @@ body.navbar-cta-show .navbar-cta {
       transition: 0.35s ease-in-out;
    }
 }
+.play-button {
+   display: inline-block;
+   width: 45px;
+   height: 45px;
+   border-radius: 50%;
+   background-color: gray; /* Default gray color */
+   position: relative;
+   transition: background-color 0.3s ease;
+
+   &:hover {
+      background-color: red; /* Red color on hover */
+   }
+
+   &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-left: 10px solid white; /* Play triangle color */
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      transform: translate(-50%, -50%);
+   }
+}
 
 .normal-btn {
    display: flex;
