@@ -14,7 +14,7 @@
    // making navbar flex
    .container {
       @include flex-between;
-      padding: 1.5rem 0;
+      padding: 0.8rem 0;
    }
 
    #navToggle {
@@ -79,44 +79,67 @@
    display: inline-block; // Keeps nav items on the same line
    white-space: nowrap; // Prevents text wrapping
  }
- 
- .dropdown {
+ .navDropdown {
+   padding-block: 1rem;
+ }
+
+ .navDropdownLabel {
+   width: auto;
+ }
+
+ .navDropdownMenu {
+   width: auto;
    position: absolute;
-   top: 100%; 
-   left: 0;
-   background-color: rgb(40, 38, 38); 
-   min-width: 160px; 
-   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); 
-   z-index: 1000; 
-   display: none; 
-   flex-direction: column;
-   margin-top: 8px; 
+   top: 100%;
+   left: 50%;
+   transform: translateX(-50%);
+   opacity: 0;
+   visibility: hidden;
  }
- 
- .dropdown.show {
-   display: flex; // Show the dropdown when active
- }
- 
- .dropdown-menu {
-   padding: 0;
-   margin: 0;
-   list-style-type: none;
- }
- 
- .dropdown-menu li {
-   padding: 12px 16px;
- }
- 
- .dropdown-menu li a {
-   color: white; // Text color inside dropdown
-   text-decoration: none;
- }
- 
- .dropdown-menu li:hover {
-   background-color: #444; // Background color on hover
- }
- 
- .dropdown-icon {
+ .navDropdown:hover .navDropdownMenu {
+   position: absolute;
+   top: 50px;
+   opacity: 1;
+   visibility: visible;
+   height: auto;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-top: 1px solid $yellow;
+  }
+
+.navDropdown {
+  position: relative;
+}
+
+.navDropdownCheckbox {
+  display: none;
+}
+
+.navDropdownLabel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  user-select: none;
+}
+
+.navDropdownMenu {
+  overflow: hidden;
+  transition: height 0.3s ease;
+  background-color: rgba(40, 38, 38, 0.8);
+}
+
+.navDropdownMenu li {
+  padding: 0.5rem 1.25rem;
+  text-align: center;
+  color: aliceblue;
+}
+
+.navDropdownMenu li a:hover {
+  color:($yellow) ; 
+}
+
+.dropdown-icon {
    margin-left: 8px;
    transition: transform 0.3s ease;
    cursor: pointer;

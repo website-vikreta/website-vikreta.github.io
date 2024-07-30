@@ -1,14 +1,14 @@
 // imporing images temporary
 import { workData } from "../json/ourWorkData";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, /*useState*/ } from "react";
 import { useHistory, Link } from "react-router-dom";
 import parse from 'html-react-parser';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
-import ReactPlayer from "react-player";
+//import ReactPlayer from "react-player";
 import Modal from 'react-modal';
 //import workData from "../json/ourWorkData";
 import { pageAnimation, frameParentVert, frameAnimationVert, smoothFade } from "../utility/animation";
@@ -25,8 +25,8 @@ const DetailedWork = () => {
   const myWork = workData.find((x) => x.url === url);
 
   const customSlider = React.createRef();
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentVideo, setCurrentVideo] = useState(null);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [currentVideo, setCurrentVideo] = useState(null);
 
   const settings = {
     dots: false,
@@ -46,15 +46,15 @@ const DetailedWork = () => {
     customSlider.current.slickPrev();
   };
 
-  const openModal = (videoUrl) => {
-    setCurrentVideo(videoUrl);
-    setIsModalOpen(true);
-  };
+  // const openModal = (videoUrl) => {
+  //   setCurrentVideo(videoUrl);
+  //   setIsModalOpen(true);
+  // };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setCurrentVideo(null);
-  };
+  // const closeModal = () => {
+  //   setIsModalOpen(false);
+  //   setCurrentVideo(null);
+  // };
 
   return (
     <motion.div exit="exit" variants={pageAnimation} initial="hidden" animate="show">
@@ -85,23 +85,29 @@ const DetailedWork = () => {
                   <i className="bi bi-chevron-left"></i>
                 </button>
                 <Slider {...settings} className="work-slider" ref={customSlider}>
-                  {myWork.gallery.map((img, index) => (
-                    <div className="card" key={index}>
-                      <div className="videobuttton">
-                        {myWork.links2.map((link, linkIndex) => (
-                          <button
-                            key={linkIndex}
-                            className="play-button"
-                            onClick={() => openModal(link.value)}
-                          >
-                            
-                          </button>
-                        ))}
-                      </div>
-                      <img src={img} alt={`Gallery ${index}`} className="gallery-image" />
-                    </div>
-                  ))}
-                </Slider>
+                      {/* First Gallery Image */}
+                      {myWork.gallery.length > 0 && (
+                        <div className="card" key="gallery-0">
+                          <img src={myWork.gallery[0]} alt="Gallery 0" className="gallery-image" />
+                        </div>
+                      )}
+
+                      {/* Video Component */}
+                      {myWork.video.length > 0 && (
+                        <div className="card" key="youtube-video">
+                          <div className="iframe-container">
+                        <iframe src="https://www.loom.com/embed/ee6558b81b744060925b9731613de5a5?sid=f4a7f85c-532c-4231-a268-131ad3243fa4" title="demo video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Remaining Gallery Images */}
+                      {myWork.gallery.slice(1).map((img, index) => (
+                        <div className="card" key={`gallery-${index + 1}`}>
+                          <img src={img} alt={`Gallery ${index + 1}`} className="gallery-image" />
+                        </div>
+                      ))}
+                    </Slider>
                 <button className="next slider-btn" id="test-next" onClick={gotoNext}>
                   <i className="bi bi-chevron-right"></i>
                 </button>
@@ -144,26 +150,6 @@ const DetailedWork = () => {
           </div>
         </motion.div>
       </motion.div>
-
-      <Modal
-  isOpen={isModalOpen}
-  onRequestClose={closeModal}
-  contentLabel="Video Player"
-  className="video-modal"
-  overlayClassName="video-modal-overlay"
->
-  {currentVideo && (
-    <ReactPlayer
-      url={currentVideo}
-      playing={isModalOpen}
-      controls
-      width="100%" // Ensure it fills the modal width
-      height="100%" // Ensure it fills the modal height
-    />
-  )}
-  <button className="close-modal-btn" onClick={closeModal}> <i class="bi bi-x-lg"></i>  </button>
-</Modal>
-
     </motion.div>
   );
 };

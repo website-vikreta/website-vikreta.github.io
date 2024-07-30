@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaArrowLeft } from 'react-icons/fa';
 
 const ThankYou = ({ orderId, setIsSubmitted }) => {
    return (

@@ -27,10 +27,15 @@ const Nav = () => {
     unCheck();
   };
 
+  
+
   const toggleDropdown = () => {
-    setDropdownVisible(!dropdownVisible);
+    setDropdownVisible(prev => !prev);
   };
 
+  const handleLinkClick = () => {
+    setDropdownVisible(false); // Hide the dropdown when a link is clicked
+  };
   return (
     <header>
       <nav className="navbar">
@@ -58,22 +63,34 @@ const Nav = () => {
               </li>
               <li className="nav-item" onClick={unCheck}>
                 <ScrollLink smooth to="../#services">Our Services</ScrollLink>
-              </li>
-              <li className="nav-item">
-                <Link to="/" onClick={toggleDropdown}>
-                  Calculator
-                </Link>
-                <FontAwesomeIcon
-                  icon={faCaretDown}
-                  className="dropdown-icon"
-                  onClick={toggleDropdown}
-                />
-                <div className={`dropdown ${dropdownVisible ? 'show' : ''}`}>
-                  <ul className="dropdown-menu">
-                    <li onClick={unCheck}><Link to="/website-cost-calculator">Website Cost Calculator</Link></li>
-                  </ul>
-                </div>
-              </li>
+                </li>
+                <li className="nav-item">
+          <Link to="/" onClick={toggleDropdown}>
+           
+          </Link>
+
+          <div className={`navDropdown ${dropdownVisible ? 'show' : ''}`}>
+            <input
+              type="checkbox"
+              className="navDropdownCheckbox"
+              id="dropdownCheckbox"
+              // checked
+            />
+            <label htmlFor="dropdownCheckbox" className="navDropdownLabel">
+              <span> Calculator </span>
+              <i className="bi bi-chevron-down"></i>
+            </label>
+            <div className="navDropdownMenu">
+              <ul>
+                <li>
+                  <Link to="/website-cost-calculator" onClick={handleLinkClick}>
+                    Website Cost Calculator
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
               <li className="nav-item" onClick={unCheck}>
                 <Link to="/work">Our Work</Link>
               </li>

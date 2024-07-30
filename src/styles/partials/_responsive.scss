@@ -1,4 +1,4 @@
-@media screen and (max-width: 1220px) {
+@media screen and (max-width: 1280px) {
    // global components
    .container {
       max-width: initial;
@@ -8,8 +8,13 @@
 
    // navigation bar
    .navbar .container {
-      padding: 1.5rem 50px;
+      padding: 0.8rem 50px;
    }
+  
+    .navDropdownLabel {
+      width: auto;
+    }
+  
 
    .navbar-cta {
       .close {
@@ -99,6 +104,23 @@
          opacity: 1;
          visibility: visible;
       }
+
+      .navDropdown{
+         padding-block: 0;
+      }
+      .navDropdownMenu{
+         display: none;
+      }
+      
+       #dropdownCheckbox:checked ~ .navDropdownMenu {
+         display: block;
+         position: relative;
+         top: initial;
+         opacity: 1;
+         visibility: visible;
+         margin-top: 1rem;
+         width: auto;
+        }
 
       .wrapper {
          position: fixed;
@@ -462,6 +484,11 @@
    .container {
       padding: 0 20px;
    }
+   .navDropdownMenu {
+      width: 100%;
+      top: 60px; /* Adjust if needed */
+      padding: 1rem;
+    }
 
    .navbar .container {
       padding: 1rem 20px;
@@ -473,6 +500,7 @@
          right: 20px;
       }
    }
+   
 
    .services .card-wrapper {
       grid-template-columns: 1fr !important;
@@ -568,6 +596,18 @@
       margin-top: 20px;
       
    }
-
+   .navDropdownMenu {
+      width: 100%;
+      top: 50px; /* Adjust if needed */
+      padding: 0.5rem;
+    }
+  
+    .navDropdownLabel {
+      font-size: inherit; /* Adjust if needed */
+    }
+  
+    .navDropdownMenu li {
+      padding: 0.5rem 1rem;
+    }
 
 }

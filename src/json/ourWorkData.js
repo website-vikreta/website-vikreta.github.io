@@ -148,7 +148,7 @@ export const workData = [
       links: [
          { key: "Figma", value: "https://bit.ly/sbp-platform-figma" }
       ],
-      links2: [
+      video: [
 
       ],
       gallery: [ sbpapp1, sbpapp2, sbpapp3, sbpapp4, sbpapp5, sbpapp6, sbpapp7, sbpapp8, sbpapp9
@@ -204,7 +204,8 @@ export const workData = [
          { key: "Figma", value: "https://bit.ly/sbp-website-figma" },
          { key: "Website", value: "https://www.sustainablebtc.org/" }
       ],
-      links2: [
+      video: [
+        {key:"video", value:"https://www.youtube.com/embed/IuIyorW_9XY?si=yKSs5B361-vLXRNF"}
 
       ],
       gallery: [
@@ -262,7 +263,7 @@ export const workData = [
       links: [
          { key: "Website", value: "https://blancoraclothing.com/shop" },
       ],
-      links2: [
+      video: [
 
       ],
       gallery: [
@@ -301,7 +302,7 @@ export const workData = [
          { key: "Website", value: "https://iendorse.io/" },
          { key: "CMS", value: "https://iendorse.io/studio" },
       ],
-      links2: [
+      video: [
 
       ],
       gallery: [
@@ -332,7 +333,7 @@ export const workData = [
          { key: " Website", value: "https://www.strandzboost.com/" },
          { key: "CMS", value: "https://strandzboost.com/studio" }
       ],
-      links2: [
+      video: [
 
       {key:"gallery", value:"https://youtu.be/xcJtL7QggTI?si=xW4JDvx04X8EIHVj"}
       ],
@@ -361,7 +362,7 @@ export const workData = [
       links: [
          { key: " Figma", value: "https://bit.ly/workik-figma" }
       ],
-      links2: [
+      video: [
 
       ],
       gallery: [
@@ -389,7 +390,7 @@ export const workData = [
       links: [
          { key: " Website", value: "http://psilentganges.com/" }
       ],
-      links2: [
+      video: [
 
       ],
       gallery: [
@@ -416,7 +417,7 @@ export const workData = [
       links: [
          { key: "Figma", value: "https://bit.ly/fionali-figma" }
       ],
-      links2: [
+      video: [
 
       ],
       gallery: [
@@ -470,7 +471,7 @@ export const workData = [
          { key: "Figma", value: "https://www.bit.ly/budget-renovations" },
          { key: "Website", value: "https://website-vikreta.github.io/budget-renovations/" }
       ],
-      links2: [
+      video: [
 
       ],
       gallery: [
@@ -498,7 +499,7 @@ export const workData = [
       links: [
          { key: "View Figma", value: "https://bit.ly/cozmorealty-figma" }
       ],
-      links2: [
+      video: [
 
       ],
       gallery: [
@@ -534,7 +535,7 @@ export const workData = [
          { key: "Website", value: "https://abc.in/" },
          { key: "Dashboard", value: "https://abc.in/login/" },
       ],
-      links2: [
+      video: [
 
       ],
       gallery: [
@@ -564,7 +565,7 @@ export const workData = [
          { key: "Website", value: "https://boompanda.in/" },
          { key: "Dashboard", value: "https://boompanda.in/login/" },
       ],
-      links2: [
+      video: [
 
       ],
       gallery: [
@@ -623,7 +624,7 @@ export const workData = [
       gallery: [
          championThumb, championg2, championg3, championg4, championg5, championg6
       ],
-      links2: [
+      video: [
 
       ],
       description: `
