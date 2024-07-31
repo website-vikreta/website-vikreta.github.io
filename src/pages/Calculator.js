@@ -25,7 +25,7 @@ import ThankYou from "../components/OrderPlaced";
 const Calculator = () => {
    useEffect(() => {
       window.scrollTo(0, 0);
-      document.title = "Calculator | UI-UX";
+      document.title = "Website Cost Calculator";
    }, []);
 
    //for order
@@ -148,52 +148,65 @@ const Calculator = () => {
          (item) => item.name === tempValue
       )?.title;
 
-      setFormState((prevState) => {
-         const newState = {
-            ...prevState,
-            [tempName]: [title, cost, time, que],
-         };
-
-         const nextQuestionName = currentQuestion.data.find(
-            (item) => item.name === tempValue
-         )?.visibleAfterLoad;
-
-         if (nextQuestionName) {
-            const newVisibleQuestions = visibleQuestions.slice(
-               0,
-               visibleQuestions.indexOf(tempName) + 1
-            );
-            setVisibleQuestions([...newVisibleQuestions, nextQuestionName]);
-
-            const updatedFormState = { ...newState };
-            let flag = false;
-            Object.keys(updatedFormState).forEach((key) => {
-               if (newVisibleQuestions.indexOf(key) === -1) {
-                  flag = true;
-                  delete updatedFormState[key];
-               }
-            });
-            if (flag) {
-               setFormState(updatedFormState);
-            }
-         } else {
-            const newVisibleQuestions = visibleQuestions.slice(
-               0,
-               visibleQuestions.indexOf(tempName) + 1
-            );
-            setVisibleQuestions(newVisibleQuestions);
-
-            const updatedFormState = { ...newState };
-            Object.keys(updatedFormState).forEach((key) => {
-               if (visibleQuestions.indexOf(key) === -1) {
-                  delete updatedFormState[key];
-               }
-            });
-            setFormState(updatedFormState);
-         }
-
-         return newState;
-      });
+      if (tempName === 'type') {
+         setFormState((prevState) => ({
+             ...prevState,
+             [tempName]: [title, cost, time, que],
+         }));
+     }
+     else{
+        setFormState((prevState) => {
+           const newState = {
+              ...prevState,
+              [tempName]: [title, cost, time, que],
+           };
+  
+           const nextQuestionName = currentQuestion.data.find(
+              (item) => item.name === tempValue
+           )?.visibleAfterLoad;
+  
+           // if(currentQuestion==='type'){
+  
+           // }
+  
+           if (nextQuestionName) {
+              const newVisibleQuestions = visibleQuestions.slice(
+                 0,
+                 visibleQuestions.indexOf(tempName) + 1
+              );
+              setVisibleQuestions([...newVisibleQuestions, nextQuestionName]);
+  
+              const updatedFormState = { ...newState };
+              let flag = false;
+              Object.keys(updatedFormState).forEach((key) => {
+                 if (newVisibleQuestions.indexOf(key) === -1) {
+                    flag = true;
+                    delete updatedFormState[key];
+                 }
+              });
+              if (flag) {
+                 setFormState(updatedFormState);
+              }
+           } else {
+              
+              const newVisibleQuestions = visibleQuestions.slice(
+                 0,
+                 visibleQuestions.indexOf(tempName) + 1
+              );
+              setVisibleQuestions(newVisibleQuestions);
+  
+              const updatedFormState = { ...newState };
+              Object.keys(updatedFormState).forEach((key) => {
+                 if (visibleQuestions.indexOf(key) === -1) {
+                    delete updatedFormState[key];
+                 }
+              });
+              setFormState(updatedFormState);
+           }
+  
+           return newState;
+        });
+     }
    };
 
    const calculateTotal = () => {
@@ -280,7 +293,6 @@ const Calculator = () => {
                      {questionText}
                      <span> *</span>
                      <span className="recommended-label1">
-                        {/* Recommended SVG */}
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
                      <g clip-path="url(#clip0_2528_2145)">
                         <path d="M6.70056 5.46616C6.79681 5.17741 7.20456 5.17741 7.30081 5.46616L7.86519 7.16103C7.98941 7.53361 8.19871 7.87213 8.4765 8.14976C8.75428 8.4274 9.09292 8.63651 9.46556 8.76053L11.1596 9.32491C11.4483 9.42116 11.4483 9.82891 11.1596 9.92516L9.46469 10.4895C9.09211 10.6138 8.75359 10.8231 8.47596 11.1008C8.19833 11.3786 7.98921 11.7173 7.86519 12.0899L7.30081 13.7839C7.28006 13.8471 7.23987 13.9022 7.18598 13.9412C7.13208 13.9803 7.06724 14.0013 7.00069 14.0013C6.93414 14.0013 6.8693 13.9803 6.8154 13.9412C6.76151 13.9022 6.72132 13.8471 6.70056 13.7839L6.13619 12.089C6.01205 11.7165 5.80289 11.3781 5.52526 11.1005C5.24763 10.8228 4.90917 10.6137 4.53669 10.4895L2.84181 9.92516C2.77859 9.90441 2.72353 9.86422 2.68449 9.81032C2.64545 9.75643 2.62444 9.69158 2.62444 9.62503C2.62444 9.55849 2.64545 9.49364 2.68449 9.43974C2.72353 9.38585 2.77859 9.34566 2.84181 9.32491L4.53669 8.76053C4.90917 8.63639 5.24763 8.42723 5.52526 8.1496C5.80289 7.87197 6.01205 7.53351 6.13619 7.16103L6.70056 5.46616ZM3.32044 1.00453C3.33299 0.96664 3.35716 0.933666 3.38951 0.910294C3.42187 0.886923 3.46077 0.874344 3.50069 0.874344C3.5406 0.874344 3.57951 0.886923 3.61186 0.910294C3.64422 0.933666 3.66839 0.96664 3.68094 1.00453L4.01956 2.02128C4.17094 2.47453 4.52619 2.82978 4.97944 2.98116L5.99619 3.31978C6.03408 3.33233 6.06706 3.3565 6.09043 3.38886C6.1138 3.42122 6.12638 3.46012 6.12638 3.50003C6.12638 3.53995 6.1138 3.57885 6.09043 3.61121C6.06706 3.64357 6.03408 3.66773 5.99619 3.68028L4.97944 4.01891C4.75577 4.09314 4.55252 4.21857 4.38587 4.38522C4.21923 4.55186 4.0938 4.75511 4.01956 4.97878L3.68094 5.99553C3.66839 6.03342 3.64422 6.0664 3.61186 6.08977C3.57951 6.11314 3.5406 6.12572 3.50069 6.12572C3.46077 6.12572 3.42187 6.11314 3.38951 6.08977C3.35716 6.0664 3.33299 6.03342 3.32044 5.99553L2.98181 4.97878C2.90758 4.75511 2.78215 4.55186 2.6155 4.38522C2.44886 4.21857 2.24561 4.09314 2.02194 4.01891L1.00519 3.68028C0.967296 3.66773 0.934322 3.64357 0.910951 3.61121C0.887579 3.57885 0.875 3.53995 0.875 3.50003C0.875 3.46012 0.887579 3.42122 0.910951 3.38886C0.934322 3.3565 0.967296 3.33233 1.00519 3.31978L2.02194 2.98116C2.24561 2.90692 2.44886 2.78149 2.6155 2.61485C2.78215 2.4482 2.90758 2.24495 2.98181 2.02128L3.32044 1.00453ZM9.50581 0.0866576C9.51445 0.0617431 9.53064 0.040139 9.55212 0.024849C9.57361 0.00955894 9.59932 0.00134277 9.62569 0.00134277C9.65206 0.00134277 9.67777 0.00955894 9.69926 0.024849C9.72074 0.040139 9.73693 0.0617431 9.74556 0.0866576L9.97131 0.763908C10.0719 1.06666 10.3091 1.30378 10.6118 1.40441L11.2891 1.63016C11.314 1.6388 11.3356 1.65498 11.3509 1.67647C11.3662 1.69795 11.3744 1.72366 11.3744 1.75003C11.3744 1.7764 11.3662 1.80212 11.3509 1.8236C11.3356 1.84508 11.314 1.86127 11.2891 1.86991L10.6118 2.09566C10.4627 2.14553 10.3273 2.22935 10.2162 2.3405C10.105 2.45165 10.0212 2.58709 9.97131 2.73616L9.74556 3.41341C9.73693 3.43832 9.72074 3.45993 9.69926 3.47522C9.67777 3.49051 9.65206 3.49872 9.62569 3.49872C9.59932 3.49872 9.57361 3.49051 9.55212 3.47522C9.53064 3.45993 9.51445 3.43832 9.50581 3.41341L9.28006 2.73616C9.23019 2.58709 9.14637 2.45165 9.03522 2.3405C8.92408 2.22935 8.78863 2.14553 8.63956 2.09566L7.96319 1.86991C7.93827 1.86127 7.91667 1.84508 7.90138 1.8236C7.88609 1.80212 7.87787 1.7764 7.87787 1.75003C7.87787 1.72366 7.88609 1.69795 7.90138 1.67647C7.91667 1.65498 7.93827 1.6388 7.96319 1.63016L8.64044 1.40441C8.94319 1.30378 9.18031 1.06666 9.28094 0.763908L9.50581 0.0866576Z" fill="#1B1B1B"/>
@@ -674,13 +686,13 @@ const Calculator = () => {
 
    const sendEmail = (e) => {
       e.preventDefault();
-
+   
       let flag1 = 0,
          flag2 = 0,
          flag3 = 0;
       const stringCheck = /^[a-zA-Z\s]*$/;
       const mailCheck = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-
+   
       // Name validation
       const tempname = e.target.name.value;
       if (!stringCheck.test(tempname) || tempname === "") {
@@ -690,7 +702,7 @@ const Calculator = () => {
          setNameErr(null);
          flag1 = 0;
       }
-
+   
       // Contact validation
       const phoneNumber = parsePhoneNumberFromString(
          mobile,
@@ -703,7 +715,7 @@ const Calculator = () => {
          setMobileErr(null);
          flag2 = 0;
       }
-
+   
       // Email validation
       const tempemail = e.target.email.value;
       if (!mailCheck.test(tempemail) || tempemail === "") {
@@ -713,63 +725,64 @@ const Calculator = () => {
          setEmailErr(null);
          flag3 = 0;
       }
-
+   
       if (flag1 === 0 && flag2 === 0 && flag3 === 0) {
          // Format the phone number
          const formattedPhoneNumber = phoneNumber.formatInternational();
-
+   
          // Update the hidden mobile input field value
          e.target.mobile.value = formattedPhoneNumber;
-
+   
          // Construct the summary information as an HTML table
          let summaryHTML =
             "<table border='1' style='border-collapse:collapse; width:100%;'><tr><th>Name</th><th>Cost</th><th>Time</th></tr>";
          visibleQuestions.forEach((key) => {
             const questionState = formState[key];
             if (!questionState || !questionState[0]) return;
-
+   
             summaryHTML += `
-                <tr>
-                    <td>
-                      
-                      <p>${questionState[3]}</p>
-                      ${questionState[0]==='Single Country'?(
-                        `</p>${questionState[0]} : (${selected})</p>`
-                      ):(`</p>${questionState[0]}</p>`)}
-                      
-                    
-                    </td>
-                    <td>${symbol}${selectedCurrency === "INR"
-                  ? formatNumberToIndianCurrency(questionState[1] * factor)
-                  : (questionState[1] * factor).toLocaleString()
-               }</td>
-                    <td>${questionState[2] === 0 ? "—" : `${questionState[2]} Week`
-               }</td>
-                </tr>
-            `;
+               <tr>
+                   <td>
+                     
+                     <p>${questionState[3]} <br/>
+                        ${questionState[0]==='Single Country'?(
+                        `<strong>${questionState[0]} : (${countryNames[selected]})</strong>`
+                        ):(`<strong>${questionState[0]}<strong>`)}
+                     </p>
+                     
+                   
+                   </td>
+                   <td>${symbol}${selectedCurrency === "INR"
+               ? formatNumberToIndianCurrency(questionState[1] * factor)
+               : (questionState[1] * factor).toLocaleString()
+            }</td>
+                   <td>${questionState[2] === 0 ? "—" : `${questionState[2]} Week`
+            }</td>
+               </tr>
+           `;
          });
-
+   
          if (timeline.length > 0) {
             summaryHTML += `
-                <tr>
-                    <td>
-                    <p>What is the timeline you have in mind for launch?*</p>
-                    ${timeline === "Fast Train" ? `<p>Fast Train</p>` : `<p>Slow Train</p>`
-               }
-                    </td>
-                    <td>${timeline === "Fast Train"
-                  ? `${symbol}${100 * factor}`
-                  : `${symbol}${0 * factor}`
-               }</td>
-                    <td>—</td>
-                </tr>
-            `;
+               <tr>
+                   <td>
+                   <p>What is the timeline you have in mind for launch?* <br/>
+                   ${timeline === "Fast Train" ? `<strong>Fast Train</strong>` : `<strong>Slow Train</strong>`
+            }     </p>
+                   </td>
+                   <td>${timeline === "Fast Train"
+               ? `${symbol}${100 * factor}`
+               : `${symbol}${0 * factor}`
+            }</td>
+                   <td>—</td>
+               </tr>
+           `;
          }
-
+   
          summaryHTML += `
-            <tr>
-                <td>Total</td>
-                <td>${timeline === "Fast Train"
+           <tr>
+               <td><strong>Total</strong></td>
+               <td>${timeline === "Fast Train"
                ? `~ ${symbol}${selectedCurrency === "INR"
                   ? formatNumberToIndianCurrency(
                      (totalCost + 100) * factor
@@ -781,17 +794,25 @@ const Calculator = () => {
                   : (totalCost * factor).toLocaleString()
                }`
             }</td>
-                <td>${timeline === "Fast Train"
+               <td>${timeline === "Fast Train"
                ? `${totalTime - 4} Weeks`
                : `${totalTime} Weeks`
             }</td>
-            </tr>
-        `;
+           </tr>
+       `;
          summaryHTML += "</table>";
-
-         // Append summary to the form
+   
          e.target.summary.value = summaryHTML;
-
+   
+         // console.log(summaryHTML);
+         const generateOrderId = () => {
+            const now = new Date();
+            const uniqueNumber = now.getTime() % 10000; // Get the last 4 digits of the timestamp
+            return uniqueNumber.toString().padStart(4, '0'); // Ensure it's 4 digits
+         };
+         const orderId = generateOrderId();
+         e.target.orderId.value = orderId;
+   
          emailjs
             .sendForm(
                process.env.REACT_APP_SERVICE_ID,
@@ -807,7 +828,7 @@ const Calculator = () => {
                   console.log(error.text);
                }
             );
-
+   
          toast.success(
             "Hurray!, We got your message. Our team will soon contact you.",
             {
@@ -829,11 +850,11 @@ const Calculator = () => {
          setFormState({});
          setIsClicked(false);
          setIsSubmitted(true);
-         setOrderId(Date.now())
+         setOrderId(orderId);
          // window.location.reload()
-
       }
    };
+   
 
    return (
       <>
@@ -861,7 +882,7 @@ const Calculator = () => {
                </motion.div>
             </motion.div>
 
-            <section className="calculator">
+            <section className="calculator"> 
                <div className="container">
 
                   {/* Heading */}
@@ -1103,6 +1124,7 @@ const Calculator = () => {
                                           ></textarea>
                                        </div>
                                        <input type="hidden" name="summary" />
+                                       <input type="hidden" name="orderId" />
                                        <button className="normal-btn primary">
                                           <p className="btn-txt">Place Order</p>
                                           <svg

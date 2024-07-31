@@ -305,6 +305,11 @@
    gap: 2rem;
    background: #222;
    // width: 552px;
+   @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
 }
 
 .heading1 {
