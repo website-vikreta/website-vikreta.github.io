@@ -285,14 +285,14 @@
       @include dark-color-bg(medium);
 
       .slick-slide{
-         aspect-ratio: 16 / 9;
+      aspect-ratio: 16 / 9;
       }
 
       .iframe-container {
          position: relative;
          height: 100%;
          width: 100%;
-         //padding-bottom: 56.25%; /* 16:9 aspect ratio */
+         padding-bottom: 56.25%; /* 16:9 aspect ratio */
   
          overflow: hidden;
        }
