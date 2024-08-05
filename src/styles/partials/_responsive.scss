@@ -697,7 +697,9 @@
       
    }
 
-      
+   .hidden{
+      display: flex !important;
+   }
 
     .form-option{
       background: inherit;
