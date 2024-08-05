@@ -261,7 +261,9 @@
    display: none;
 }
 
-
+.hidden{
+   display: none !important;
+}
 
 .summary {
    display: flex;

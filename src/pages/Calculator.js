@@ -990,7 +990,7 @@ const Calculator = () => {
                                  {
                                     timeline.length>0 && (
 
-                                       <div className="place-order">
+                                       <div className="hidden place-order">
                                        <div className="button-group1">
                                           <p
                                              className="normal-btn primary"
