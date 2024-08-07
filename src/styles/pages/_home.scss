@@ -30,6 +30,7 @@
    .content {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       gap: 1.5rem;
       margin-top: 4rem;
    }
@@ -57,6 +58,8 @@
       font-size: 3rem;
       @include font-weight(bold);
       margin-top: 0.9rem;
+      text-align: left;
+
 
       .hide {
          overflow: hidden;
@@ -70,6 +73,7 @@
    .para {
       @include para-font;
       width: 80%;
+      text-align: left;
    }
 
    .features {
@@ -224,6 +228,8 @@
       p {
          @include para-font;
          font-size: 0.9rem;
+         text-align: left;
+      
 
          &:not(:last-child) {
             margin-bottom: 0.75rem;
@@ -293,6 +299,7 @@
          @include para-font;
          font-size: 0.9rem;
          margin-top: 0.5rem;
+         text-align: left;
       }
 
       ul {
@@ -558,6 +565,7 @@
 
    .para {
       @include para-font;
+      text-align: left;
    }
 
    .center {

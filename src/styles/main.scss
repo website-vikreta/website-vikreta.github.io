@@ -58,8 +58,11 @@ img {
 
 // importing pages
 @import "./pages/home";
+@import "./pages/calculator";
 @import "./pages/contact";
 @import "./pages/work";
 
 // responsive
 @import "./partials/responsive";
+@import "./partials//customSelect.scss";
+@import "./partials/placeOrder";

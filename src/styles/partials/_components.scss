@@ -14,7 +14,7 @@
    // making navbar flex
    .container {
       @include flex-between;
-      padding: 1.5rem 0;
+      padding: 0.8rem 0;
    }
 
    #navToggle {
@@ -72,6 +72,83 @@
       gap: 1rem;
    }
 }
+
+
+.nav-item {
+   position: relative; // Required for absolute positioning of the dropdown
+   display: inline-block; // Keeps nav items on the same line
+   white-space: nowrap; // Prevents text wrapping
+ }
+ .navDropdown {
+   padding-block: 1rem;
+ }
+
+ .navDropdownLabel {
+   width: auto;
+ }
+
+ .navDropdownMenu {
+   width: auto;
+   position: absolute;
+   top: 100%;
+   left: 50%;
+   transform: translateX(-50%);
+   opacity: 0;
+   visibility: hidden;
+ }
+ .navDropdown:hover .navDropdownMenu {
+   position: absolute;
+   top: 50px;
+   opacity: 1;
+   visibility: visible;
+   height: auto;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-top: 1px solid $yellow;
+  }
+
+.navDropdown {
+  position: relative;
+}
+
+.navDropdownCheckbox {
+  display: none;
+}
+
+.navDropdownLabel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  user-select: none;
+}
+
+.navDropdownMenu {
+  overflow: hidden;
+  transition: height 0.3s ease;
+  background-color: rgba(40, 38, 38, 0.8);
+}
+
+.navDropdownMenu li {
+  padding: 0.5rem 1.25rem;
+  text-align: center;
+  color: aliceblue;
+}
+
+.navDropdownMenu li a:hover {
+  color:($yellow) ; 
+}
+
+.dropdown-icon {
+   margin-left: 8px;
+   transition: transform 0.3s ease;
+   cursor: pointer;
+ }
+ 
+ 
+ 
+
+ //------------------------------------------------------------------------//
 
 body.scroll-down .navbar {
    transform: translate3d(0, -100%, 0);
@@ -275,6 +352,32 @@ body.navbar-cta-show .navbar-cta {
       background: $yellow;
       z-index: -1;
       transition: 0.35s ease-in-out;
+   }
+}
+.play-button {
+   display: inline-block;
+   width: 45px;
+   height: 45px;
+   border-radius: 50%;
+   background-color: gray; /* Default gray color */
+   position: relative;
+   transition: background-color 0.3s ease;
+
+   &:hover {
+      background-color: red; /* Red color on hover */
+   }
+
+   &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-left: 10px solid white; /* Play triangle color */
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      transform: translate(-50%, -50%);
    }
 }
 

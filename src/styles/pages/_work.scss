@@ -102,7 +102,7 @@
             // flex: 1; line clamp works only with block element
          
             display: -webkit-box;
-            -webkit-line-clamp: 3;
+         //   -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;  
             overflow: hidden;
          }
@@ -279,10 +279,31 @@
    // slider
    .slider-wrapper {
       position: relative;
-      min-height: 30vh;
+      // min-height: 30vh;
+      aspect-ratio: 16 / 9;
       margin-top: 4rem;
       @include dark-color-bg(medium);
 
+      .slick-slide{
+      aspect-ratio: 16 / 9;
+      }
+
+      .iframe-container {
+         position: relative;
+         height: 100%;
+         width: 100%;
+         padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  
+         overflow: hidden;
+       }
+       
+       .iframe-container iframe {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+       }
       .slider-btn {
          position: absolute;
          top: 50%;
@@ -353,3 +374,38 @@
       }
    }
 }
+.video-modal {
+   position: absolute;
+   width: 550px; /* Set the width to match the slider thumbnail */
+   height: 350px; /* Set the height to match the slider thumbnail */
+   margin: auto;
+   padding: 0;
+   border: none;
+   background: transparent;
+   z-index: 10000;
+ }
+ 
+ .video-modal-overlay {
+   position: absolute;
+   top: 150px;
+   left: 0;
+   right: 70px;
+   bottom: 0;
+   background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+ 
+ .close-modal-btn {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   //background: rgba(244, 244, 244, 0.8); /* Light close button */
+   border: none;
+   padding: 5px;
+   border-radius: 50%;
+   cursor: pointer;
+   font-size: 0.8rem;
+ }
+ 

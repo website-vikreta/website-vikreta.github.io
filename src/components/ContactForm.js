@@ -1,8 +1,10 @@
+import { useEffect, useState } from 'react';
 import emailjs from 'emailjs-com';
-import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import axios from 'axios';
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
 
 const ContactForm = () => {
    const [nameErr, setNameErr] = useState(null);
@@ -13,6 +15,18 @@ const ContactForm = () => {
    const [budget, setBudget] = useState('');
    const [serviceErr, setServiceErr] = useState(null);
    const [budgetErr, setBudgetErr] = useState(null);
+   const [countryCode, setCountryCode] = useState(''); // store country code
+
+   useEffect(() => {
+      // Fetch user's country code
+      axios.get('https://ipapi.co/json/')
+         .then((response) => {
+            setCountryCode(response.data.country_code.toLowerCase());
+         })
+         .catch((error) => {
+            console.error("Error fetching country code:", error);
+         });
+   }, []);
 
    const sendEmail = (e) => {
       e.preventDefault();
@@ -32,7 +46,8 @@ const ContactForm = () => {
       }
 
       // contact validation
-      if (mobile === "" || mobile.length < 10) {
+      const phoneNumber = parsePhoneNumberFromString(mobile, countryCode.toUpperCase());
+      if (!phoneNumber || !phoneNumber.isValid()) {
          setMobileErr("Invalid Contact Number");
          flag2 = 1;
       } else {
@@ -69,8 +84,11 @@ const ContactForm = () => {
       }
 
       if (flag1 === 0 && flag2 === 0 && flag3 === 0 && flag4 === 0 && flag5 === 0 && flag6 === 0) {
+         // Format the phone number
+         const formattedPhoneNumber = phoneNumber.formatInternational();
+
          // Update the hidden mobile input field value
-         e.target.mobile.value = mobile;
+         e.target.mobile.value = formattedPhoneNumber;
          e.target.service.value = service;
          e.target.budget.value = budget;
 
@@ -105,7 +123,7 @@ const ContactForm = () => {
             </div>
             <div className="form-group">
                <PhoneInput
-                  country={'in'}
+                  country={countryCode}
                   value={mobile}
                   onChange={(phone) => setMobile(phone)}
                   inputClass="form-control"
@@ -135,7 +153,13 @@ const ContactForm = () => {
             <span className="error">{serviceErr != null ? serviceErr : ""}</span>
          </div>
          <div className="form-group">
-            <input type="text" className="form-control" name="budget" placeholder="Your Budget" value={budget} onChange={(e) => setBudget(e.target.value)} />
+            <select className="form-control" name="budget" value={budget} onChange={(e) => setBudget(e.target.value)}>
+               <option value="">Select Budget</option>
+               <option value="$0 - $1000">$0 - $1000</option>
+               <option value="$1000 - $5000">$1000 - $5000</option>
+               <option value="$5000 - $20000">$5000 - $20000</option>
+               <option value="$20000 onwards">$20000 onwards</option>
+            </select>
             <span className="error">{budgetErr != null ? budgetErr : ""}</span>
          </div>
          <div className="form-group">

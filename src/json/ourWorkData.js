@@ -2,6 +2,7 @@
 
 //common logo for both SBP
 import SBPlogo from "../assets/Work/SBP-webApp/sbp-logo.svg"
+//import ReactPlayer from 'react-player';
 
 //sbp webapp change images when ready
 
@@ -21,6 +22,18 @@ import SBP4 from "../assets/Work/SBP-website/4.jpg"
 import SBP5 from "../assets/Work/SBP-website/5.jpg"
 import SBP6 from "../assets/Work/SBP-website/6.jpg"
 import SBP7 from "../assets/Work/SBP-website/7.jpg"
+
+//sbp webapp
+import sbpapp1 from "../assets/Work/SBP-webApp/sbp_webapp-01.jpg"
+import sbpapp2 from "../assets/Work/SBP-webApp/sbp_webapp-02.jpg"
+import sbpapp3 from "../assets/Work/SBP-webApp/sbp_webapp-03.jpg"
+import sbpapp4 from "../assets/Work/SBP-webApp/sbp_webapp-04.jpg"
+import sbpapp5 from "../assets/Work/SBP-webApp/sbp_webapp-05.jpg"
+import sbpapp6 from "../assets/Work/SBP-webApp/sbp_webapp-06.jpg"
+import sbpapp7 from "../assets/Work/SBP-webApp/sbp_webapp-07.jpg"
+import sbpapp8 from "../assets/Work/SBP-webApp/sbp_webapp-08.jpg"
+import sbpapp9 from "../assets/Work/SBP-webApp/sbp_webapp-09.jpg"
+
 //blancora
 import blancoraLogo from "../assets/Work/blancora/blancora-logo.svg"
 import blancora1 from "../assets/Work/blancora/1.jpg"
@@ -48,6 +61,8 @@ import iEndorse6 from "../assets/Work/iEndorse/iEndorse-06.jpg"
 
 // StrandzBoost WebApp
 import StrandzBoostLogo from "../assets/Work/StrandzBoost/logo-short.png"
+import Strandzthunbnill from "../assets/Work/StrandzBoost/thumbnill.png"
+//import StrandzBoostdemo from "../assets/Work/StrandzBoost/demo.mp4"
 
 
 
@@ -125,7 +140,7 @@ export const workData = [
    {
       id: 1,
       url: "/work/sbpwebapp",
-      thumbnail: "",
+      thumbnail: sbpapp1,
       logo: SBPlogo,
       title: "WebApp Re-design for Sustainable Bitcoin Protocol",
       niche: ["Figma", "UI/UX", "Prototyping", "Web Design", "Web Apps", "Mockups"],
@@ -133,7 +148,10 @@ export const workData = [
       links: [
          { key: "Figma", value: "https://bit.ly/sbp-platform-figma" }
       ],
-      gallery: [
+      video: [
+
+      ],
+      gallery: [ sbpapp1, sbpapp2, sbpapp3, sbpapp4, sbpapp5, sbpapp6, sbpapp7, sbpapp8, sbpapp9
         
       ],
       shortDescription: `
@@ -185,6 +203,10 @@ export const workData = [
       links: [
          { key: "Figma", value: "https://bit.ly/sbp-website-figma" },
          { key: "Website", value: "https://www.sustainablebtc.org/" }
+      ],
+      video: [
+        {key:"video", value:"https://www.youtube.com/embed/IuIyorW_9XY?si=yKSs5B361-vLXRNF"}
+
       ],
       gallery: [
          SBP1, SBP2, SBP3, SBP4, SBP5, SBP6, SBP7
@@ -241,6 +263,9 @@ export const workData = [
       links: [
          { key: "Website", value: "https://blancoraclothing.com/shop" },
       ],
+      video: [
+
+      ],
       gallery: [
          blancora1, blancora2, blancora3, blancora4,
       ],
@@ -277,6 +302,9 @@ export const workData = [
          { key: "Website", value: "https://iendorse.io/" },
          { key: "CMS", value: "https://iendorse.io/studio" },
       ],
+      video: [
+
+      ],
       gallery: [
          iEndorse1, iEndorse2, iEndorse3, iEndorse4, iEndorse5, iEndorse6
       ],
@@ -296,7 +324,7 @@ export const workData = [
    {
       id: 5,
       url: "/work/StrandzBoost",
-      thumbnail: "",
+     thumbnail: Strandzthunbnill,
       logo: StrandzBoostLogo,
       title: "Web Application Developed for Medical Survey Platform StrandzBoost",
       niche: ["Laravel", "Surveys", "Forms", "Web Development", "Content Management System", "User Authentication", "Responsive Design"],
@@ -305,7 +333,13 @@ export const workData = [
          { key: " Website", value: "https://www.strandzboost.com/" },
          { key: "CMS", value: "https://strandzboost.com/studio" }
       ],
+      video: [
+
+      {key:"gallery", value:"https://youtu.be/xcJtL7QggTI?si=xW4JDvx04X8EIHVj"}
+      ],
+
       gallery: [
+         Strandzthunbnill
       ],
       shortDescription: "",
       description: ``,
@@ -327,6 +361,9 @@ export const workData = [
       tags: ["Web Design", "Web Development", "UI/UX & Prototyping", "Figma", "Landing Page", "Shopify"],
       links: [
          { key: " Figma", value: "https://bit.ly/workik-figma" }
+      ],
+      video: [
+
       ],
       gallery: [
          Workik1, Workik2, Workik3
@@ -353,6 +390,9 @@ export const workData = [
       links: [
          { key: " Website", value: "http://psilentganges.com/" }
       ],
+      video: [
+
+      ],
       gallery: [
          psilentGanges1, psilentGanges2, psilentGanges3, psilentGanges4
       ],
@@ -376,6 +416,9 @@ export const workData = [
       category: ["Web Design", "UI/UX & Prototyping"],
       links: [
          { key: "Figma", value: "https://bit.ly/fionali-figma" }
+      ],
+      video: [
+
       ],
       gallery: [
          FionaLi1, FionaLi2, FionaLi3, FionaLi4
@@ -428,6 +471,9 @@ export const workData = [
          { key: "Figma", value: "https://www.bit.ly/budget-renovations" },
          { key: "Website", value: "https://website-vikreta.github.io/budget-renovations/" }
       ],
+      video: [
+
+      ],
       gallery: [
          budgetRenovations2, budgetRenovations3, budgetRenovations4
       ],
@@ -452,6 +498,9 @@ export const workData = [
       category: ["Web Design","UI/UX & Prototyping"],
       links: [
          { key: "View Figma", value: "https://bit.ly/cozmorealty-figma" }
+      ],
+      video: [
+
       ],
       gallery: [
          cozmoThumb, cozmog2, cozmog3
@@ -486,6 +535,9 @@ export const workData = [
          { key: "Website", value: "https://abc.in/" },
          { key: "Dashboard", value: "https://abc.in/login/" },
       ],
+      video: [
+
+      ],
       gallery: [
          Katalyst1, Katalyst2, Katalyst3, Katalyst4
       ],
@@ -512,6 +564,9 @@ export const workData = [
       links: [
          { key: "Website", value: "https://boompanda.in/" },
          { key: "Dashboard", value: "https://boompanda.in/login/" },
+      ],
+      video: [
+
       ],
       gallery: [
          boompandaThumb, boompandag2, boompandag3, boompandag4, boompandag5, boompandag6
@@ -568,6 +623,9 @@ export const workData = [
       shortDescription: "Figma based website design. It provides investors and beneficiaries with the best possible trust deed investment opportunities.",
       gallery: [
          championThumb, championg2, championg3, championg4, championg5, championg6
+      ],
+      video: [
+
       ],
       description: `
          <p className = "para">
