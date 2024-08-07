@@ -992,32 +992,32 @@ const Calculator = () => {
                 >
                   <div className="cal">
                     {/* <div className="form-container">
-                                 {questions
-                                    .filter((question) =>
-                                       visibleQuestions.includes(question.name)
-                                    )
-                                    .map((question) => renderQuestion(question))}
-                                 {Object.keys(formState).includes("cms") && (
-                                    <div className="type-wrapper">
-                                       <label className="queLabel">
-                                          What is the timeline you have in mind for launch?
-                                       </label>
-                                       <div className="form-group">
-                                          <CustomDropdown
-                                             data={data}
-                                             handleTypeChange={handleTypeChange}
-                                             name="timeline"
-                                             factor={factor}
-                                             symbol={symbol}
-                                             selectedCurrency={selectedCurrency}
-                                             formatNumberToIndianCurrency={
-                                                formatNumberToIndianCurrency
-                                             }
-                                          />
-                                       </div>
-                                    </div>
-                                 )}
-                                 {
+                      {questions
+                        .filter((question) =>
+                          visibleQuestions.includes(question.name)
+                        )
+                        .map((question) => renderQuestion(question))}
+                      {Object.keys(formState).includes("cms") && (
+                        <div className="type-wrapper">
+                          <label className="queLabel">
+                            What is the timeline you have in mind for launch?
+                          </label>
+                          <div className="form-group">
+                            <CustomDropdown
+                              data={data}
+                              handleTypeChange={handleTypeChange}
+                              name="timeline"
+                              factor={factor}
+                              symbol={symbol}
+                              selectedCurrency={selectedCurrency}
+                              formatNumberToIndianCurrency={
+                                formatNumberToIndianCurrency
+                              }
+                            />
+                          </div>
+                        </div>
+                      )}
+                       {
                                     timeline.length>0 && (
 
                                        <div className="hidden place-order">
@@ -1032,8 +1032,8 @@ const Calculator = () => {
                                        </div>
                                     </div>
                                     )
-                                 }
-                              </div> */}
+                                 } 
+                    </div> */}
                     {!showSummary && (
                       <div className="form-container">
                         {questions
@@ -1062,7 +1062,7 @@ const Calculator = () => {
                           </div>
                         )}
                         {timeline.length > 0 && (
-                          <div className="place-order">
+                          <div className="hidden place-order">
                             <div className="button-group1">
                               <p
                                 className="normal-btn primary"
