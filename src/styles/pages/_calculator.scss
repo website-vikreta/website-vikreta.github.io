@@ -1,7 +1,7 @@
 .calculator {
    padding: 150px 0;
 
-   .content {
+   .content-cal {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -265,6 +265,20 @@
    display: none !important;
 }
 
+// .form-container-mobile{
+//    display: none;
+//    // display: flex;
+//    padding: 48px var(--Paragraph-Letter-Spacing, 0px);
+//    flex-direction: column;
+//    align-items: flex-start;
+//    gap: var(--Paragraph-Line-Height, 24px);
+//    flex: 1;
+// }
+
+.place-order{
+   display: none;
+}
+
 .summary {
    display: flex;
    padding: 48px var(--Paragraph-Letter-Spacing, 0px);
@@ -324,6 +338,9 @@
 
 .calculatorWrapper {
    padding-top: 100px;
+}
+.calWrap{
+   padding-top: 0px;
 }
 .cal {
    display: flex;
@@ -712,6 +729,13 @@
    gap: 8px;
    justify-content: flex-end;
    align-self: stretch;
+}
+
+.option-cost-res{
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+      align-self: stretch;
 }
 
 .option-cost-cost {
