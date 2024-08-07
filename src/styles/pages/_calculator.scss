@@ -1,7 +1,7 @@
 .calculator {
    padding: 150px 0;
 
-   .content {
+   .content-cal {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -43,7 +43,14 @@
       }
 
       .para {
-         @include para-font;
+         color: #FFF;
+         text-align: center;
+         font-family: Roboto;
+         font-size: 18px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: normal;
+         opacity: 0.9;
       }
 
       .normal-btn {
@@ -246,9 +253,45 @@
    font-weight: 400;
    line-height: normal;
 }
+.content1{
+   display: none;
+}
+
+.go-back{
+   display: none;
+}
+
+.hidden{
+   display: none !important;
+}
+
+// .form-container-mobile{
+//    display: none;
+//    // display: flex;
+//    padding: 48px var(--Paragraph-Letter-Spacing, 0px);
+//    flex-direction: column;
+//    align-items: flex-start;
+//    gap: var(--Paragraph-Line-Height, 24px);
+//    flex: 1;
+// }
+
+.place-order{
+   display: none;
+}
 
 .summary {
    display: flex;
+   padding: 48px var(--Paragraph-Letter-Spacing, 0px);
+   flex-direction: column;
+   align-items: flex-start;
+   gap: var(--Paragraph-Space, 16px);
+   flex: 1;
+   position: sticky;
+   top: 0;
+}
+
+.summary-mobile {
+   display: none;
    padding: 48px var(--Paragraph-Letter-Spacing, 0px);
    flex-direction: column;
    align-items: flex-start;
@@ -286,7 +329,7 @@
    span {
       color: #ffd600;
       font-family: Roboto;
-      font-size: 16px;
+      font-size: 14px;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
@@ -296,6 +339,9 @@
 .calculatorWrapper {
    padding-top: 100px;
 }
+.calWrap{
+   padding-top: 0px;
+}
 .cal {
    display: flex;
    width: inherit;
@@ -304,12 +350,9 @@
    align-items: flex-start;
    gap: 2rem;
    background: #222;
-   // width: 552px;
-   @media (max-width: 768px) {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-   }
+
+   
+
 }
 
 .heading1 {
@@ -377,6 +420,47 @@
 
 .cost {
    display: flex;
+   padding: 6px 8px;
+   // justify-content: center;
+   align-items: flex-start;
+   gap: var(--Radius-10, 10px);
+   width: 116px;
+
+   .total-cost {
+      color: #ffd600;
+      font-family: Roboto;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+   }
+
+   .dash {
+      width: 100px;
+      color: #fff;
+      font-family: Roboto;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+   }
+
+   p {
+      color: #fff;
+      font-family: Roboto;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+   }
+}
+
+.cost1 .total-label {
+   display: none; /* Hide the Total label */
+ }
+
+.cost1{
+   display: none;
    padding: 6px 8px;
    // justify-content: center;
    align-items: flex-start;
@@ -645,6 +729,13 @@
    gap: 8px;
    justify-content: flex-end;
    align-self: stretch;
+}
+
+.option-cost-res{
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+      align-self: stretch;
 }
 
 .option-cost-cost {

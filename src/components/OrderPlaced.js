@@ -1,6 +1,10 @@
 import React from 'react';
+import { useEffect } from 'react';
 
 const ThankYou = ({ orderId, setIsSubmitted }) => {
+   useEffect(()=>{
+      window.scrollTo({top: 0, left: 0, behavior:'smooth'})
+   })
    return (
       <div className="p-thanks">
          <div className="icon-wrapper">
