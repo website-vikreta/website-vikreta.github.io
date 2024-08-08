@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import {
   pageAnimation,
-  smoothFade,
   frameParentIvert,
   frameAnimationIvert,
 } from "../utility/animation";
@@ -55,31 +54,15 @@ const Calculator = () => {
       });
   }, []);
 
-  // useEffect(() => {
-  //    // Fetch user's country code
-  //    axios
-  //       .get("http://ip-api.com/json/")
-  //       .then((response) => {
-  //          // setCountryCode(response.data.country_code.toLowerCase());
-  //          console.log(response.countryCode)
-  //          setSelected(response.countryCode);
-  //       })
-  //       .catch((error) => {
-  //          console.error("Error fetching country code:", error);
-  //       });
-  // }, []);
-
   const questions = calData();
   const curr = currancy();
   const countryNames = countries();
 
   const [selectedCurrency, setSelectedCurrency] = useState("USD");
   const first = curr.find((item) => item.name === "USD")?.flag;
-  // console.log(first);
   const [selectedFlag, setSelectedFlag] = useState(first);
   const [factor, setFactor] = useState(1);
   const [symbol, setSymbol] = useState("$");
-  // const handleChange = (e) => setSelectedCurrency(e.target.value);
 
   const handleChange = (e) => {
     const prev = curr.find((item) => item.name === selectedCurrency);
@@ -93,7 +76,6 @@ const Calculator = () => {
     const mul = front1 * back1;
     console.log(mul);
     setFactor(front1);
-    // console.log(factor)
   };
 
   const [totalCost, setTotalCost] = useState(0);
@@ -184,10 +166,6 @@ const Calculator = () => {
           (item) => item.name === tempValue
         )?.visibleAfterLoad;
 
-        // if(currentQuestion==='type'){
-
-        // }
-
         if (nextQuestionName) {
           const newVisibleQuestions = visibleQuestions.slice(
             0,
@@ -247,6 +225,7 @@ const Calculator = () => {
   const renderQuestion = (question) => {
     const { name, questionType, data, question: questionText } = question;
 
+    //code for rendering question with question-type dropdown
     if (questionType === "dropdown") {
       return (
         <div key={name} className="type-wrapper">
@@ -259,7 +238,6 @@ const Calculator = () => {
                 <p>Select Currency</p>
                 <div className="curr-option ">
                   <div className="curr-name">
-                    {/* <p className=""></p> */}
                     <p className="">
                       <span
                         dangerouslySetInnerHTML={{ __html: selectedFlag }}
@@ -292,7 +270,6 @@ const Calculator = () => {
               <span> *</span>
             </label>
           )}
-
           <CustomDropdown
             data={data}
             handleTypeChange={handleTypeChange}
@@ -305,7 +282,7 @@ const Calculator = () => {
         </div>
       );
     }
-
+    //code for rendering question with question-type radio
     if (questionType === "radio") {
       return (
         <div key={name} className="type-wrapper">
@@ -566,7 +543,6 @@ const Calculator = () => {
                       ) : (
                         <>
                           <div className="no-option">
-                            {/* <input type="radio" disabled/> */}
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="16"
@@ -658,7 +634,6 @@ const Calculator = () => {
                             </>
                           ) : (
                             <>
-                              {/* <p className="option-cost-cost">+{symbol}{option.cost*factor}</p> */}
                               {option.name === "yes" || option.name === "no" ? (
                                 <>
                                   <p className="strikethrough">
@@ -716,7 +691,6 @@ const Calculator = () => {
   };
 
   const handleClick = (event) => {
-    // event.stopPropagation();
     console.log("Click event triggered");
     setShowSummary(false);
   };
@@ -835,7 +809,6 @@ const Calculator = () => {
                </tr>
            `;
       }
-
       summaryHTML += `
            <tr>
                <td><strong>Total</strong></td>
@@ -865,7 +838,6 @@ const Calculator = () => {
 
       e.target.summary.value = summaryHTML;
 
-      // console.log(summaryHTML);
       const generateOrderId = () => {
         const now = new Date();
         const uniqueNumber = now.getTime() % 10000; // Get the last 4 digits of the timestamp
@@ -909,7 +881,6 @@ const Calculator = () => {
       setIsClicked(false);
       setIsSubmitted(true);
       setOrderId(orderId);
-      // window.location.reload()
     }
   };
 
@@ -960,6 +931,7 @@ const Calculator = () => {
                 )}
               </div>
             )}
+
             {!showSummary && (
               <div className="content1">
                 <div className="title-wrapper">
@@ -991,49 +963,6 @@ const Calculator = () => {
                   id={"calculate"}
                 >
                   <div className="cal">
-                    {/* <div className="form-container">
-                      {questions
-                        .filter((question) =>
-                          visibleQuestions.includes(question.name)
-                        )
-                        .map((question) => renderQuestion(question))}
-                      {Object.keys(formState).includes("cms") && (
-                        <div className="type-wrapper">
-                          <label className="queLabel">
-                            What is the timeline you have in mind for launch?
-                          </label>
-                          <div className="form-group">
-                            <CustomDropdown
-                              data={data}
-                              handleTypeChange={handleTypeChange}
-                              name="timeline"
-                              factor={factor}
-                              symbol={symbol}
-                              selectedCurrency={selectedCurrency}
-                              formatNumberToIndianCurrency={
-                                formatNumberToIndianCurrency
-                              }
-                            />
-                          </div>
-                        </div>
-                      )}
-                       {
-                                    timeline.length>0 && (
-
-                                       <div className="hidden place-order">
-                                       <div className="button-group1">
-                                          <p
-                                             className="normal-btn primary"
-                                             onClick={() => setShowSummary(true)}
-                                          >
-                                             Proceed To Pay
-                                          </p>
-                                          
-                                       </div>
-                                    </div>
-                                    )
-                                 } 
-                    </div> */}
                     {!showSummary && (
                       <div className="form-container">
                         {questions
@@ -1070,7 +999,6 @@ const Calculator = () => {
                               >
                                 Proceed To Pay
                               </p>
-                              {/* <p className="orderLabel" onClick={()=>setIsClicked(true)}>Place Order</p> */}
                             </div>
                           </div>
                         )}
@@ -1081,7 +1009,6 @@ const Calculator = () => {
                       <div className="summary-container">
                         <div className="heading1">
                           <h3 className="text-3xl font-semibold">Summary</h3>
-                          {/* <button > */}
                           <i
                             className={
                               toggleSummary
@@ -1090,7 +1017,6 @@ const Calculator = () => {
                             }
                             onClick={() => setToggleSummary(!toggleSummary)}
                           ></i>
-                          {/* </button> */}
                         </div>
                         <div className="summary-row">
                           <div className="name-div">
@@ -1127,7 +1053,6 @@ const Calculator = () => {
                                   ) : (
                                     <p className="sub">{questionState[0]}</p>
                                   )}
-                                  {/* <p className="sub">{questionState[0]}</p> */}
                                 </div>
                                 <div className="cost">
                                   <p>
@@ -1214,7 +1139,6 @@ const Calculator = () => {
                                   : (totalCost * factor).toLocaleString()}
                               </p>
                             )}
-                            {/* <div className="total-label">Total:</div> */}
                           </div>
                           <div className="cost1">
                             {timeline === "Fast Train" ? (
@@ -1261,7 +1185,6 @@ const Calculator = () => {
                             >
                               Place Order
                             </p>
-                            {/* <p className="orderLabel" onClick={()=>setIsClicked(true)}>Place Order</p> */}
                           </div>
                         </div>
                       )}
@@ -1289,7 +1212,6 @@ const Calculator = () => {
                             <span className="error">
                               {mobileErr != null ? mobileErr : ""}
                             </span>
-                            {/* Hidden input field for mobile number */}
                             <input type="hidden" name="mobile" value={mobile} />
                           </div>
                           <div className="form-group">
@@ -1351,15 +1273,12 @@ const Calculator = () => {
                         </div>
                       )}
                     </div>
-                    {/* dummy  */}
-                    {showSummary && <></>}
-                    {/* <Summary setShowSummary={setShowSummary} showSummary={showSummary} setToggleSummary={setToggleSummary} visibleQuestions={visibleQuestions} formState={formState} selected={selected} symbol={symbol} selectedCurrency={selectedCurrency} formatNumberToIndianCurrency={formatNumberToIndianCurrency} factor={factor} timeline={timeline}/> */}
-                    {showSummary && (
-                      // <div className="">
 
+                    {/* summary for mobile devices  */}
+
+                    {showSummary && (
                       <div className="summary-mobile">
                         <div className="go-back" onClick={handleClick}>
-                          {/* {console.log(showSummary)} */}
                           <div className="back-svg-bg" onClick={handleClick}>
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -1393,7 +1312,6 @@ const Calculator = () => {
                         <div className="summary-container">
                           <div className="heading1">
                             <h3 className="text-3xl font-semibold">Summary</h3>
-                            {/* <button > */}
                             <i
                               className={
                                 toggleSummary
@@ -1402,7 +1320,6 @@ const Calculator = () => {
                               }
                               onClick={() => setToggleSummary(!toggleSummary)}
                             ></i>
-                            {/* </button> */}
                           </div>
                           <div className="summary-row">
                             <div className="name-div">
@@ -1439,7 +1356,6 @@ const Calculator = () => {
                                     ) : (
                                       <p className="sub">{questionState[0]}</p>
                                     )}
-                                    {/* <p className="sub">{questionState[0]}</p> */}
                                   </div>
                                   <div className="cost">
                                     <p>
@@ -1526,7 +1442,6 @@ const Calculator = () => {
                                     : (totalCost * factor).toLocaleString()}
                                 </p>
                               )}
-                              {/* <div className="total-label">Total:</div> */}
                             </div>
 
                             <div className="cost">
@@ -1549,7 +1464,6 @@ const Calculator = () => {
                               >
                                 Place Order
                               </p>
-                              {/* <p className="orderLabel" onClick={()=>setIsClicked(true)}>Place Order</p> */}
                             </div>
                           </div>
                         )}
@@ -1643,7 +1557,6 @@ const Calculator = () => {
                           </div>
                         )}
                       </div>
-                      // </div>
                     )}
                     {!showSummary && (
                       <div
