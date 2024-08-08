@@ -33,6 +33,7 @@ const Nav = () => {
 
    const handleLinkClick = () => {
       setDropdownVisible(false); // Hide the dropdown when a link is clicked
+      unCheck();
    };
    return (
       <header>

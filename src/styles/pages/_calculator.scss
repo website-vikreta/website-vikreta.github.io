@@ -103,6 +103,10 @@
    flex: 1;
 }
 
+.hidden1{
+   display: flex;
+}
+
 .text-xl {
    font-size: 1.25rem;
    font-weight: 600;
@@ -265,15 +269,6 @@
    display: none !important;
 }
 
-// .form-container-mobile{
-//    display: none;
-//    // display: flex;
-//    padding: 48px var(--Paragraph-Letter-Spacing, 0px);
-//    flex-direction: column;
-//    align-items: flex-start;
-//    gap: var(--Paragraph-Line-Height, 24px);
-//    flex: 1;
-// }
 
 .place-order{
    display: none;
@@ -309,11 +304,9 @@
 
 .black-background {
    background: #000;
-   // @include dark-color(dark);
    color: white;
    border: none;
    left: 0;
-   // padding: 1rem;
 }
 
 .queLabel {
@@ -340,7 +333,7 @@
    padding-top: 100px;
 }
 .calWrap{
-   padding-top: 0px;
+   padding-top: 100px;
 }
 .cal {
    display: flex;
@@ -369,7 +362,6 @@
    justify-content: center;
    align-items: flex-start;
    gap: var(--Radius-10, 10px);
-   // flex: 1 0 0;
    border-radius: 5px;
    background: #222;
    width: 296px;
@@ -403,7 +395,6 @@
    gap: var(--Radius-10, 10px);
    border-radius: 5px;
    background: #222;
-   // flex: 0 1 0;
    width: 116px;
 
    h3 {
@@ -421,7 +412,6 @@
 .cost {
    display: flex;
    padding: 6px 8px;
-   // justify-content: center;
    align-items: flex-start;
    gap: var(--Radius-10, 10px);
    width: 116px;
@@ -456,13 +446,12 @@
 }
 
 .cost1 .total-label {
-   display: none; /* Hide the Total label */
+   display: none;
  }
 
 .cost1{
    display: none;
    padding: 6px 8px;
-   // justify-content: center;
    align-items: flex-start;
    gap: var(--Radius-10, 10px);
    width: 116px;
@@ -604,7 +593,7 @@
 
 .place-order {
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
    justify-content: center;
    align-items: center;
    gap: var(--Radius-10, 10px);
@@ -909,10 +898,10 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
-   padding: 2px 10px; /* Adjust padding to fit within 27px height */
+   padding: 2px 10px; 
    border-radius: 5px;
-   height: 27px; /* Set the height to 27px */
-   box-sizing: border-box; /* Ensure padding is included in the height calculation */
+   height: 27px; 
+   box-sizing: border-box;
 }
 
 .s-select .ReactFlagsSelect-module_selectBtn__1kE5p:hover {
@@ -962,7 +951,6 @@
  .limited-offer{
    display: flex;
    padding: 4px 8px;
-   // justify-content: center;
    align-items: center;
    gap: 4px;
    border-radius: 15px;
