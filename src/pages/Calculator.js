@@ -16,7 +16,7 @@ import CustomDropdown from "../components/CustomDropdown";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import emailjs from "emailjs-com";
 import ReactFlagsSelect from "react-flags-select";
 import ThankYou from "../components/OrderPlaced";
