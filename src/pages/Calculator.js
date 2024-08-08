@@ -205,20 +205,20 @@ const Calculator = () => {
     }
   };
 
-  const calculateTotal = () => {
-    let totalCost = 0;
-    let totalTime = 0;
-
-    Object.keys(formState).forEach((key) => {
-      totalCost += formState[key][1];
-      totalTime += formState[key][2];
-    });
-
-    setTotalCost(totalCost);
-    setTotalTime(totalTime);
-  };
-
   useEffect(() => {
+    const calculateTotal = () => {
+      let totalCost = 0;
+      let totalTime = 0;
+  
+      Object.keys(formState).forEach((key) => {
+        totalCost += formState[key][1];
+        totalTime += formState[key][2];
+      });
+  
+      setTotalCost(totalCost);
+      setTotalTime(totalTime);
+    };
+
     calculateTotal();
   }, [formState]);
 
