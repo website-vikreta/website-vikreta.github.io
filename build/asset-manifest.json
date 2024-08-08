@@ -1,10 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.2f5a83ea.css",
-    "main.js": "/static/js/main.34834639.js",
+    "main.css": "/static/css/main.22615e4d.css",
+    "main.js": "/static/js/main.df067f01.js",
     "static/js/787.9c1d6841.chunk.js": "/static/js/787.9c1d6841.chunk.js",
+    "static/media/addli-03.jpg": "/static/media/addli-03.63f68708f023a152fda9.jpg",
+    "static/media/addli-06.jpg": "/static/media/addli-06.325841786c74e283f711.jpg",
+    "static/media/addli-01.jpg": "/static/media/addli-01.3308d596746fa4d72f1a.jpg",
+    "static/media/addli-05.jpg": "/static/media/addli-05.81f822fd3f86637f033c.jpg",
+    "static/media/addli-02.jpg": "/static/media/addli-02.224afcbd4a886cca02cb.jpg",
     "static/media/MetaThumbz.png": "/static/media/MetaThumbz.8d175b0ab308d9a5140d.png",
     "static/media/blancora-logo.svg": "/static/media/blancora-logo.bbdcb3ff2414112b23569264229fa093.svg",
+    "static/media/addli-04.jpg": "/static/media/addli-04.b95553b9ae8c55167279.jpg",
     "static/media/1.jpg": "/static/media/1.7e9a8cdfeb1cb0fe1aa0.jpg",
     "static/media/2.jpg": "/static/media/2.01fe3392ae704a485afd.jpg",
     "static/media/Slide 3.png": "/static/media/Slide 3.8bc93daac87961066c72.png",
@@ -55,6 +61,7 @@
     "static/media/logo.jpg": "/static/media/logo.e531c31de7056ea217ec.jpg",
     "static/media/Service2.svg": "/static/media/Service2.f3a265d5a8d2c53eac445b2abaf33f0f.svg",
     "static/media/logo.png": "/static/media/logo.a7788e8d6f8fce09b5a6.png",
+    "static/media/adlogo.svg": "/static/media/adlogo.1284c4179fca31f5c5553f32efce3b07.svg",
     "static/media/Service3.svg": "/static/media/Service3.bc9b223e6437d6270bc66e63eb2a6424.svg",
     "static/media/Service4.svg": "/static/media/Service4.b90af155ba1715403458f07df26b7721.svg",
     "static/media/Service1.svg": "/static/media/Service1.057eba1cc82b11284475a5f571dc5ef8.svg",
@@ -68,12 +75,12 @@
     "static/media/Quote.svg": "/static/media/Quote.6eef5bb8749ba19b45728b17fcadd344.svg",
     "static/media/numbers-svg.svg": "/static/media/numbers-svg.16ea1f0513571ad2811b224c086b569c.svg",
     "static/media/LogoIcon.svg": "/static/media/LogoIcon.0696f8eddb8a6dba074d5aeff6f48f5e.svg",
-    "main.2f5a83ea.css.map": "/static/css/main.2f5a83ea.css.map",
-    "main.34834639.js.map": "/static/js/main.34834639.js.map",
+    "main.22615e4d.css.map": "/static/css/main.22615e4d.css.map",
+    "main.df067f01.js.map": "/static/js/main.df067f01.js.map",
     "787.9c1d6841.chunk.js.map": "/static/js/787.9c1d6841.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f5a83ea.css",
-    "static/js/main.34834639.js"
+    "static/css/main.22615e4d.css",
+    "static/js/main.df067f01.js"
   ]
 }
