@@ -489,18 +489,29 @@
       gap: 2rem;
       background: none; 
       flex-direction: column; 
+      position: relative;
     }
+    .calWrap{
+      padding-top: 0px;
+   }
     .summary{
       display: none !important;
     }
   
     .form-container{
+      position: relative;
       padding: 48px var(--Paragraph-Letter-Spacing, 8px);
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: 20px;
       align-self: stretch;
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .form-container.hidden1 {
+      opacity: 0.0;
     }
 
     .queLabel{
@@ -584,6 +595,7 @@
         opacity: 1;
       }
     }
+
     
     .go-back, .summary-mobile {
       animation: moveInRight 500ms ease-out;
@@ -746,6 +758,11 @@
       display: none;
       margin-top: -17%;
   }
+
+//   .form-container.hidden{
+//    transition: left 300ms ease-out;
+//    display: none;
+//   }
   
     .cost {
       .total-cost{
@@ -790,9 +807,12 @@
       display: none;
     }
     .summary-mobile{
+      position: absolute;
+      z-index: 900;
       display: flex;
       width: 100%;
-      height: 740px;
+      height: 100%;
+      background-color:#333333;
       flex-direction: column;
       align-items: flex-start;
       gap: 30px;
@@ -852,8 +872,70 @@
          line-height: normal;
       }
     }
-    .calculator .content-cal .para{
+    
+
+
+    .calculator .content1 .para{
       margin-top: 1rem !important;
+    }
+    .content1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      text-align: center;
+
+      .sub-title {
+         letter-spacing: 0.1em;
+         @include font-weight(light);
+         color: $yellow;
+         font-size: 1rem;
+         overflow: hidden;
+         position: relative;
+
+         .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @include dark-color-bg(medium);
+            z-index: 1;
+         }
+      }
+
+      .title {
+         font-size: 3rem;
+         @include font-weight(bold);
+         margin-top: 0.9rem;
+
+         .hide {
+            overflow: hidden;
+         }
+
+         span {
+            color: $yellow;
+         }
+      }
+
+      .para {
+         color: #FFF;
+         text-align: center;
+         font-family: Roboto;
+         font-size: 18px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: normal;
+         opacity: 0.9;
+      }
+
+      .normal-btn {
+         width: fit-content;
+      }
+   }
+    .content-cal{
+      display: none !important;
     }
     .main{
       color: #fff;

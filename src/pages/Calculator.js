@@ -209,12 +209,12 @@ const Calculator = () => {
     const calculateTotal = () => {
       let totalCost = 0;
       let totalTime = 0;
-  
+
       Object.keys(formState).forEach((key) => {
         totalCost += formState[key][1];
         totalTime += formState[key][2];
       });
-  
+
       setTotalCost(totalCost);
       setTotalTime(totalTime);
     };
@@ -489,7 +489,6 @@ const Calculator = () => {
                                 </>
                               ) : (
                                 <>
-                                  {/* <p className="option-cost-cost">+{symbol}{option.cost*factor}</p> */}
                                   {option.name === "yes" ||
                                   option.name === "no" ? (
                                     <>
@@ -691,7 +690,6 @@ const Calculator = () => {
   };
 
   const handleClick = (event) => {
-    console.log("Click event triggered");
     setShowSummary(false);
   };
 
@@ -911,26 +909,26 @@ const Calculator = () => {
           <div className="container">
             {/* Heading */}
             {/* ================================================== */}
-            {!showSummary && (
-              <div className="content-cal">
-                <div className="title-wrapper">
-                  <h1 className="title">
-                    Website <span>Cost Calculator</span>
-                  </h1>
-                  <p className="para">
-                    Find a cost effective website that meets your budget!
-                  </p>
-                </div>
-                {!isSubmitted && (
-                  <div className="button-group">
-                    <a href="#calculate" className="normal-btn primary">
-                      <span>Get Started Now</span>
-                      <i className="bi bi-arrow-right"></i>
-                    </a>
-                  </div>
-                )}
+            {/* {!showSummary && ( */}
+            <div className="content-cal">
+              <div className="title-wrapper">
+                <h1 className="title">
+                  Website <span>Cost Calculator</span>
+                </h1>
+                <p className="para">
+                  Find a cost effective website that meets your budget!
+                </p>
               </div>
-            )}
+              {!isSubmitted && (
+                <div className="button-group">
+                  <a href="#calculate" className="normal-btn primary">
+                    <span>Get Started Now</span>
+                    <i className="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              )}
+            </div>
+            {/* )} */}
 
             {!showSummary && (
               <div className="content1">
@@ -963,47 +961,49 @@ const Calculator = () => {
                   id={"calculate"}
                 >
                   <div className="cal">
-                    {!showSummary && (
-                      <div className="form-container">
-                        {questions
-                          .filter((question) =>
-                            visibleQuestions.includes(question.name)
-                          )
-                          .map((question) => renderQuestion(question))}
-                        {Object.keys(formState).includes("cms") && (
-                          <div className="type-wrapper">
-                            <label className="queLabel">
-                              What is the timeline you have in mind for launch?
-                            </label>
-                            <div className="form-group">
-                              <CustomDropdown
-                                data={data}
-                                handleTypeChange={handleTypeChange}
-                                name="timeline"
-                                factor={factor}
-                                symbol={symbol}
-                                selectedCurrency={selectedCurrency}
-                                formatNumberToIndianCurrency={
-                                  formatNumberToIndianCurrency
-                                }
-                              />
-                            </div>
+                    <div
+                      className={`form-container ${
+                        showSummary ? "hidden1" : ""
+                      }`}
+                    >
+                      {questions
+                        .filter((question) =>
+                          visibleQuestions.includes(question.name)
+                        )
+                        .map((question) => renderQuestion(question))}
+                      {Object.keys(formState).includes("cms") && (
+                        <div className="type-wrapper">
+                          <label className="queLabel">
+                            What is the timeline you have in mind for launch?
+                          </label>
+                          <div className="form-group">
+                            <CustomDropdown
+                              data={data}
+                              handleTypeChange={handleTypeChange}
+                              name="timeline"
+                              factor={factor}
+                              symbol={symbol}
+                              selectedCurrency={selectedCurrency}
+                              formatNumberToIndianCurrency={
+                                formatNumberToIndianCurrency
+                              }
+                            />
                           </div>
-                        )}
-                        {timeline.length > 0 && (
-                          <div className="hidden place-order">
-                            <div className="button-group1">
-                              <p
-                                className="normal-btn primary"
-                                onClick={() => setShowSummary(true)}
-                              >
-                                Proceed To Pay
-                              </p>
-                            </div>
+                        </div>
+                      )}
+                      {timeline.length > 0 && (
+                        <div className="hidden place-order">
+                          <div className="button-group1">
+                            <p
+                              className="normal-btn primary"
+                              onClick={() => setShowSummary(true)}
+                            >
+                              Proceed To Pay
+                            </p>
                           </div>
-                        )}
-                      </div>
-                    )}
+                        </div>
+                      )}
+                    </div>
 
                     <div className="summary">
                       <div className="summary-container">
@@ -1264,14 +1264,14 @@ const Calculator = () => {
                           </button>
                         </form>
                       )}
-                      {!isClicked && (
+                      {/* {!isClicked && (
                         <div>
                           <Toaster
                             position="bottom-right"
                             reverseOrder={false}
                           />
                         </div>
-                      )}
+                      )} */}
                     </div>
 
                     {/* summary for mobile devices  */}
@@ -1457,6 +1457,28 @@ const Calculator = () => {
                         </div>
                         {!isClicked && timeline.length > 0 && (
                           <div className="place-order">
+                            <button className="normal-btn secondary">
+                              <p
+                                className="btn-txt"
+                                onClick={() => setShowSummary(false)}
+                              >
+                                Edit Form
+                              </p>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-arrow-clockwise"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
+                                />
+                                <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                              </svg>
+                            </button>
                             <div className="button-group1">
                               <p
                                 className="normal-btn primary"
@@ -1548,14 +1570,14 @@ const Calculator = () => {
                             </button>
                           </form>
                         )}
-                        {!isClicked && (
+                        {/* {!isClicked && (
                           <div>
                             <Toaster
                               position="bottom-right"
                               reverseOrder={false}
                             />
                           </div>
-                        )}
+                        )} */}
                       </div>
                     )}
                     {!showSummary && (
