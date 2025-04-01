@@ -133,13 +133,13 @@ import championg4 from "../assets/Work/champion-lenders/gallery/champion4.jpg";
 import championg5 from "../assets/Work/champion-lenders/gallery/champion5.jpg";
 import championg6 from "../assets/Work/champion-lenders/gallery/champion6.jpg";
 //addli
-import addlylogo from "../assets/Work/Addli/adlogo.svg"
-import addli1 from "../assets/Work/Addli/addli-01.jpg"
-import addli2 from "../assets/Work/Addli/addli-02.jpg"
-import addli3 from "../assets/Work/Addli/addli-03.jpg"
-import addli4 from "../assets/Work/Addli/addli-04.jpg"
-import addli5 from "../assets/Work/Addli/addli-05.jpg"
-import addli6 from "../assets/Work/Addli/addli-06.jpg"
+// import addlylogo from "../assets/Work/Addli/adlogo.svg"
+// import addli1 from "../assets/Work/Addli/addli-01.jpg"
+// import addli2 from "../assets/Work/Addli/addli-02.jpg"
+// import addli3 from "../assets/Work/Addli/addli-03.jpg"
+// import addli4 from "../assets/Work/Addli/addli-04.jpg"
+// import addli5 from "../assets/Work/Addli/addli-05.jpg"
+// import addli6 from "../assets/Work/Addli/addli-06.jpg"
 
 
 
