@@ -146,45 +146,45 @@ import addli6 from "../assets/Work/Addli/addli-06.jpg"
 // Real Data
 export const workData = [
    // SBP webApp update content
-   {
-      id: 1,
-      url: "/work/addlly",
-      thumbnail: addli1,
-      logo: addlylogo,
-      title: "WebApp Re-design for Addlly",
-      niche: ["Figma", "UI/UX", "Prototyping", "Web Design", "Web Apps", "Mockups"],
-      category: ["Web Apps","UI/UX & Prototyping"],
-      links: [
-         { key: "Figma", value: "https://bit.ly/addly-website-figma" }
-      ],
-      video: [
+   // {
+   //    id: 1,
+   //    url: "/work/addlly",
+   //    thumbnail: addli1,
+   //    logo: addlylogo,
+   //    title: "WebApp Re-design for Addlly",
+   //    niche: ["Figma", "UI/UX", "Prototyping", "Web Design", "Web Apps", "Mockups"],
+   //    category: ["Web Apps","UI/UX & Prototyping"],
+   //    links: [
+   //       { key: "Figma", value: "https://bit.ly/addly-website-figma" }
+   //    ],
+   //    video: [
 
-      ],
-      gallery: [ addli1, addli2, addli3, addli4, addli5, addli6
+   //    ],
+   //    gallery: [ addli1, addli2, addli3, addli4, addli5, addli6
         
-      ],
-      shortDescription: `
-      Addlly AI’s Content Playground is the first customizable Gen AI platform that empowers you to leverage your proprietary data to generate unique, on-brand content across various modules – effortlessly and securely. The business has a requirement for reconstructing & redesigning its existing platform/web application     
-      `,
-      description: `
-      <p className="para">
-      Addlly promotes eco-friendly bitcoin mining by requiring companies to register on their platform through a KYC process. In return, they offer benefits and issue their own cryptocurrency, SBC (Sustainable Bitcoin Certificate). The business needs to revamp and redesign its current platform/web application.
-      </p>
-      <p className="para">
-      There are three core modules: Miner, Auditor, and Investor. These modules handle bitcoin mining, verify miners through third-party integration, and facilitate the purchase of bitcoins, respectively.
-      </p>
-      <p className="para">
-      Website Vikreta has delivered a fully updated UI/UX design to the company. Our research focused on achieving the optimal design. We provided all necessary components, charts, graphs, and layout elements to enhance the website’s functionality. Additionally, we created a straightforward Figma design to ensure that the tech team can develop it easily and efficiently.
-      </p>
-      <p className="para">
-      Given that blockchain-based projects require highly secure modules, we have conducted extensive testing to ensure the web application appears more professional and appealing. This enhances user trust and provides instant, easy-to-access information about the services offered by Addlly.
-      </p>
-      `,
-      clientReview: `
-           `,
-      clientName: "Harshit Agarwal",
-      designation: "CTO- Addlly.ai",
-   },
+   //    ],
+   //    shortDescription: `
+   //    Addlly AI’s Content Playground is the first customizable Gen AI platform that empowers you to leverage your proprietary data to generate unique, on-brand content across various modules – effortlessly and securely. The business has a requirement for reconstructing & redesigning its existing platform/web application     
+   //    `,
+   //    description: `
+   //    <p className="para">
+   //    Addlly promotes eco-friendly bitcoin mining by requiring companies to register on their platform through a KYC process. In return, they offer benefits and issue their own cryptocurrency, SBC (Sustainable Bitcoin Certificate). The business needs to revamp and redesign its current platform/web application.
+   //    </p>
+   //    <p className="para">
+   //    There are three core modules: Miner, Auditor, and Investor. These modules handle bitcoin mining, verify miners through third-party integration, and facilitate the purchase of bitcoins, respectively.
+   //    </p>
+   //    <p className="para">
+   //    Website Vikreta has delivered a fully updated UI/UX design to the company. Our research focused on achieving the optimal design. We provided all necessary components, charts, graphs, and layout elements to enhance the website’s functionality. Additionally, we created a straightforward Figma design to ensure that the tech team can develop it easily and efficiently.
+   //    </p>
+   //    <p className="para">
+   //    Given that blockchain-based projects require highly secure modules, we have conducted extensive testing to ensure the web application appears more professional and appealing. This enhances user trust and provides instant, easy-to-access information about the services offered by Addlly.
+   //    </p>
+   //    `,
+   //    clientReview: `
+   //         `,
+   //    clientName: "Harshit Agarwal",
+   //    designation: "CTO- Addlly.ai",
+   // },
    {
       id: 2,
       url: "/work/sbpwebapp",
